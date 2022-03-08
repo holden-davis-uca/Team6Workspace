@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.papyrus.uml.diagram.wizards.createmodel"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.papyrus.wizards.category"/>
+			<item value="org.eclipse.papyrus.wizards.category/org.eclipse.papyrus.wizards.addons.category"/>
+			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"/>
+		</list>
+	</section>
+</section>

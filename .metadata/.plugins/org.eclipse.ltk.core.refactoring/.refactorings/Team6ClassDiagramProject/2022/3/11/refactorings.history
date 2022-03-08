@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;Team6ClassDiagramProject&apos;&#x0D;&#x0A;- Original project: &apos;Team6ClassDiagramProject&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Team6ClassDiagramProject.di&#x0D;&#x0A;     Team6ClassDiagramProject.notation&#x0D;&#x0A;     Team6ClassDiagramProject.uml" description="Delete elements" element1="Team6ClassDiagramProject.di" element2="Team6ClassDiagramProject.notation" element3="Team6ClassDiagramProject.uml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1646764016192" subPackages="false" version="1.0"/>
+</session>
