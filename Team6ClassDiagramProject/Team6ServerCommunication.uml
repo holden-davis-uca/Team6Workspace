@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_tEnUoJ9FEey4CrfTp4bsKQ" name="Team6ServerCommunication">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_tFXikJ9FEey4CrfTp4bsKQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T7I5UJ9GEey4CrfTp4bsKQ" name="DatabaseFile"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T7KHcJ9GEey4CrfTp4bsKQ" name="User"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T7KHcZ9GEey4CrfTp4bsKQ" name="GameServer">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_T7KHcp9GEey4CrfTp4bsKQ" name="databasefile" type="_T7I5UJ9GEey4CrfTp4bsKQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T7KHc59GEey4CrfTp4bsKQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T7KHdJ9GEey4CrfTp4bsKQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>

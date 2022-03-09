@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_noOkcJ9FEey4CrfTp4bsKQ" name="Team6ClientCommunication">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_no554J9FEey4CrfTp4bsKQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWekMJ9GEey4CrfTp4bsKQ" name="LoginControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWfyUJ9GEey4CrfTp4bsKQ" name="PlacingData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWfyUZ9GEey4CrfTp4bsKQ" name="CreateControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWgZYJ9GEey4CrfTp4bsKQ" name="CreateData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWgZYZ9GEey4CrfTp4bsKQ" name="LobbyControl">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RWgZYp9GEey4CrfTp4bsKQ" name="gameclient" type="_RWhAcJ9GEey4CrfTp4bsKQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWgZY59GEey4CrfTp4bsKQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWgZZJ9GEey4CrfTp4bsKQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWgZZZ9GEey4CrfTp4bsKQ" name="GameData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWgZZp9GEey4CrfTp4bsKQ" name="StartControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhAcJ9GEey4CrfTp4bsKQ" name="GameClient"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhAcZ9GEey4CrfTp4bsKQ" name="LobbyData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhAcp9GEey4CrfTp4bsKQ" name="GameControl">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RWhAc59GEey4CrfTp4bsKQ" name="gameclient" type="_RWhAcJ9GEey4CrfTp4bsKQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWhAdJ9GEey4CrfTp4bsKQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWhAdZ9GEey4CrfTp4bsKQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhAdp9GEey4CrfTp4bsKQ" name="PlacingControl">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RWhAd59GEey4CrfTp4bsKQ" name="gameclient" type="_RWhAcJ9GEey4CrfTp4bsKQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWhAeJ9GEey4CrfTp4bsKQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWhAeZ9GEey4CrfTp4bsKQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhngJ9GEey4CrfTp4bsKQ" name="Ships">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RWhngZ9GEey4CrfTp4bsKQ" name="gamedata" type="_RWgZZZ9GEey4CrfTp4bsKQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWhngp9GEey4CrfTp4bsKQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWhng59GEey4CrfTp4bsKQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RWhnhJ9GEey4CrfTp4bsKQ" name="LoginData"/>
+</uml:Model>
