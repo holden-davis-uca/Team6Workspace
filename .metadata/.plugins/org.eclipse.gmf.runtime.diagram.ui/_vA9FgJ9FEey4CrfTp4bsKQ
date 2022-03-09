@@ -2,10 +2,8 @@
 print.useInches=true
 rulergrid.rulerunit=2
 print.margin.left=0.5
-viewport.x=967
 rulergrid.gridlinestyle=6
-viewport.y=-279
-zoom=1.25
+zoom=1.0
 print.usePortrait=true
 print.page.height=11.0
 print.page.width=8.5
