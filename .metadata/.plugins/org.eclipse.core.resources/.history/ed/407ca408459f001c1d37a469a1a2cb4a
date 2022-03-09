@@ -12,9 +12,6 @@
       <packageImport xmi:type="uml:PackageImport" xmi:id="_gNEP4J9EEey4CrfTp4bsKQ" importedPackage="_b7GEYJ9EEey4CrfTp4bsKQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_b7GEYJ9EEey4CrfTp4bsKQ" name="ClientCommunication"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_dYYhwJ9EEey4CrfTp4bsKQ" name="ServerCommunication">
-      <packageImport xmi:type="uml:PackageImport" xmi:id="_B9SpIJ9FEey4CrfTp4bsKQ" importedPackage="_AsNbwJ9FEey4CrfTp4bsKQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_AsNbwJ9FEey4CrfTp4bsKQ" name="Database"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_dYYhwJ9EEey4CrfTp4bsKQ" name="ServerCommunication"/>
   </packagedElement>
 </uml:Model>
