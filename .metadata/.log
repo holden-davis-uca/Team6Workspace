@@ -62,3 +62,611 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-03-08 12:31:46.467 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data C:\Users\holde\Team6Workspace -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-03-08 12:31:54.466
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 12:31:54.466
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@578036a2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36cc6055,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 12:31:54.466
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41d1bcbd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ba6f4e7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-03-08 12:32:15.147
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\holde'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.189
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.codan.internal.ui.views.ProblemDetails" id and the "Problem Details" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.191
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.debug.ui.executablesView" id and the "Executables" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.191
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.debug.ui.SignalsView" id and the "Signals" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.192
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.debug.ui.debuggerConsoleView" id and the "Debugger Console" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.193
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" id and the "Trace Control" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.193
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.dsf.gdb.ui.osresources.view" id and the "OS Resources" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.194
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.dsf.gdb.ui.debugsources.view" id and the "Debug Sources" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.195
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.dsf.debug.ui.disassembly.view" id and the "Disassembly" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.196
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.make.ui.views.MakeView" id and the "Build Targets" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.196
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.ui.CView" id and the "C/C++ Projects" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.196
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.ui.IndexView" id and the "C/C++ Index" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.197
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.ui.includeBrowser" id and the "Include Browser" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.197
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.ui.callHierarchy" id and the "Call Hierarchy" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.198
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.cdt.ui.typeHierarchy" id and the "Type Hierarchy" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.199
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.papyrus.designer.languages.cpp.view.cpp" id and the "C/C++" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.200
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.papyrus.moka.animation.presentation.control.controlview" id and the "Animation Observation Control" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.201
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.papyrus.moka.ui.tracepoint.view.Tracepoints" id and the "Tracepoints" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.202
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.common.snippets.internal.ui.SnippetsView" id and the "Snippets" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.203
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.internet.monitor.view" id and the "TCP/IP Monitor" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.203
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.jsdt.callhierarchy.view" id and the "Call Hierarchy" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.204
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.jsdt.ui.SourceView" id and the "Declaration" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.204
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.jsdt.ui.JavadocView" id and the "Documentation" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.205
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.server.ui.ServersView" id and the "Servers" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.206
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.xml.ui.views.annotations.XMLAnnotationsView" id and the "Documentation" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-03-08 12:32:15.206
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.wst.xml.ui.contentmodel.view" id and the "Content Model" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+!SESSION 2022-03-08 18:06:15.983 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-03-08 18:06:52.871
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 18:06:52.871
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13ac7281,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7740028a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 18:06:52.871
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@409a164d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6a7eef27,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-03-08 18:07:33.931
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\holde'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2022-03-08 18:17:43.774
+!MESSAGE DevStyle theme is being deactivated on this workspace; restoring colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2022-03-08 18:17:44.013
+!MESSAGE DevStyle is restoring colors that were configured prior to DevStyle being enabled
+!SESSION 2022-03-08 18:17:51.639 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data file:/C:/Users/holde/Team6Workspace/ -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-03-08 18:18:05.451
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 18:18:05.451
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@19d483dc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18a693de,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-03-08 18:18:05.451
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71120f9a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@40597c95,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-03-08 18:18:46.070
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\holde'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-03-08 18:21:26.337
+!MESSAGE Execution exception for: ParameterizedCommand(Command(org.eclipse.ui.edit.paste,Paste,
+		Paste from the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d2e2949,
+		,,true),null) in 
+	context chain: WorkbenchContext -> TrimmedWindowImpl (IDEWindow) Context -> PerspectiveImpl (org.eclipse.jdt.ui.JavaPerspective) Context -> PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.papyrus.infra.core.papyrusEditor active activeOnClose (Team6ClassDiagram.di) Context -> MultiPageEditorSite
+!STACK 0
+org.eclipse.core.commands.ExecutionException: Error executing 'org.eclipse.ui.edit.paste': org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:170)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:580)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:647)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1280)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1059)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1111)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1107)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1536)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4875)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:345)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4753)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+Caused by: org.eclipse.e4.core.di.InjectionException: org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:68)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	... 45 more
+Caused by: org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.CommonDeferredCreateConnectionViewCommand.doExecuteWithResult(CommonDeferredCreateConnectionViewCommand.java:181)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.CommonDeferredCreateConnectionViewCommand.doExecuteWithResult(CommonDeferredCreateConnectionViewCommand.java:133)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(AbstractTransactionalCommand.java:248)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy.execute(ICommandProxy.java:69)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy.doExecuteWithResult(CommandProxy.java:51)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy.execute(ICommandProxy.java:69)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultDiagramPasteCommand.doExecuteWithResult(DefaultDiagramPasteCommand.java:136)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(AbstractTransactionalCommand.java:248)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper.execute(GMFtoGEFCommandWrapper.java:126)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper.execute(GEFtoEMFCommandWrapper.java:97)
+	at org.eclipse.emf.workspace.EMFCommandOperation.doExecute(EMFCommandOperation.java:119)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(DefaultOperationHistory.java:496)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.doExecute(CheckedOperationHistory.java:208)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.execute(CheckedOperationHistory.java:197)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NotifyingWorkspaceCommandStack.doExecute(NotifyingWorkspaceCommandStack.java:266)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:165)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:219)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NestingNotifyingWorkspaceCommandStack.execute(NestingNotifyingWorkspaceCommandStack.java:132)
+	at org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler.execute(AbstractGraphicalCommandHandler.java:87)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	... 49 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-03-08 18:21:27.638
+!MESSAGE Execution exception for: ParameterizedCommand(Command(org.eclipse.ui.edit.paste,Paste,
+		Paste from the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d2e2949,
+		,,true),null) in 
+	context chain: WorkbenchContext -> TrimmedWindowImpl (IDEWindow) Context -> PerspectiveImpl (org.eclipse.jdt.ui.JavaPerspective) Context -> PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.papyrus.infra.core.papyrusEditor active activeOnClose (Team6ClassDiagram.di) Context -> MultiPageEditorSite
+!STACK 0
+org.eclipse.core.commands.ExecutionException: Error executing 'org.eclipse.ui.edit.paste': org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:170)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:580)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:647)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1280)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1059)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1111)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1107)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1536)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4875)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:345)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4753)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+Caused by: org.eclipse.e4.core.di.InjectionException: org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:68)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	... 45 more
+Caused by: org.eclipse.core.runtime.AssertionFailedException: null argument:
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:88)
+	at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:76)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.CommonDeferredCreateConnectionViewCommand.doExecuteWithResult(CommonDeferredCreateConnectionViewCommand.java:181)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.CommonDeferredCreateConnectionViewCommand.doExecuteWithResult(CommonDeferredCreateConnectionViewCommand.java:133)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(AbstractTransactionalCommand.java:248)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy.execute(ICommandProxy.java:69)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy.doExecuteWithResult(CommandProxy.java:51)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.common.core.command.CompositeCommand.doExecuteWithResult(CompositeCommand.java:404)
+	at org.eclipse.gmf.runtime.common.core.command.AbstractCommand.execute(AbstractCommand.java:135)
+	at org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy.execute(ICommandProxy.java:69)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.papyrus.infra.gmfdiag.common.commands.DefaultDiagramPasteCommand.doExecuteWithResult(DefaultDiagramPasteCommand.java:136)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(AbstractTransactionalCommand.java:248)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.papyrus.commands.wrappers.GMFtoGEFCommandWrapper.execute(GMFtoGEFCommandWrapper.java:126)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.gef.commands.CompoundCommand.execute(CompoundCommand.java:129)
+	at org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper.execute(GEFtoEMFCommandWrapper.java:97)
+	at org.eclipse.emf.workspace.EMFCommandOperation.doExecute(EMFCommandOperation.java:119)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(DefaultOperationHistory.java:496)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.doExecute(CheckedOperationHistory.java:208)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.execute(CheckedOperationHistory.java:197)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NotifyingWorkspaceCommandStack.doExecute(NotifyingWorkspaceCommandStack.java:266)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:165)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:219)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NestingNotifyingWorkspaceCommandStack.execute(NestingNotifyingWorkspaceCommandStack.java:132)
+	at org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler.execute(AbstractGraphicalCommandHandler.java:87)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	... 49 more
+
+!ENTRY org.eclipse.papyrus.uml.diagram.common 4 0 2022-03-08 18:22:40.528
+!MESSAGE No semantic element was found during activation of the mask managed label edit policy
+
+!ENTRY org.eclipse.papyrus.uml.diagram.common 4 0 2022-03-08 18:22:40.530
+!MESSAGE No semantic element was found during activation of the mask managed label edit policy
+
+!ENTRY org.eclipse.papyrus.uml.diagram.common 4 0 2022-03-08 18:22:40.532
+!MESSAGE No semantic element was found during activation of the mask managed label edit policy
+
+!ENTRY org.eclipse.papyrus.uml.diagram.common 4 0 2022-03-08 18:22:40.534
+!MESSAGE No semantic element was found during activation of the mask managed label edit policy
+
+!ENTRY org.eclipse.core.databinding 4 0 2022-03-08 18:28:29.030
+!MESSAGE An error occurred while setting the value.
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.core.databinding.observable.value.IObservableValue.setValue(Object)" because "this.decorated" is null
+	at org.eclipse.core.databinding.observable.value.DecoratingObservableValue.setValue(DecoratingObservableValue.java:117)
+	at org.eclipse.core.databinding.observable.value.SelectObservableValue.doSetValue(SelectObservableValue.java:185)
+	at org.eclipse.core.databinding.observable.value.AbstractObservableValue.setValue(AbstractObservableValue.java:70)
+	at org.eclipse.core.databinding.UpdateValueStrategy.doSet(UpdateValueStrategy.java:481)
+	at org.eclipse.core.databinding.ValueBinding.lambda$1(ValueBinding.java:209)
+	at org.eclipse.core.databinding.Binding.lambda$3(Binding.java:194)
+	at org.eclipse.core.databinding.observable.Realm$1.run(Realm.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.databinding.observable.Realm.safeRun(Realm.java:155)
+	at org.eclipse.core.databinding.observable.Realm.exec(Realm.java:173)
+	at org.eclipse.core.databinding.Binding.execAfterDisposalCheck(Binding.java:192)
+	at org.eclipse.core.databinding.ValueBinding.lambda$0(ValueBinding.java:202)
+	at org.eclipse.core.databinding.Binding.lambda$3(Binding.java:194)
+	at org.eclipse.core.databinding.observable.Realm$1.run(Realm.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.databinding.observable.Realm.safeRun(Realm.java:155)
+	at org.eclipse.core.databinding.observable.Realm.exec(Realm.java:173)
+	at org.eclipse.core.databinding.Binding.execAfterDisposalCheck(Binding.java:192)
+	at org.eclipse.core.databinding.ValueBinding.doUpdate(ValueBinding.java:166)
+	at org.eclipse.core.databinding.ValueBinding.access$4(ValueBinding.java:151)
+	at org.eclipse.core.databinding.ValueBinding$2.handleValueChange(ValueBinding.java:56)
+	at org.eclipse.core.databinding.observable.value.ValueChangeEvent.dispatch(ValueChangeEvent.java:73)
+	at org.eclipse.core.databinding.observable.ChangeManager.fireEvent(ChangeManager.java:119)
+	at org.eclipse.papyrus.infra.tools.databinding.DelegatingObservable.fireEvent(DelegatingObservable.java:306)
+	at org.eclipse.papyrus.infra.tools.databinding.DelegatingObservableValue$1.handleValueChange(DelegatingObservableValue.java:116)
+	at org.eclipse.core.databinding.observable.value.ValueChangeEvent.dispatch(ValueChangeEvent.java:73)
+	at org.eclipse.core.databinding.observable.ChangeManager.fireEvent(ChangeManager.java:119)
+	at org.eclipse.core.databinding.observable.value.AbstractObservableValue.fireValueChange(AbstractObservableValue.java:86)
+	at org.eclipse.papyrus.uml.properties.databinding.NavigationObservableValue.handleChange(NavigationObservableValue.java:85)
+	at org.eclipse.core.databinding.observable.ChangeEvent.dispatch(ChangeEvent.java:45)
+	at org.eclipse.core.databinding.observable.ChangeManager.fireEvent(ChangeManager.java:119)
+	at org.eclipse.core.databinding.observable.AbstractObservable.fireChange(AbstractObservable.java:76)
+	at org.eclipse.core.databinding.observable.list.DecoratingObservableList.fireListChange(DecoratingObservableList.java:71)
+	at org.eclipse.core.databinding.observable.list.DecoratingObservableList.handleListChange(DecoratingObservableList.java:109)
+	at org.eclipse.core.databinding.observable.list.ListChangeEvent.dispatch(ListChangeEvent.java:78)
+	at org.eclipse.core.databinding.observable.ChangeManager.fireEvent(ChangeManager.java:119)
+	at org.eclipse.core.databinding.observable.ChangeSupport.fireEvent(ChangeSupport.java:45)
+	at org.eclipse.core.databinding.observable.list.AbstractObservableList.fireListChange(AbstractObservableList.java:132)
+	at org.eclipse.core.internal.databinding.property.list.SimplePropertyObservableList.notifyIfChanged(SimplePropertyObservableList.java:586)
+	at org.eclipse.core.internal.databinding.property.list.SimplePropertyObservableList.lambda$1(SimplePropertyObservableList.java:79)
+	at org.eclipse.core.databinding.observable.Realm$1.run(Realm.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.databinding.observable.Realm.safeRun(Realm.java:155)
+	at org.eclipse.core.databinding.observable.Realm.exec(Realm.java:173)
+	at org.eclipse.core.internal.databinding.property.list.SimplePropertyObservableList.lambda$0(SimplePropertyObservableList.java:76)
+	at org.eclipse.emf.databinding.internal.EMFPropertyListener$EMFListPropertyListener.notifyChanged(EMFPropertyListener.java:165)
+	at org.eclipse.uml2.uml.internal.impl.ElementImpl.eNotify(ElementImpl.java:1012)
+	at org.eclipse.emf.common.notify.impl.NotificationImpl.dispatch(NotificationImpl.java:1027)
+	at org.eclipse.emf.common.notify.impl.NotificationImpl.dispatch(NotificationImpl.java:1032)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.clear(NotifyingListImpl.java:1104)
+	at org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand.doExecuteWithResult(SetValueCommand.java:69)
+	at org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand.doExecute(AbstractTransactionalCommand.java:248)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.papyrus.infra.emf.gmf.command.GMFtoEMFCommandWrapper.execute(GMFtoEMFCommandWrapper.java:123)
+	at org.eclipse.emf.workspace.EMFCommandOperation.doExecute(EMFCommandOperation.java:119)
+	at org.eclipse.emf.workspace.AbstractEMFOperation.execute(AbstractEMFOperation.java:150)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(DefaultOperationHistory.java:496)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.doExecute(CheckedOperationHistory.java:208)
+	at org.eclipse.papyrus.infra.emf.gmf.command.CheckedOperationHistory.execute(CheckedOperationHistory.java:197)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NotifyingWorkspaceCommandStack.doExecute(NotifyingWorkspaceCommandStack.java:266)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:165)
+	at org.eclipse.emf.transaction.impl.AbstractTransactionalCommandStack.execute(AbstractTransactionalCommandStack.java:219)
+	at org.eclipse.papyrus.infra.emf.gmf.command.NestingNotifyingWorkspaceCommandStack.execute(NestingNotifyingWorkspaceCommandStack.java:132)
+	at org.eclipse.papyrus.uml.properties.databinding.OwnerObservableValue.doSetValue(OwnerObservableValue.java:116)
+	at org.eclipse.core.databinding.observable.value.AbstractObservableValue.setValue(AbstractObservableValue.java:70)
+	at org.eclipse.papyrus.infra.tools.databinding.DelegatingObservableValue.setValue(DelegatingObservableValue.java:106)
+	at jdk.internal.reflect.GeneratedMethodAccessor73.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.papyrus.infra.tools.databinding.DelegatingInvocationHandler.invoke(DelegatingInvocationHandler.java:162)
+	at jdk.proxy24/jdk.proxy24.$Proxy103.setValue(Unknown Source)
+	at org.eclipse.core.databinding.UpdateValueStrategy.doSet(UpdateValueStrategy.java:481)
+	at org.eclipse.core.databinding.ValueBinding.lambda$1(ValueBinding.java:209)
+	at org.eclipse.core.databinding.Binding.lambda$3(Binding.java:194)
+	at org.eclipse.core.databinding.observable.Realm$1.run(Realm.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.databinding.observable.Realm.safeRun(Realm.java:155)
+	at org.eclipse.core.databinding.observable.Realm.exec(Realm.java:173)
+	at org.eclipse.core.databinding.Binding.execAfterDisposalCheck(Binding.java:192)
+	at org.eclipse.core.databinding.ValueBinding.lambda$0(ValueBinding.java:202)
+	at org.eclipse.core.databinding.Binding.lambda$3(Binding.java:194)
+	at org.eclipse.core.databinding.observable.Realm$1.run(Realm.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.databinding.observable.Realm.safeRun(Realm.java:155)
+	at org.eclipse.core.databinding.observable.Realm.exec(Realm.java:173)
+	at org.eclipse.core.databinding.Binding.execAfterDisposalCheck(Binding.java:192)
+	at org.eclipse.core.databinding.ValueBinding.doUpdate(ValueBinding.java:166)
+	at org.eclipse.core.databinding.ValueBinding.access$4(ValueBinding.java:151)
+	at org.eclipse.core.databinding.ValueBinding$1.handleValueChange(ValueBinding.java:47)
+	at org.eclipse.core.databinding.observable.value.ValueChangeEvent.dispatch(ValueChangeEvent.java:73)
+	at org.eclipse.core.databinding.observable.ChangeManager.fireEvent(ChangeManager.java:119)
+	at org.eclipse.core.databinding.observable.value.AbstractObservableValue.fireValueChange(AbstractObservableValue.java:86)
+	at org.eclipse.papyrus.infra.widgets.databinding.ComboObservableValue.selectionChanged(ComboObservableValue.java:121)
+	at org.eclipse.jface.viewers.Viewer$1.run(Viewer.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:148)
+	at org.eclipse.jface.viewers.StructuredViewer.updateSelection(StructuredViewer.java:2130)
+	at org.eclipse.jface.viewers.StructuredViewer.handleSelect(StructuredViewer.java:1176)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireSelectionEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:421)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:773)
+	at org.eclipse.swt.custom.CCombo.listEvent(CCombo.java:1242)
+	at org.eclipse.swt.custom.CCombo.lambda$0(CCombo.java:117)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)

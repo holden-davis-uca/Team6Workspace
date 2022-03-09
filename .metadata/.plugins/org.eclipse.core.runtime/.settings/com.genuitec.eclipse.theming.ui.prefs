@@ -1,9 +1,11 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1624986146000
+codetogether.announce.displayed=true
 configurationInstallLocation=/C\:/Users/holde/eclipse/java-2021-12/eclipse/
+ct.reengagement.display.after=1657218746110
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1646763846618
-lastConfiguration=1644102269656
+last.download.attempt.time=1646784453839
+lastConfiguration=1646785077400
 newinstall=true
 workbench.theme=Dark Gray
