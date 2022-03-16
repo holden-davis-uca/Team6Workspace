@@ -51,9 +51,39 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P3LG4J9BEey4CrfTp4bsKQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P3LG4Z9BEey4CrfTp4bsKQ" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yIQVgKVXEeyUu6fcU56ARQ" name="lobbyPanel" type="_pxC50J8_Eey4CrfTp4bsKQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__HYeYKVXEeyUu6fcU56ARQ" name="client" type="_uMlbkJ9AEey4CrfTp4bsKQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_B4f7IKVYEeyUu6fcU56ARQ" name="LobbyControl"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Eb66IKVYEeyUu6fcU56ARQ" name="actionPerformed"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_F8VkAKVYEeyUu6fcU56ARQ" name="DisplayError"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HLllYKVYEeyUu6fcU56ARQ" name="Logout"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_oIY58J8_Eey4CrfTp4bsKQ" name="LobbyData"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_pxC50J8_Eey4CrfTp4bsKQ" name="LobbyPanel"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oIY58J8_Eey4CrfTp4bsKQ" name="LobbyData">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kO0rEKVYEeyUu6fcU56ARQ" name="player">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mTWHkKVYEeyUu6fcU56ARQ" name="highScore">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_surzUKVYEeyUu6fcU56ARQ" name="LobbyData"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_tuRBAKVYEeyUu6fcU56ARQ" name="getPlayer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uqjDEKVYEeyUu6fcU56ARQ" name="getHighScore"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_vv790KVYEeyUu6fcU56ARQ" name="setPlayer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wXlzsKVYEeyUu6fcU56ARQ" name="setHighScore"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pxC50J8_Eey4CrfTp4bsKQ" name="LobbyPanel">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_IyLvwKVYEeyUu6fcU56ARQ" name="SelectedPlayer">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QWRMQKVYEeyUu6fcU56ARQ" name="userHighScore">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_S8luQKVYEeyUu6fcU56ARQ" name="errorLabel"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_c3q3UKVYEeyUu6fcU56ARQ" name="LobbyPanel"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_elrRQKVYEeyUu6fcU56ARQ" name="getSelectedPlayer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_fdfqEKVYEeyUu6fcU56ARQ" name="getUserHighScore"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_gpsXcKVYEeyUu6fcU56ARQ" name="setError"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_rlX-MJ8_Eey4CrfTp4bsKQ" memberEnd="_rlZMUZ8_Eey4CrfTp4bsKQ _rlZzYJ8_Eey4CrfTp4bsKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rlYlQJ8_Eey4CrfTp4bsKQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rlZMUJ8_Eey4CrfTp4bsKQ" key="nature" value="UML_Nature"/>
@@ -73,9 +103,43 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PXs8op9BEey4CrfTp4bsKQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PXs8o59BEey4CrfTp4bsKQ" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_45UkMKVYEeyUu6fcU56ARQ" name="placingPanel" type="_C-FxEJ9AEey4CrfTp4bsKQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6uG7kKVYEeyUu6fcU56ARQ" name="client" type="_uMlbkJ9AEey4CrfTp4bsKQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-pl5sKVYEeyUu6fcU56ARQ" name="PlacingControl"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AGofcKVZEeyUu6fcU56ARQ" name="actionPerformed"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BSG0EKVZEeyUu6fcU56ARQ" name="allShipsPlaced"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CO3-UKVZEeyUu6fcU56ARQ" name="DisplayError"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_CNjsAJ9AEey4CrfTp4bsKQ" name="PlacingData"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_C-FxEJ9AEey4CrfTp4bsKQ" name="PlacingPanel"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_CNjsAJ9AEey4CrfTp4bsKQ" name="PlacingData">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hrdhAKVZEeyUu6fcU56ARQ" name="xCoords"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hrfWMKVZEeyUu6fcU56ARQ" name="ships"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hrf9QKVZEeyUu6fcU56ARQ" name="yCoords"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hrgkUKVZEeyUu6fcU56ARQ" name="isHorizontal">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jnkBUKVZEeyUu6fcU56ARQ" name="getisHorizontal"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jnl2gKVZEeyUu6fcU56ARQ" name="getShip"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jnmdkKVZEeyUu6fcU56ARQ" name="getYCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jnnEoKVZEeyUu6fcU56ARQ" name="getXCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kIrKUKVZEeyUu6fcU56ARQ" name="setXCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ljN1sKVZEeyUu6fcU56ARQ" name="setYCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mzz64KVZEeyUu6fcU56ARQ" name="setisHorizontal"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oUDloKVZEeyUu6fcU56ARQ" name="setShip"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_C-FxEJ9AEey4CrfTp4bsKQ" name="PlacingPanel">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GuzGQKVZEeyUu6fcU56ARQ" name="isHorizontal">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_K__1sKVZEeyUu6fcU56ARQ" name="xCoords"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Taq78KVZEeyUu6fcU56ARQ" name="yCoords"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TonRUKVZEeyUu6fcU56ARQ" name="ships"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WJ7-kKVZEeyUu6fcU56ARQ" name="PlacingPanel"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XR4eEKVZEeyUu6fcU56ARQ" name="getisHorizontal"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Yg7EEKVZEeyUu6fcU56ARQ" name="getXCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZWTz8KVZEeyUu6fcU56ARQ" name="getYCoord"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aStx0KVZEeyUu6fcU56ARQ" name="getShip"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_a8EQ0KVZEeyUu6fcU56ARQ" name="setError"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_EiEsUJ9AEey4CrfTp4bsKQ" memberEnd="_EiFTYp9AEey4CrfTp4bsKQ _EiF6cJ9AEey4CrfTp4bsKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EiFTYJ9AEey4CrfTp4bsKQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EiFTYZ9AEey4CrfTp4bsKQ" key="nature" value="UML_Nature"/>
