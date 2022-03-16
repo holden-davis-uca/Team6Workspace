@@ -5,7 +5,7 @@ Here are the remaining tasks, distributed by person. <br>I have realized the tru
 * **Holden** - Refine/Redo Input/Output for each package and add to document. When all methods and variables are finished, fix appearance of every class and redraw all 5 diagrams to be readable (class diagram + package diagram + 3 subsystem diagrams). After all tasks are finished, export all 5 diagrams to png format and add to document, and export papyrus project as zip. As final step, name each individuals contribution in document and submit to blackboard before due date (3/17/22 @ 2:40pm).
 * **Austin** - Complete methods and variables for LoginControl, LoginPanel, LoginData, CreateControl, CreatePanel, CreateData     
 * - 6 classes aka .java files: Everything for login screen and account creation screen
-* **Cas**    - Complete methods and variables for LobbyControl, LobbyPanel, LobbyData, PlacingControl, PlacingPanel, PlacingData 
+* **Cas - DONE**    - Complete methods and variables for LobbyControl, LobbyPanel, LobbyData, PlacingControl, PlacingPanel, PlacingData 
 * - 6 classes aka .java files: Everything for lobby screen and placing phase screen
 * **Riley**  - Complete methods and variables for StartControl, StartPanel, GameClient, GameServer, User                        
 * - 5 classes aka .java files: Everything for start screen and backend including game client, game server, and user
