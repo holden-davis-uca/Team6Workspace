@@ -24,7 +24,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWkq4Z9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhAcJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWkDwZ9GEey4CrfTp4bsKQ" x="419" y="324"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWkDwZ9GEey4CrfTp4bsKQ" x="260" y="880"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWkq4p9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWlR4J9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -50,7 +50,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWlR8Z9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhAcp9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWkq459GEey4CrfTp4bsKQ" x="429" y="334"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWkq459GEey4CrfTp4bsKQ" x="1120" y="420"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWlR8p9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWlR9J9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -76,7 +76,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWl4-Z9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWgZZZ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWlR859GEey4CrfTp4bsKQ" x="439" y="344"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWlR859GEey4CrfTp4bsKQ" x="1220" y="520"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWl4-p9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWl4_J9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -102,7 +102,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWl5DZ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWfyUZ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWl4-59GEey4CrfTp4bsKQ" x="449" y="354"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWl4-59GEey4CrfTp4bsKQ" x="320" y="560"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWmgAJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWmgAp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -128,7 +128,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWmgE59GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhngJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWmgAZ9GEey4CrfTp4bsKQ" x="459" y="364"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWmgAZ9GEey4CrfTp4bsKQ" x="380" y="880"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWmgFJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWmgFp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -154,7 +154,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnHGZ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWekMJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWmgFZ9GEey4CrfTp4bsKQ" x="469" y="374"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWmgFZ9GEey4CrfTp4bsKQ" x="320" y="260"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWnHGp9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWnHHJ9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -180,7 +180,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnHLZ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhAdp9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnHG59GEey4CrfTp4bsKQ" x="479" y="384"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnHG59GEey4CrfTp4bsKQ" x="860" y="420"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWnuIJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWnuIp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -206,7 +206,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnuM59GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhnhJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnuIZ9GEey4CrfTp4bsKQ" x="489" y="394"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWnuIZ9GEey4CrfTp4bsKQ" x="420" y="360"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWoVMJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWoVMp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -232,7 +232,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWoVQ59GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWgZYZ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWoVMZ9GEey4CrfTp4bsKQ" x="499" y="404"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWoVMZ9GEey4CrfTp4bsKQ" x="600" y="420"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWo8QJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWo8Qp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -258,7 +258,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWo8U59GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWhAcZ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWo8QZ9GEey4CrfTp4bsKQ" x="509" y="414"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWo8QZ9GEey4CrfTp4bsKQ" x="700" y="520"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWpjUJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWpjUp9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -284,7 +284,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWpjY59GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWfyUJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWpjUZ9GEey4CrfTp4bsKQ" x="519" y="424"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWpjUZ9GEey4CrfTp4bsKQ" x="960" y="520"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWpjZJ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWqKYJ9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -310,7 +310,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWqKcZ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWgZYJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWpjZZ9GEey4CrfTp4bsKQ" x="529" y="434"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWpjZZ9GEey4CrfTp4bsKQ" x="420" y="660"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RWqKcp9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWqKdJ9GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -336,7 +336,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWqKhZ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ClientCommunication.uml#_RWgZZp9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWqKc59GEey4CrfTp4bsKQ" x="539" y="444"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RWqKc59GEey4CrfTp4bsKQ" x="180" y="400"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_p4A1wZ9FEey4CrfTp4bsKQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_p4A1wp9FEey4CrfTp4bsKQ"/>

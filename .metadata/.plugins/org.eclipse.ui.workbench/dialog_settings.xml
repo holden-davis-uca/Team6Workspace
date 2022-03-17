@@ -7,4 +7,6 @@
 			<item value="org.eclipse.papyrus.wizards.category/org.eclipse.papyrus.wizards.addons.category"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>

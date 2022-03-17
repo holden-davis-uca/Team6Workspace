@@ -24,7 +24,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7NKxJ9GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ServerCommunication.uml#_T7KHcZ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7L8oZ9GEey4CrfTp4bsKQ" x="320" y="320"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7L8oZ9GEey4CrfTp4bsKQ" x="400" y="320"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_T7NKxZ9GEey4CrfTp4bsKQ" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_T7NKx59GEey4CrfTp4bsKQ" type="Class_NameLabel"/>
@@ -76,7 +76,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7Nx459GEey4CrfTp4bsKQ"/>
     </children>
     <element xmi:type="uml:Class" href="Team6ServerCommunication.uml#_T7KHcJ9GEey4CrfTp4bsKQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7Nx0Z9GEey4CrfTp4bsKQ" x="220" y="200"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7Nx0Z9GEey4CrfTp4bsKQ" x="400" y="460"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_vA9FgZ9FEey4CrfTp4bsKQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_vA9Fgp9FEey4CrfTp4bsKQ"/>

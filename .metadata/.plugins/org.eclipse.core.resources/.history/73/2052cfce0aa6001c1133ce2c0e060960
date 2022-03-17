@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_cL-jkJ9FEey4CrfTp4bsKQ" name="Team6ClientGUI">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_cNiCwJ9FEey4CrfTp4bsKQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xancEKYKEeyYv7JjOYf-rw" name="LoginPanel">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xancEaYKEeyYv7JjOYf-rw" name="errorLabel"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xancEqYKEeyYv7JjOYf-rw" name="userField"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xancE6YKEeyYv7JjOYf-rw" name="passField"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xancFKYKEeyYv7JjOYf-rw" name="LoginPanel"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xancFaYKEeyYv7JjOYf-rw" name="getUserField"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xancFqYKEeyYv7JjOYf-rw" name="getPassField"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xancF6YKEeyYv7JjOYf-rw" name="setError"/>
+  </packagedElement>
+</uml:Model>

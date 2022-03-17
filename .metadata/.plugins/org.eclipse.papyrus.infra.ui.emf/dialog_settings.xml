@@ -3,12 +3,23 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
-				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_uMlbkJ9AEey4CrfTp4bsKQ"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_iFagUJ8-Eey4CrfTp4bsKQ"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_IUw60J9AEey4CrfTp4bsKQ"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_WJay8J8_Eey4CrfTp4bsKQ"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_52YbIJ8-Eey4CrfTp4bsKQ"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_C-FxEJ9AEey4CrfTp4bsKQ"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_pxC50J8_Eey4CrfTp4bsKQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
 			</list>
 		</section>
 	</section>
