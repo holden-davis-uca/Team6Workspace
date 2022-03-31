@@ -9,9 +9,9 @@
 
 package ServerCommunication;
 
-import java.io.*;
-import java.sql.*;
-import java.util.*;
+import java.io.*; //Needed for FIS
+import java.sql.*; //Needed for JDBC
+import java.util.*; //Needed for Properties, ArrayList etc
 
 public class Database {
 	/*
@@ -19,12 +19,15 @@ public class Database {
 	 * con is the connection to the database using JDBC
 	 * username and password are the credentials eventually retrieved from db.properties that con uses to establish a connection
 	 * url is the path used by JDBC to connect to the mysql instance
+	 * aeskey is the encryption key used when encrypting and decrypting the password with aes_encrypt()
+	 * * Needs to be constant over multiple setups and shutdowns of the server, so it is hard coded and not random
 	 * fis is used to read in the information stored in db.properties
 	 */
 	private Connection con;
 	private String username;
 	private String password;
 	private String url;
+	private String aeskey;
 	private FileInputStream fis;
 	
 	/*
@@ -53,6 +56,7 @@ public class Database {
 		username = props.getProperty("user");
 		password = props.getProperty("password");
 		url = props.getProperty("url");
+		aeskey = props.getProperty("aeskey");
 		try {
 			con = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -84,6 +88,7 @@ public class Database {
 			{
 				queryresults.add(results.getString(1));
 				queryresults.add(results.getString(2));
+				queryresults.add(results.getString(3));
 			}
 			
 			return queryresults;
