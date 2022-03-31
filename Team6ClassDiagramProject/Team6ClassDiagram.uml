@@ -280,6 +280,20 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lVI4A6YKEeyYv7JjOYf-rw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lVI4BKYKEeyYv7JjOYf-rw" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gNeNkLEhEeyUwsRvsNsdHA" name="player1Ships"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_iBdTsLEhEeyUwsRvsNsdHA" name="player2Ships"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_iztQALEhEeyUwsRvsNsdHA" name="player1Hits">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kJU_ILEhEeyUwsRvsNsdHA" name="player2Hits">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_laCZELEhEeyUwsRvsNsdHA" name="player1Miss">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mP_wsLEhEeyUwsRvsNsdHA" name="player2Miss">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_4vzy4KYIEeyYv7JjOYf-rw" name="GameServer"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5TcrcKYIEeyYv7JjOYf-rw" name="listeningException"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_6lbQsKYIEeyYv7JjOYf-rw" name="serverStarted"/>
@@ -291,6 +305,10 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YNFPkLEhEeyUwsRvsNsdHA" name="checkIfHit"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_amORMLEhEeyUwsRvsNsdHA" name="checkIfSunk"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_bi5U0LEhEeyUwsRvsNsdHA" name="validateSelection"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_erp1gLEhEeyUwsRvsNsdHA" name="playerBoardDataUpdate"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_et5qkJ9BEey4CrfTp4bsKQ" name="DatabaseFile">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_TKLOUKYIEeyYv7JjOYf-rw" name="gameData"/>
