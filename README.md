@@ -14,9 +14,13 @@ Database specification and definition is as follows (also contained within db.pr
 * For this project, the database will contain a single table: *users*
 * The table will consist of three columns:
 * > username
-* >> Datatype of varchar(30), non-null, first half of primary key
+* >> Datatype of varchar(30), non-null, primary key
 * > password
-* >> Datatype of varbinary(20), non-null, second half of primary key
+* >> Datatype of varbinary(20), non-null
 * >> Uses aes_encrypt() for insertion and aes_decrypt for retrieval
-* > wlratio
-* >> Datatype of double(3,2), non-null
+* > wins
+* >> Datatype of int(10)
+* > losses
+* >> Datatype of int(10)
+* Program-level constraints for username: Must be unique, must be at least 3 characters, must be alphanumeric (including capitals and lowercase)
+* Program-level constraints for password: Must be at least 10 characters, must be alphanumeric (including capitals and lowercase)
