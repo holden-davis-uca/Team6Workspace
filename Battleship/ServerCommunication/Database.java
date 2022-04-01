@@ -46,6 +46,7 @@ public class Database {
 	 *getAllUsers() - Method to retrieve all users and corresponding w/l ratios from the database, returned in an HashMap<String, String>
 	 *getUserRatio() - Method to retrieve a user's w/l ratio given their username, returned in a String
 	 *recordMatch() - Method to record a match given the usernames of the two players and a bool (true for first parameter name win, false for second)
+	 *finish() - Method to safely close connection to database
 	 *
 	 *NOTE: All win/loss ratios are returned as strings, as their most common usage outside of the database is to be displayed on screen ex. in a JLabel
 	 */
@@ -64,7 +65,7 @@ public class Database {
 	public Database()
 	{
 		try {
-			fis = new FileInputStream(".\\db.properties");
+			fis = new FileInputStream("./ServerCommunication/db.properties");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -239,6 +240,26 @@ public class Database {
 		{
 			executeDML("update users set wins = wins + 1 where username='"+user2+"';");
 			executeDML("update users set losses = losses + 1 where username='"+user1+"';");
+		}
+	}
+	/*
+	 * Safely closes connection to database server
+	 * To be called before turning off server program
+	 * 
+	 * Takes:
+	 * Returns:
+	 * 	boolean - true if successfully closed connection, false otherwise
+	 * Throws:
+	 *	SQLException if connection is unable to be closed (if connection not initially established)
+	 */
+	public boolean finish()
+	{
+		try {
+			con.close();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
 		}
 	}
 
