@@ -12,7 +12,7 @@ Database specification and definition is as follows (also contained within db.pr
 * Using the username *student* and the password *hello*
 * Using the password AES encryption key *midnightexigent*
 * For this project, the database will contain a single table: *users*
-* The table will consist of three columns:
+* The table will consist of four columns:
 * > username
 * >> Datatype of varchar(30), non-null, primary key
 * > password
