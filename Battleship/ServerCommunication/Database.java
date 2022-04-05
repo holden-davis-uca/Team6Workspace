@@ -7,6 +7,7 @@
  * Assumes the existence of a user with the name "student" and password "hello" as well as a database "student_space"
  * Necessary login credentials (username + password) and the url used for connection need to be contained within db.properties in the same directory
  * W/L values are stored along with user credentials in the database; W/L ratio is calculated serverside (here) to save on number of required database interactions
+ * Input is sanitized prior to insertion to prevent SQLI
  */
 
 package ServerCommunication;
@@ -24,8 +25,7 @@ public class Database {
 	 * url is the path used by JDBC to connect to the mysql instance
 	 * aeskey is the encryption key used when encrypting and decrypting the password with aes_encrypt()
 	 * * Needs to be constant over multiple setups and shutdowns of the server, so it is hard coded and not random
-	 * fis is used to read in the information stored in db.properties
-	 * 
+	 * fis is the fileinputstream object used to read db.properties
 	 */
 	private Connection con;
 	private String username;
