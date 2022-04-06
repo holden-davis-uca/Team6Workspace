@@ -26,10 +26,10 @@ public class DatabaseTest {
 	{
 		assertNotNull(db.query("select * from users"));
 	}
-	@Test 
+	@Test (expected=AssertionError.class)
 	public void testQueryFail()
 	{
-		//assertNotNull(db.query("select * from gamers"));
+		assertNotNull(db.query("select * from gamers"));
 	}
 	@Test
 	public void testexecuteDMLSuccess()
@@ -37,10 +37,10 @@ public class DatabaseTest {
 		assert(db.executeDML("insert into users values('yourmom',aes_encrypt('yourmomspw', 'midnightexigent'),0,0);"));
 		assert(db.executeDML("delete from users where username='yourmom';"));
 	}
-	@Test
+	@Test (expected=AssertionError.class)
 	public void testexecuteDMLFail()
 	{
-		//assert(db.executeDML("insert into gamers values('yourmom',aes_encrypt('yourmomspw', 'midnightexigent'),0,0);"));
+		assert(db.executeDML("insert into gamers values('yourmom',aes_encrypt('yourmomspw', 'midnightexigent'),0,0);"));
 	}
 	@Test
 	public void testcreateAccountSuccess()
@@ -48,40 +48,42 @@ public class DatabaseTest {
 		assert(db.createAccount("yourmom", "yourmomspw"));
 		assert(db.executeDML("delete from users where username='yourmom';"));
 	}
-	@Test
+	@Test (expected=AssertionError.class)
 	public void testcreateAccountFail()
 	{
-		//assert(db.createAccount("yourmom", "yourmomspwbuttoolong"));
+		assert(db.createAccount("yourmom", "yourmomspwbuttoolong"));
 	}
 	@Test
 	public void testverifyAccountSuccess()
 	{
 		assert(db.verifyAccount("Holden", "Davis13"));
 	}
-	@Test
+	@Test (expected=AssertionError.class)
 	public void testverifyAccountFail()
 	{
-		//assert(db.verifyAccount("yourmom", "yourmompw"));
+		assert(db.verifyAccount("yourmom", "yourmompw"));
 	}
 	@Test
 	public void testgetUserRatioSuccess()
 	{
-		assertNotNull(db.getUserRatio("Holden"));
+		assertNotEquals(db.getUserRatio("Holden"), "");
 	}
-	@Test
+	@Test (expected=AssertionError.class)
 	public void testgetUserRatioFail()
 	{
-		//assertNotNull(db.getUserRatio("yourmom"));
+		assertNotEquals(db.getUserRatio("yourmom"), "");
 	}
 	@Test
 	public void testgetAllUsersSuccess()
 	{
 		assertNotNull(db.getAllUsers());
 	}
-	@Test
+	@Test (expected=NullPointerException.class)
 	public void testgetAllUsersFail()
 	{
-		//assert???(db.getAllUsers());
+		db.finish();
+		db.getAllUsers();
+		setUp();
 	}
 	@Test
 	public void testrecordMatchSuccess()
@@ -91,7 +93,9 @@ public class DatabaseTest {
 	@Test
 	public void testrecordMatchFail()
 	{
-		//db.recordMatch("your", "mom", true);
+		db.finish();
+		db.recordMatch("ffffffffffffffffffffffffffffyour", "mom", true);
+		setUp();
 	}
 	@After
 	public void tearDown() 

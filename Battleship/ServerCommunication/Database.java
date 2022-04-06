@@ -92,30 +92,17 @@ public class Database {
 	 * Takes:
 	 * 	A String representing the query statement to be executed; ie. "select * from table users;"
 	 * Returns:
-	 * 	ArrayList<String> - null if query unsuccessful, results of query otherwise
+	 * 	ResultSet - null if query unsuccessful, results of query otherwise
 	 * Throws:
 	 * 	SQLException if query is unsuccessful
 	 */
-	public ArrayList<String> query(String query)
+	public ResultSet query(String query)
 	{
 		try {
 			
 			Statement stmt = con.createStatement();
-			ArrayList<String> queryresults = new ArrayList<String>();
 			ResultSet results = stmt.executeQuery(query);
-			if (results == null)
-			{
-				return null;
-			}
-			while (results.next())
-			{
-				queryresults.add(results.getString(1));
-				queryresults.add(results.getString(2));
-				queryresults.add(results.getString(3));
-				queryresults.add(results.getString(4));
-			}
-			
-			return queryresults;
+			return results;
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -175,12 +162,16 @@ public class Database {
 	 */
 	public boolean verifyAccount(String username, String password)
 	{
-		ArrayList<String> results = query("select username, aes_decrypt(password, '"+aeskey+"') from users where username='"+username+"';");
-		if (results == null)
-			return false;
-		else if (results.contains(password))
+		ResultSet results = query("select * from users where username='"+username+"' and password=aes_encrypt('"+password+"', '"+aeskey+"');");
+		try {
+			if (results == null || (!results.next()))
+				return false;
 			return true;
-		return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 	/*
 	 * Returns a list of all users and their win/loss ratios
@@ -195,10 +186,14 @@ public class Database {
 	public HashMap<String, String> getAllUsers()
 	{
 		HashMap<String, String> newresults = new HashMap<String, String>();
-		ArrayList<String> results = query("select username from users");
-		for (int i = 0; i < results.size(); i++)
-		{
-			newresults.put(results.get(i), getUserRatio(results.get(i)));
+		ResultSet results = query("select username from users");
+		try {
+			while (results.next())
+			{
+				newresults.put(results.getString(1), getUserRatio(results.getString(1)));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return newresults;
 	}
@@ -215,8 +210,14 @@ public class Database {
 	 */
 	public String getUserRatio(String username)
 	{
-		ArrayList<String> results = query("select wins, losses from users where username='"+username+"';");
-		return String.valueOf(Double.parseDouble(results.get(0)) / Double.parseDouble(results.get(1)));
+		ResultSet results = query("select wins, losses from users where username='"+username+"';");
+		try {
+			results.next();
+			return String.valueOf(Double.parseDouble(results.getString(1)) / Double.parseDouble(results.getString(2)));
+		} catch (NumberFormatException | SQLException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 	/*
 	 * Records the results of a completed match
