@@ -4,6 +4,8 @@ package ClientGUI;
 import java.awt.*;
 import javax.swing.*;
 
+import ClientCommunication.CreateControl;
+
 public class CreatePanel extends JPanel {
 	// Private data fields for the important GUI components.
 	  private JTextField usernameField;
