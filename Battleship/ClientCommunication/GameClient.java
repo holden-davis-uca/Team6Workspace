@@ -95,8 +95,8 @@ public class GameClient extends AbstractClient {
 		//client.setPlacingControl(pc); TODO
 		
 		JPanel view1 = new StartPanel(sc);
-		JPanel view2 = new CreatePanel(cc);
-		JPanel view3 = new LoginPanel(lc);
+		JPanel view2 = new LoginPanel(lc);
+		JPanel view3 = new CreatePanel(cc);
 		//JPanel view4 = new LobbyPanel(lbc); TODO
 		//JPanel view5 = new GamePanel(gc); TODO
 		//JPanel view6 = new PlacingPanel(pc) TODO

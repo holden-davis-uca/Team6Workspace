@@ -24,11 +24,11 @@ public class StartControl implements ActionListener {
 		if (command.equals("Login")) {
 			//LoginPanel loginPanel = (LoginPanel)container.getComponent(1);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
-			cardLayout.show(container, "3");
+			cardLayout.show(container, "2");
 		} else if (command.equals("Create")) {
 			//CreatePanel createPanel = (CreatePanel)container.getComponent(2);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
-			cardLayout.show(container, "2");
+			cardLayout.show(container, "3");
 		}
 	}
 }
