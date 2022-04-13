@@ -1,13 +1,10 @@
 //Riley Williams - Team 6
+//TODO May not need the client object
 package ClientCommunication;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import ClientGUI.CreatePanel;
-import ClientGUI.LoginPanel;
-import ClientGUI.StartPanel;
 
 public class StartControl implements ActionListener {
 	private GameClient client;
