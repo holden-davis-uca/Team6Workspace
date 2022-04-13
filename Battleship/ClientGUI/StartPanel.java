@@ -7,7 +7,6 @@ import javax.swing.*;
 import ClientCommunication.StartControl;
 
 public class StartPanel extends JPanel {
-	private static final long serialVersionUID = 0L;
 	private JButton createButton;
 	private JButton loginButton;
 	private JLabel titleLabel;

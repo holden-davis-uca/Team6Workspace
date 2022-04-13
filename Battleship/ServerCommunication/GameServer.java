@@ -1,14 +1,23 @@
 //Riley Williams - Team 6
 package ServerCommunication;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
-import ClientCommunication.*;
+
+import javax.swing.JFrame;
+
+import ClientCommunication.CreateData;
+import ClientCommunication.LoginData;
+import ClientCommunication.Ships;
 import ocsf.server.*;
 
 public class GameServer extends AbstractServer {
 	private Database db;
+	private ResultSetMetaData rmd;
 	private Ships player1Ships;
 	private Ships player2Ships;
 	private int player1Hits;
