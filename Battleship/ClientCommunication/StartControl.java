@@ -1,3 +1,4 @@
+//Riley Williams - Team 6
 package ClientCommunication;
 
 import java.awt.*;
@@ -12,7 +13,7 @@ public class StartControl implements ActionListener {
 	private GameClient client;
 	private JPanel container;
 	
-	public StartControl(GameClient client, JPanel container) {
+	public StartControl(JPanel container, GameClient client) {
 		this.container = container;
 		this.client = client;
 	}
@@ -23,11 +24,11 @@ public class StartControl implements ActionListener {
 		if (command.equals("Login")) {
 			//LoginPanel loginPanel = (LoginPanel)container.getComponent(1);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
-			cardLayout.show(container, "2");
+			cardLayout.show(container, "3");
 		} else if (command.equals("Create")) {
 			//CreatePanel createPanel = (CreatePanel)container.getComponent(2);
 			CardLayout cardLayout = (CardLayout)container.getLayout();
-			cardLayout.show(container, "3");
+			cardLayout.show(container, "2");
 		}
 	}
 }

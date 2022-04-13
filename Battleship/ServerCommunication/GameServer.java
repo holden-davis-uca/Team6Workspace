@@ -1,8 +1,14 @@
+//Riley Williams - Team 6
 package ServerCommunication;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JFrame;
 
 import ClientCommunication.CreateData;
 import ClientCommunication.LoginData;
@@ -18,6 +24,7 @@ public class GameServer extends AbstractServer {
 	private int player2Hits;
 	private int player1Miss;
 	private int player2Miss;
+	private boolean running = false;
 	
 	public GameServer() {
 		super(8300);
@@ -26,6 +33,24 @@ public class GameServer extends AbstractServer {
 	
 	public void setDatabase(Database db) {
 		this.db = db;
+	}
+	
+	public boolean isRunning() {
+		return running;
+	}
+	
+	public void serverStarted() {
+		running = true;
+		System.out.println("Server Started\n");
+	}
+	
+	public void serverStopped() {
+		System.out.println("Server stopped accepting new clients\n");
+	}
+	
+	public void serverClosed() {
+		running = false;
+		System.out.println("Server is closed\n");
 	}
 	
 	public void clientConnected(ConnectionToClient client) {
@@ -100,5 +125,36 @@ public class GameServer extends AbstractServer {
 		
 	}
 	
-	//TODO add server main
+	public static void main(String[] args) {
+		//TODO Finish server main
+		GameServer server = new GameServer();
+		Database db = new Database();
+		Scanner scanner = new Scanner(System.in);
+		String input;
+		
+		server.setDatabase(db);
+		
+		try {
+			server.listen();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		do {
+			input = scanner.nextLine();
+				
+			if (input.equals("close"))
+				break;
+		} while (server.isRunning()); 
+		scanner.close();
+		
+		try {
+			if (input.equals("close"))
+				server.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

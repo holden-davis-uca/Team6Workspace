@@ -1,3 +1,4 @@
+//Riley Williams - Team 6
 package ClientCommunication;
 
 import java.awt.CardLayout;
@@ -80,24 +81,32 @@ public class GameClient extends AbstractClient {
 		CardLayout cardLayout = new CardLayout();
 		JPanel container = new JPanel(cardLayout);
 		
-		StartControl sc = new StartControl(client, container);
+		StartControl sc = new StartControl(container, client); 
 		LoginControl lc = new LoginControl(container, client);
 		CreateControl cc = new CreateControl(container, client);
-		//TODO Create the other controls
+		//LobbyControl lbc = new LobbyControl(container, client); TODO Doesnt take both inputs
+		//GameControl gc = new GameControl(container, client); TODO Not made yet
+		//PlacingControl pc = new PlacingControl(container, client); TODO doesnt take both inputs
 		
 		client.setLoginControl(lc);
 		client.setCreateControl(cc);
-		//TODO set the other controls
+		//client.setLobbyControl(lbc); TODO
+		//client.setGameControl(gc); TODO
+		//client.setPlacingControl(pc); TODO
 		
 		JPanel view1 = new StartPanel(sc);
-		JPanel view2 = new LoginPanel(lc);
-		JPanel view3 = new CreatePanel(cc);
-		//TODO Create the other views
+		JPanel view2 = new CreatePanel(cc);
+		JPanel view3 = new LoginPanel(lc);
+		//JPanel view4 = new LobbyPanel(lbc); TODO
+		//JPanel view5 = new GamePanel(gc); TODO
+		//JPanel view6 = new PlacingPanel(pc) TODO
 		
 		container.add(view1, "1");
 		container.add(view2, "2");
 		container.add(view3, "3");
-		//TODO Add the other views
+		//container.add(view4, "4");TODO
+		//container.add(view5, "5");TODO
+		//container.add(view6, "6");TODO
 		
 		cardLayout.show(container, "1");
 		
