@@ -16,39 +16,122 @@ import ClientCommunication.*;
 
 public class LoginPanel extends JPanel {
 
+	/*
+	 * Fields: 
+	 * 
+	 * serialVersionUID - a static long for classes that implement Serializable according to eclipse specifications
+	 * usernameField - a JTextField for the username entry 
+	 * passwordField - a JPasswordField for the password entry
+	 * errorLabel - a JLabel for displaying errors
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 	private JLabel errorLabel;
-
+	/*
+	 *Methods:
+	 *
+	 *LoginPanel() - constructor, takes the LoginControl that handles interaction and logic
+	 *getUsername() - getter for username
+	 *setPassword() - setter for username
+	 *getPassword() - getter for password
+	 *setPassword() - setter for password
+	 *setError() - setter for the errorLabel contents
+	 *clearAll() - clears both user entry fields as well as the errorLabel
+	 */
+	/*
+	 * Getter for username
+	 * 
+	 * Takes:
+	 * Returns:
+	 * 	A string representing the username
+	 * Throws:
+	 */
 	public String getUsername() {
 		return usernameField.getText();
 	}
-
+	/*
+	 * Setter for username
+	 * 
+	 * Takes:
+	 * 	A string representing the username to be set
+	 * Returns:
+	 * Throws:
+	 */
+	public void setUsername(String username) {
+		usernameField.setText(username);
+	}
+	/*
+	 * Setter for password
+	 * 
+	 * Takes:
+	 * 	A string representing the password to be set
+	 * Returns:
+	 * Throws:
+	 */
+	public void setPassword(String password) {
+		passwordField.setText(password);
+	}
+	/*
+	 * Getter for password
+	 * 
+	 * Takes:
+	 * Returns:
+	 * 	A string representing the password
+	 * Throws:
+	 */
 	public String getPassword() {
 		return Arrays.toString(passwordField.getPassword());
-		
 	}
-
+	/*
+	 * setError()
+	 * Is called when an error needs to be displayed on screen; shows error and clears input fields
+	 * 
+	 * Takes:
+	 * 	A string representing the error caused by user
+	 * Returns:
+	 * Throws:
+	 */
 	public void setError(String error) {
 		errorLabel.setText(error);
 	}
-	
+	/*
+	 * clearAll()
+	 * Is called when all on screen fields need to be cleared (username, password, error)
+	 * 
+	 * Takes:
+	 * Returns:
+	 * Throws:
+	 */
+	public void clearAll()
+	{
+		passwordField.setText("");
+		usernameField.setText("");
+		errorLabel.setText("");
+	}
+	/*
+	 * Contructor
+	 * Initializes an instance of LoginPanel from the given input
+	 * 
+	 * Takes:
+	 * 	LoginControl representing the controller for the Login module
+	 * Returns:
+	 * Throws:
+	 */
 	public LoginPanel(LoginControl lc)
 	{
-//		LoginControl controller = new LoginControl(container, client);
-//		client.setLoginControl(controller);
 		
-	    JPanel labelPanel = new JPanel(new GridLayout(2, 1, 5, 5));
-	    errorLabel = new JLabel("", JLabel.CENTER);
+	    JPanel labelPanel = new JPanel(new GridLayout(2, 1, 10, 10));
+	    errorLabel = new JLabel("", SwingConstants.CENTER);
 	    errorLabel.setForeground(Color.RED);
-	    JLabel instructionLabel = new JLabel("Enter username and password", JLabel.CENTER);
+	    JLabel instructionLabel = new JLabel("Enter username and password", SwingConstants.CENTER);
 	    labelPanel.add(errorLabel);
 	    labelPanel.add(instructionLabel);
 
 	    JPanel loginPanel = new JPanel(new GridLayout(2, 2, 5, 5));
-	    JLabel usernameLabel = new JLabel("Username:", JLabel.RIGHT);
+	    JLabel usernameLabel = new JLabel("Username:", SwingConstants.RIGHT);
 	    usernameField = new JTextField(10);
-	    JLabel passwordLabel = new JLabel("Password:", JLabel.RIGHT);
+	    JLabel passwordLabel = new JLabel("Password:", SwingConstants.RIGHT);
 	    passwordField = new JPasswordField(10);
 	    loginPanel.add(usernameLabel);
 	    loginPanel.add(usernameField);

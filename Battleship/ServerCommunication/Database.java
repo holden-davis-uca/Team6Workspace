@@ -20,12 +20,12 @@ public class Database {
 	/*
 	 * Fields: 
 	 * 
-	 * con is the connection to the database using JDBC
-	 * username and password are the credentials eventually retrieved from db.properties that con uses to establish a connection
-	 * url is the path used by JDBC to connect to the mysql instance
-	 * aeskey is the encryption key used when encrypting and decrypting the password with aes_encrypt()
+	 * con - the connection to the database using JDBC
+	 * username and password - the credentials eventually retrieved from db.properties that con uses to establish a connection
+	 * url - the path used by JDBC to connect to the mysql instance
+	 * aeskey - the encryption key used when encrypting and decrypting the password with aes_encrypt()
 	 * * Needs to be constant over multiple setups and shutdowns of the server, so it is hard coded and not random
-	 * fis is the fileinputstream object used to read db.properties
+	 * fis - the fileinputstream object used to read db.properties
 	 */
 	private Connection con;
 	private String username;
@@ -64,6 +64,7 @@ public class Database {
 	 */
 	public Database()
 	{
+		//Read in the db.properties file
 		try {
 			fis = new FileInputStream("./ServerCommunication/db.properties");
 		} catch (FileNotFoundException e) {
@@ -75,10 +76,12 @@ public class Database {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//Retrieve and store all relevant values from the file
 		username = props.getProperty("user");
 		password = props.getProperty("password");
 		url = props.getProperty("url");
 		aeskey = props.getProperty("aeskey");
+		//Establish a persistent connection to the database instance using the retrieved credentials
 		try {
 			con = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -145,9 +148,7 @@ public class Database {
 	 */
 	public boolean createAccount(String username, String password)
 	{
-		if (executeDML("insert into users values('"+username+"',aes_encrypt('"+password+"', '"+aeskey+"'),0,0);"))
-			return true;
-		else return false;
+		return(executeDML("insert into users values('"+username+"',aes_encrypt('"+password+"', '"+aeskey+"'),0,0);"));
 	}
 	/*
 	 * Verifies whether a user account already exists in the database using a given username, and whether the given password matches that of said user account
@@ -164,9 +165,7 @@ public class Database {
 	{
 		ResultSet results = query("select * from users where username='"+username+"' and password=aes_encrypt('"+password+"', '"+aeskey+"');");
 		try {
-			if (results == null || (!results.next()))
-				return false;
-			return true;
+			return !(results == null || (!results.next()));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -179,13 +178,13 @@ public class Database {
 	 * 
 	 * Takes:
 	 * Returns:
-	 * 	An HashMap<String> representing the list of users stored in the database and their respective w/l ratios
+	 * 	An Map<String, String> representing the list of users stored in the database and their respective w/l ratios
 	 * Throws:
 	 * 
 	 */
-	public HashMap<String, String> getAllUsers()
+	public Map<String, String> getAllUsers()
 	{
-		HashMap<String, String> newresults = new HashMap<String, String>();
+		HashMap<String, String> newresults = new HashMap<>();
 		ResultSet results = query("select username from users");
 		try {
 			while (results.next())

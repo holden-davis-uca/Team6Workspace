@@ -90,8 +90,8 @@ public class GameClient extends AbstractClient {
 		//TODO set the other controls
 		
 		JPanel view1 = new StartPanel(sc);
-		JPanel view2 = new CreatePanel(cc);
-		JPanel view3 = new LoginPanel(lc);
+		JPanel view2 = new LoginPanel(lc);
+		JPanel view3 = new CreatePanel(cc);
 		//TODO Create the other views
 		
 		container.add(view1, "1");

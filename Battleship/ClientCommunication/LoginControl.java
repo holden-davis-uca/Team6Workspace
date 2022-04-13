@@ -8,55 +8,130 @@
 
 package ClientCommunication;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
-import javax.swing.*;
+import java.awt.*; //Needed for CardLayout
+import java.awt.event.*; //Needed for ActionEvent
+import java.io.*; //Needed for exceptions
+import javax.swing.*; //Needed for containers
 
 import ClientGUI.*;
 
 public class LoginControl implements ActionListener {
-
+	/*
+	 * Fields: 
+	 * 
+	 * Client - the GameClient.java instance that eventually passes logindata from logincontrol to gameserver
+	 * container - the parent jpanel containing all jpanels for the client GUI
+	 */
 	private GameClient Client;
 	private JPanel container;
-
+	/*
+	 *Methods:
+	 *
+	 *LoginControl() - constructor, takes the client and container and sets them accordingly
+	 *actionPerformed() - handles user input in the form of selecting the login button or cancel button
+	 *loginSuccess() - is called whenever server responds green from login attempt; simply pushes to lobby panel
+	 *displayError() - is called whenever a user inputs erroneous data for username or password
+	 */
+	
+	/*
+	 * Contructor
+	 * Intializes an instance of LoginControl from given input
+	 * 
+	 * Takes:
+	 * 	JPanel representing top level container
+	 * 	GameClient representing user's client instance
+	 * Returns:
+	 * Throws:
+	 */
 	public LoginControl(JPanel container, GameClient Client) {
 		this.container = container;
 		this.Client = Client;
 	}
-
+	/*
+	 * actionPerformed
+	 * Handles all user input
+	 * 
+	 * Takes:
+	 * 	ActionEvent representing any user input (selecting either button)
+	 * Returns:
+	 * Throws:
+	 */
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
-		if (command == "Submit") {
+		if (command.equals("Cancel")) {
+			//User selected cancel option, go back to start screen and clear everything
+			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
+			loginPanel.clearAll();
 			CardLayout cardLayout = (CardLayout) container.getLayout();
 			cardLayout.show(container, "1");
 		} else {
+			//User selected submit option, retrieve input from panel and perform minimal initial checks before sending to server 
 			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 			LoginData data = new LoginData(loginPanel.getUsername(), loginPanel.getPassword());
-			if (data.getUsername().equals("") || data.getPassword().equals("")) {
+			//Credentials cannot be empty
+			if (data.getUsername().isEmpty() || data.getPassword().isEmpty())
 				displayError("You must enter a username and password.");
-				return;
-			}
+			//Username cannot be <= 3 or not alphanumeric
+			else if (data.getUsername().length() <= 3 || data.getUsername().matches("^[a-zA-Z0-9]*$"))
+				displayError("Invalid username!");
+			//Password cannot be < 10 or not alphanumeric
+			else if (data.getPassword().length() < 10 || data.getPassword().matches("^[a-zA-Z0-9]*$"))
+				displayError("Invalid password!");
+			
+			
+			
+			
+			//TODO: Send LoginData to server when GameServer.java and GameClient.java are ready
+			
+			
+			
 //			try {
 //				Client.sendToServer(data);
 //			} catch (IOException ioe) {
 //				displayError("Server connection failure!");
 //				ioe.printStackTrace();
 //			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 
 	}
-
+	/*
+	 * loginSuccess()
+	 * Is called when server greenlights login, makes necessary graphical changes
+	 * 
+	 * Takes:
+	 * Returns:
+	 * Throws:
+	 */
 	public void loginSuccess() {
 		LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
-
+		loginPanel.clearAll();
 		CardLayout cardLayout = (CardLayout) container.getLayout();
 		cardLayout.show(container, "4");
 	}
-
+	/*
+	 * displayError()
+	 * Is called when an error needs to be displayed on screen; shows error and clears input fields
+	 * 
+	 * Takes:
+	 * 	A string representing the error caused by user
+	 * Returns:
+	 * Throws:
+	 */
 	public void displayError(String error) {
 		LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 		loginPanel.setError(error);
+		loginPanel.setUsername("");
+		loginPanel.setPassword("");
 	}
 
 }
