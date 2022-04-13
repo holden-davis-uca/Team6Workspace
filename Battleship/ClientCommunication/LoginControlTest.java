@@ -8,15 +8,34 @@
 
 package ClientCommunication;
 
-import static org.junit.jupiter.api.Assertions.*;
+import javax.swing.*;
+import org.junit.*; //Needed for tests
 
-import org.junit.jupiter.api.Test;
+public class LoginControlTest {
 
-class LoginControlTest {
-
+	private GameClient Client;
+	private LoginControl lc;
+	private JPanel container;
+	
+	@Before
+	public void setUp()
+	{
+		lc = new LoginControl(container, Client);
+	}
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testloginSuccess() 
+	{
+		lc.loginSuccess();
+	}
+	@Test
+	public void testdisplayError()
+	{
+		lc.displayError("test");
+	}
+	@Test 
+	public void testactionPerformed()
+	{
+		lc.actionPerformed(null);
 	}
 
 }

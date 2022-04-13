@@ -8,8 +8,7 @@
 
 package ServerCommunication;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.*; //Needed for non-null assertions
 import org.junit.*; //Needed for tests
 
 public class DatabaseTest {
@@ -34,24 +33,24 @@ public class DatabaseTest {
 	@Test
 	public void testexecuteDMLSuccess()
 	{
-		assert(db.executeDML("insert into users values('yourmom',aes_encrypt('yourmomspw', 'midnightexigent'),0,0);"));
-		assert(db.executeDML("delete from users where username='yourmom';"));
+		assert(db.executeDML("insert into users values('test',aes_encrypt('testspw', 'midnightexigent'),0,0);"));
+		assert(db.executeDML("delete from users where username='test';"));
 	}
 	@Test (expected=AssertionError.class)
 	public void testexecuteDMLFail()
 	{
-		assert(db.executeDML("insert into gamers values('yourmom',aes_encrypt('yourmomspw', 'midnightexigent'),0,0);"));
+		assert(db.executeDML("insert into gamers values('test',aes_encrypt('testspw', 'midnightexigent'),0,0);"));
 	}
 	@Test
 	public void testcreateAccountSuccess()
 	{
-		assert(db.createAccount("yourmom", "yourmomspw"));
-		assert(db.executeDML("delete from users where username='yourmom';"));
+		assert(db.createAccount("test", "testspw"));
+		assert(db.executeDML("delete from users where username='test';"));
 	}
 	@Test (expected=AssertionError.class)
 	public void testcreateAccountFail()
 	{
-		assert(db.createAccount("yourmom", "yourmomspwbuttoolong"));
+		assert(db.createAccount("test", "testspwbuttoolong"));
 	}
 	@Test
 	public void testverifyAccountSuccess()
@@ -61,7 +60,7 @@ public class DatabaseTest {
 	@Test (expected=AssertionError.class)
 	public void testverifyAccountFail()
 	{
-		assert(db.verifyAccount("yourmom", "yourmompw"));
+		assert(db.verifyAccount("test", "testpw"));
 	}
 	@Test
 	public void testgetUserRatioSuccess()
@@ -71,7 +70,7 @@ public class DatabaseTest {
 	@Test (expected=AssertionError.class)
 	public void testgetUserRatioFail()
 	{
-		assertNotEquals(db.getUserRatio("yourmom"), "");
+		assertNotEquals(db.getUserRatio("test"), "");
 	}
 	@Test
 	public void testgetAllUsersSuccess()

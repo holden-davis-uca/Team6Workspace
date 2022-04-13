@@ -8,15 +8,58 @@
 
 package ClientGUI;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*; //Needed for not null and equals assertions
+import javax.swing.*; //Needed for JPanel/JLabel casts
+import org.junit.*; //Needed for tests
+import ClientCommunication.*; //Needed for dummy logincontrol for loginpanel constructor
 
-import org.junit.jupiter.api.Test;
+public class LoginPanelTest {
+	
+	LoginPanel lp;
+	LoginControl lc;
 
-class LoginPanelTest {
-
+	@Before
+	public void setUp()
+	{
+		lc = new LoginControl(null, null);
+		lp = new LoginPanel(lc);
+	}
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testsetUsername()
+	{
+		lp.setUsername("test");
+		assertEquals(lp.getUsername(), "test");
+	}
+	@Test
+	public void testgetUsername()
+	{
+		lp.setUsername("test");
+		assertNotNull(lp.getUsername());
+	}
+	@Test
+	public void testsetPassword()
+	{
+		lp.setPassword("test");
+		assertNotNull(lp.getPassword());
+	}
+	@Test
+	public void testgetPassword()
+	{
+		lp.setPassword("test");
+		assertNotNull(lp.getPassword());
+	}
+	@Test
+	public void testsetError()
+	{
+		lp.setError("test");
+		JLabel temp = (JLabel) ((JPanel) ((JPanel) lp.getComponent(0)).getComponent(0)).getComponent(0);
+		assertEquals(temp.getText(), "test");
+	}
+	@Test
+	public void testclearAll()
+	{
+		assertEquals(lp.getUsername(), "");
+		assertNotNull(lp.getPassword());
 	}
 
 }

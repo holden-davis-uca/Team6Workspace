@@ -8,29 +8,35 @@
 
 package ClientCommunication;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.*; //Needed for tests
 
-import org.junit.jupiter.api.Test;
-
-class LoginDataTest {
+public class LoginDataTest {
 	String[] users = {"username1", "username2", "username3"};
 	String[] passwords = {"password1", "password2", "password3"};
-
-	@Test
-	void testgetUsername() {
-		fail("Not yet implemented");
+	private LoginData data;
+	
+	@Before
+	public void setUp()
+	{
+		data = new LoginData(users[0], passwords[0]);
 	}
 	@Test
-	void testsetUsername() {
-		fail("Not yet implemented");
+	public void testgetUsername() {
+		assert(data.getUsername().equals("username1"));
 	}
 	@Test
-	void testgetPassword() {
-		fail("Not yet implemented");
+	public void testsetUsername() {
+		data.setUsername("username3");
+		assert(data.getUsername().equals(users[2]));
 	}
 	@Test
-	void testsetPassword() {
-		fail("Not yet implemented");
+	public void testgetPassword() {
+		assert(data.getPassword().equals("password1"));
+	}
+	@Test
+	public void testsetPassword() {
+		data.setPassword("password3");
+		assert(data.getPassword().equals(passwords[2]));
 	}
 
 }
