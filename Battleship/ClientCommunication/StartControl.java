@@ -1,3 +1,4 @@
+//Riley Williams - Team 6
 package ClientCommunication;
 
 import java.awt.*;
@@ -12,7 +13,7 @@ public class StartControl implements ActionListener {
 	private GameClient client;
 	private JPanel container;
 	
-	public StartControl(GameClient client, JPanel container) {
+	public StartControl(JPanel container, GameClient client) {
 		this.container = container;
 		this.client = client;
 	}
