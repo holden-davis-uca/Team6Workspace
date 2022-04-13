@@ -22,5 +22,13 @@ Database specification and definition is as follows (also contained within db.pr
 * >> Datatype of int(10)
 * > losses
 * >> Datatype of int(10)
-* Program-level constraints for username: Must be unique, must be at least 3 characters, must be alphanumeric (including capitals and lowercase)
-* Program-level constraints for password: Must be at least 10 characters, must be alphanumeric (including capitals and lowercase)
+* Program-level constraints for username: Must be unique, must be between 3 and 30 characters, must be alphanumeric (including capitals and lowercase)
+* Program-level constraints for password: Must be between 10 and 20 characters, must be alphanumeric (including capitals and lowercase)
+
+## View Ordering Note
+In order to maintain similarities between project and lab MVC setup for ease of use, it is advised that all view ordering proceed as follows:
+* Start: 1
+* Login: 2
+* Create: 3
+* Lobby: 4
+* Game: 5
