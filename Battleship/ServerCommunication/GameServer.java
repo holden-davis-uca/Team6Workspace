@@ -95,9 +95,27 @@ public class GameServer extends AbstractServer {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if (arg0 instanceof LobbyData) {
+			LobbyData data = (LobbyData)arg0;
+			Object result;
+			
+			try {
+				System.out.println("Client " + arg1.getId() + " successfully logged out of " + data.getPlayer() + "\n");
+				arg1.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (arg0 instanceof PlacingData) {
+			PlacingData data = (PlacingData)arg0;
+			Object result;
+			
+			
+		} else if (arg0 instanceof GameData) {
+			
 		}
 		
-		//TODO add the other handles
+		//TODO finish the other handles
 	}
 	
 	public void checkIfHit() {
@@ -132,6 +150,8 @@ public class GameServer extends AbstractServer {
 			e1.printStackTrace();
 		}
 		
+		System.out.println("Type 'close' to close the server and end the program.");
+		
 		do {
 			input = scanner.nextLine();
 				
@@ -142,6 +162,7 @@ public class GameServer extends AbstractServer {
 		
 		try {
 			if (input.equals("close"))
+				db.finish();
 				server.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
