@@ -13,3 +13,5 @@
 /GameClient.class
 /LoginControlTest.class
 /LoginDataTest.class
+/StartControlTest.class
+/GameClientTest.class

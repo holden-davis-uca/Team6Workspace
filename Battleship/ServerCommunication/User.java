@@ -26,4 +26,8 @@ public class User implements Serializable {
 		setUsername(username);
 		setPassword(password);
 	}
+	
+	public User() {
+		
+	}
 }
