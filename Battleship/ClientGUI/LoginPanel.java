@@ -23,11 +23,13 @@ public class LoginPanel extends JPanel {
 	 * usernameField - a JTextField for the username entry 
 	 * passwordField - a JPasswordField for the password entry
 	 * errorLabel - a JLabel for displaying errors
+	 * titleLabel - a JLabel for displaying a large title image
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 	private JLabel errorLabel;
+	private JLabel titleLabel;
 	/*
 	 *Methods:
 	 *
@@ -121,17 +123,22 @@ public class LoginPanel extends JPanel {
 	public LoginPanel(LoginControl lc)
 	{
 		
-	    JPanel labelPanel = new JPanel(new GridLayout(2, 1, 10, 10));
+	    JPanel labelPanel = new JPanel(new GridLayout(3, 1, 0, 5));
 	    errorLabel = new JLabel("", SwingConstants.CENTER);
 	    errorLabel.setForeground(Color.RED);
-	    JLabel instructionLabel = new JLabel("Enter username and password", SwingConstants.CENTER);
+	    errorLabel.setFont(new Font("", Font.BOLD, 12));
+	    titleLabel = new JLabel("BattleShip - Login", SwingConstants.CENTER);
+	    titleLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+	    JLabel instructionLabel = new JLabel("Enter Username and Password:", SwingConstants.CENTER);
+	    instructionLabel.setFont(new Font("", Font.ITALIC, 12));
 	    labelPanel.add(errorLabel);
+	    labelPanel.add(titleLabel);
 	    labelPanel.add(instructionLabel);
 
-	    JPanel loginPanel = new JPanel(new GridLayout(2, 2, 5, 5));
-	    JLabel usernameLabel = new JLabel("Username:", SwingConstants.RIGHT);
+	    JPanel loginPanel = new JPanel(new GridLayout(4, 1, 5, 5));
+	    JLabel usernameLabel = new JLabel("Username:", SwingConstants.CENTER);
 	    usernameField = new JTextField(10);
-	    JLabel passwordLabel = new JLabel("Password:", SwingConstants.RIGHT);
+	    JLabel passwordLabel = new JLabel("Password:", SwingConstants.CENTER);
 	    passwordField = new JPasswordField(10);
 	    loginPanel.add(usernameLabel);
 	    loginPanel.add(usernameField);
@@ -139,18 +146,19 @@ public class LoginPanel extends JPanel {
 	    loginPanel.add(passwordField);
 	    
 	    JPanel buttonPanel = new JPanel();
-	    JButton submitButton = new JButton("Submit");
-	    submitButton.addActionListener(lc);
-	    JButton cancelButton = new JButton("Cancel");
-	    cancelButton.addActionListener(lc);    
-	    buttonPanel.add(submitButton);
-	    buttonPanel.add(cancelButton);
+	    JButton loginButton = new JButton("Login");
+	    loginButton.addActionListener(lc);
+	    JButton backButton = new JButton("Back");
+	    backButton.addActionListener(lc);    
+	    buttonPanel.add(loginButton);
+	    buttonPanel.add(backButton);
 
 	    JPanel grid = new JPanel(new GridLayout(3, 1, 0, 10));
 	    grid.add(labelPanel);
 	    grid.add(loginPanel);
 	    grid.add(buttonPanel);
 	    this.add(grid);
+
 		
 	}
 

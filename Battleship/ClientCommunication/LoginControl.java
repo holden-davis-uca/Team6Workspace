@@ -11,6 +11,10 @@ package ClientCommunication;
 import java.awt.*; //Needed for CardLayout
 import java.awt.event.*; //Needed for ActionEvent
 import java.io.*; //Needed for exceptions
+import java.nio.CharBuffer;
+import java.util.Arrays;
+import java.util.regex.Pattern;
+
 import javax.swing.*; //Needed for containers
 
 import ClientGUI.*;
@@ -58,27 +62,27 @@ public class LoginControl implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
-		if (command.equals("Cancel")) {
-			//User selected cancel option, go back to start screen and clear everything
+		if (command.equals("Back")) {
+			//User selected Back option, go back to start screen and clear everything
 			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 			loginPanel.clearAll();
 			CardLayout cardLayout = (CardLayout) container.getLayout();
 			cardLayout.show(container, "1");
 		} else {
-			//User selected submit option, retrieve input from panel and perform minimal initial checks before sending to server 
+			//User selected Login option, retrieve input from panel and perform minimal initial checks before sending to server 
 			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 			LoginData data = new LoginData(loginPanel.getUsername(), loginPanel.getPassword());
 			//Credentials cannot be empty
 			if (data.getUsername().isEmpty() || data.getPassword().isEmpty())
 				displayError("You must enter a username and password.");
 			//Username cannot be <= 3 or not alphanumeric
-			else if (data.getUsername().length() <= 3 || data.getUsername().matches("^[a-zA-Z0-9]*$"))
-				displayError("Invalid username!");
+			else if (data.getUsername().length() <= 3)
+				displayError("Invalid username! (Less than 3 characters!)");
+			else if (!data.getUsername().matches("[a-zA-Z0-9]*"))
+				displayError("Invalid username! (Not alphanumeric!)");
 			//Password cannot be < 10 or not alphanumeric
-			else if (data.getPassword().length() < 10 || data.getPassword().matches("^[a-zA-Z0-9]*$"))
-				displayError("Invalid password!");
-			
-			
+			else if (data.getPassword().length() < 10)
+				displayError("Invalid password! (Less than 10 characters!)");
 			
 			
 			//TODO: Send LoginData to server when GameServer.java and GameClient.java are ready
@@ -133,5 +137,4 @@ public class LoginControl implements ActionListener {
 		loginPanel.setUsername("");
 		loginPanel.setPassword("");
 	}
-
 }
