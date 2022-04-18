@@ -3,14 +3,17 @@ package ClientCommunication;
 
 import java.awt.event.*;
 import java.util.HashMap;
+
+import javax.swing.JPanel;
+
 import ClientGUI.PlacingPanel;
 
 public class PlacingControl implements ActionListener{
 	private PlacingPanel container;
 	private GameClient client;
 	
-	public PlacingControl(PlacingPanel container, GameClient client) {
-		this.container = container;
+	public PlacingControl(JPanel container, GameClient client) {
+		this.container = (PlacingPanel) container;
 		this.client = client;
 	}
 
