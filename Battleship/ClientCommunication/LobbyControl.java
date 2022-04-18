@@ -2,16 +2,18 @@
 package ClientCommunication;
 
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
 import ClientGUI.LobbyPanel;
 
 public class LobbyControl implements ActionListener {
 	private JPanel container;
-	//private GameClient client;
+	private GameClient client;
 
-	public LobbyControl(JPanel container/*, GameClient client*/) {
+	public LobbyControl(JPanel container, GameClient client) {
 		this.container = container;
-		//this.client = client
+		this.client = client;
 	}
 
 	public void actionPerformed(ActionEvent ae) {
@@ -56,5 +58,11 @@ public class LobbyControl implements ActionListener {
 
 	public void Logout() {
 		// TODO log client out from server
+		try {
+			client.closeConnection();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

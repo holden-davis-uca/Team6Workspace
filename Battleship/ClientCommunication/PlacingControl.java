@@ -7,11 +7,11 @@ import ClientGUI.PlacingPanel;
 
 public class PlacingControl implements ActionListener{
 	private PlacingPanel container;
-	//private GameClient client;
+	private GameClient client;
 	
-	public PlacingControl(PlacingPanel container/*, GameClient client*/) {
+	public PlacingControl(PlacingPanel container, GameClient client) {
 		this.container = container;
-		//this.client = client;
+		this.client = client;
 	}
 
 	public void actionPerformed(ActionEvent ae) {
