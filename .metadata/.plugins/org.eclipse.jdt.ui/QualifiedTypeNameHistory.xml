@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.awt.GridLayout"/>
-    <fullyQualifiedTypeName name="ClientCommunication.LoginControl"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="java.awt.CardLayout"/>
     <fullyQualifiedTypeName name="ClientGUI.LoginPanel"/>
@@ -17,4 +16,6 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="java.nio.CharBuffer"/>
+    <fullyQualifiedTypeName name="ClientCommunication.GameClient"/>
+    <fullyQualifiedTypeName name="ClientCommunication.LoginControl"/>
 </qualifiedTypeNameHistroy>

@@ -1,9 +1,11 @@
-package ServerCommunication;
+package Tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import ServerCommunication.User;
 
 public class UserTest {
 	private User user;

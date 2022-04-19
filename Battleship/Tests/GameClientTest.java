@@ -1,4 +1,4 @@
-package ClientCommunication;
+package Tests;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import ClientCommunication.*;
 
 public class GameClientTest {
 	private GameClient client;

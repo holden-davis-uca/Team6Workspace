@@ -6,10 +6,12 @@
  * Provides JUnit 5 unit tests for the Database.java files, particularly those that take parameters
  */
 
-package ServerCommunication;
+package Tests;
 
 import static org.junit.Assert.*; //Needed for non-null assertions
 import org.junit.*; //Needed for tests
+
+import ServerCommunication.Database;
 
 public class DatabaseTest {
 	
