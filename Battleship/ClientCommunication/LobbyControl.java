@@ -13,18 +13,19 @@ public class LobbyControl implements ActionListener {
 
 	public LobbyControl(JPanel container, GameClient client) {
 		this.container = container;
-		this.client = client;
+		this.client = client;		
 	}
 
 	public void actionPerformed(ActionEvent ae) {
-		String command = ae.getActionCommand();
-		LobbyPanel panel = (LobbyPanel) container.getComponent(2);
-
-		if (command == "Logout") {
+		String command = ae.getActionCommand();		
+		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
+		
+		if (command.equals("Log Out")) {
 			System.out.println("Logout Selected");
 			// TODO add logout functionality
 			Logout();
 		} else if (command.equals("Challenge")) {
+			
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
 			} else {
@@ -38,7 +39,7 @@ public class LobbyControl implements ActionListener {
 				}
 			}
 
-		} else if (command == "View Score"){
+		} else if (command.equals("View Score")){
 			System.out.println("View Score");
 			// ToDO retrieve selected player info from server and display their score
 			if (panel.getSelectedPlayer() == null) {
@@ -55,14 +56,37 @@ public class LobbyControl implements ActionListener {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(2);
 		panel.setError(error);
 	}
+	
+	public void addListUsers(String name, String score) {
+		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
+		panel.addAllOnline(name);
+		panel.addAllOnlineScore(score);
+	}
 
 	public void Logout() {
 		// TODO log client out from server
 		try {
 			client.closeConnection();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public void processOnline(String allPlayers) {
+		String [] player = allPlayers.split(","); 
+		
+		for (int i = 0; i < player.length;i++) {
+			if (player[i].startsWith("{")) {
+				player[i] = player[i].substring(1);
+			}
+			if (player[i].endsWith("}")) {
+				player[i] = player[i].substring(0, player[i].length() - 1);
+			}
+			player[i] = player[i].strip();
+			String[] toSend = player[i].split("=");
+			addListUsers(toSend[0], toSend[1]);
 		}
 	}
 }

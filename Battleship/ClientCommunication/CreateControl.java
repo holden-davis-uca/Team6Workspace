@@ -59,7 +59,7 @@ public class CreateControl implements ActionListener {
 	        displayError("The password must be at least 6 characters.");
 	        return;
 	      }
-	      /*
+	      
 	      // Submit the new account information to the server.
 	      CreateData data = new CreateData(username, password);
 	      try
@@ -69,7 +69,7 @@ public class CreateControl implements ActionListener {
 	      catch (IOException e)
 	      {
 	        displayError("Error connecting to the server.");
-	      }*/
+	      }
 	    }
 	  }
 

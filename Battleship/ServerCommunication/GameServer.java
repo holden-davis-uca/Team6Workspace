@@ -113,6 +113,15 @@ public class GameServer extends AbstractServer {
 			
 		} else if (arg0 instanceof GameData) {
 			
+		} else if (arg0.equals("OnlinePlayers")) {
+			String response = "Online: ";
+			response += db.getAllUsers();
+			try {
+				arg1.sendToClient(response);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		//TODO finish the other handles
