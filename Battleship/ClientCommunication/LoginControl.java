@@ -83,28 +83,12 @@ public class LoginControl implements ActionListener {
 			//Password cannot be < 10 or not alphanumeric
 			else if (data.getPassword().length() < 10)
 				displayError("Invalid password! (Less than 10 characters!)");
-			
-			
-			//TODO: Send LoginData to server when GameServer.java and GameClient.java are ready
-			
-			
-			
-//			try {
-//				Client.sendToServer(data);
-//			} catch (IOException ioe) {
-//				displayError("Server connection failure!");
-//				ioe.printStackTrace();
-//			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			try {
+				Client.sendToServer(data);
+			} catch (IOException ioe) {
+				displayError("Server connection failure!");
+				ioe.printStackTrace();
+			}
 		}
 
 	}
