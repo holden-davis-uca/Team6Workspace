@@ -73,16 +73,28 @@ public class LoginControl implements ActionListener {
 			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 			LoginData data = new LoginData(loginPanel.getUsername(), loginPanel.getPassword());
 			//Credentials cannot be empty
-			if (data.getUsername().isEmpty() || data.getPassword().isEmpty())
+			if (data.getUsername().isEmpty() || data.getPassword().isEmpty()){
 				displayError("You must enter a username and password.");
+				return;
+			}
 			//Username cannot be <= 3 or not alphanumeric
-			else if (data.getUsername().length() <= 3)
+			else if (data.getUsername().length() <= 3){
 				displayError("Invalid username! (Less than 3 characters!)");
-			else if (!data.getUsername().matches("[a-zA-Z0-9]*"))
+				return;
+			}
+			else if (!data.getUsername().matches("[a-zA-Z0-9]*")){
 				displayError("Invalid username! (Not alphanumeric!)");
+				return;
+			}
 			//Password cannot be < 10 or not alphanumeric
-			else if (data.getPassword().length() < 10)
+			else if (data.getPassword().length() < 10){
 				displayError("Invalid password! (Less than 10 characters!)");
+				return;
+			}
+			else if (!data.getPassword().matches("[a-zA-Z0-9]*")){
+				displayError("Invalid password! (Not alphanumeric!)");
+				return;
+			}
 			try {
 				Client.sendToServer(data);
 			} catch (IOException ioe) {
