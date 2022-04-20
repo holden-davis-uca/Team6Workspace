@@ -50,6 +50,10 @@ public class GameClient extends AbstractClient {
 			createControl.createAccountSuccess();
 		else if (message.equals("CreateError")) 
 			createControl.displayError("Account could not be created");
+		else if (message.startsWith("Online: ")) {
+			String allPlayers = message.substring(8);
+			lobbyControl.processOnline(allPlayers);			
+			}
 		//TODO add the other handles
 	}
 	
@@ -81,29 +85,29 @@ public class GameClient extends AbstractClient {
 		StartControl sc = new StartControl(container, client); 
 		LoginControl lc = new LoginControl(container, client);
 		CreateControl cc = new CreateControl(container, client);
-		//LobbyControl lbc = new LobbyControl(container, client); //TODO Doesnt take both inputs
+		LobbyControl lbc = new LobbyControl(container, client); //TODO Doesnt take both inputs
 		//GameControl gc = new GameControl(container, client); //TODO Not made yet
-		//PlacingControl pc = new PlacingControl(container, client); //TODO doesnt take both inputs
+		PlacingControl pc = new PlacingControl(container, client); //TODO doesnt take both inputs
 		
 		client.setLoginControl(lc);
 		client.setCreateControl(cc);
-		//client.setLobbyControl(lbc); //TODO
+		client.setLobbyControl(lbc); //TODO
 		//client.setGameControl(gc); TODO
-		//client.setPlacingControl(pc); TODO
+		client.setPlacingControl(pc); //TODO
 		
 		JPanel view1 = new StartPanel(sc);
 		JPanel view2 = new LoginPanel(lc);
 		JPanel view3 = new CreatePanel(cc);
-		//JPanel view4 = new LobbyPanel(lbc); //TODO
+		JPanel view4 = new LobbyPanel(lbc); //TODO
 		//JPanel view5 = new GamePanel(gc); TODO
-		//JPanel view6 = new PlacingPanel(pc) TODO
+		JPanel view6 = new PlacingPanel(pc); //TODO
 		
 		container.add(view1, "1");
 		container.add(view2, "2");
 		container.add(view3, "3");
-		//container.add(view4, "4");//TODO
+		container.add(view4, "4");//TODO
 		//container.add(view5, "5");//TODO
-		//container.add(view6, "6");//TODO
+		container.add(view6, "6");//TODO
 		
 		cardLayout.show(container, "1");
 		
@@ -112,5 +116,11 @@ public class GameClient extends AbstractClient {
 		
 		jframe.setSize(550, 350);
 		jframe.setVisible(true);
+		try {
+			client.sendToServer("OnlinePlayers");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -2,27 +2,39 @@
 package ClientGUI;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 import javax.swing.event.*;
 import ClientCommunication.LobbyControl;
+import ServerCommunication.User;
 
 public class LobbyPanel extends JPanel{
 	private String selectedPlayer;
+	private JList<String> playerList;
+	DefaultListModel<String> list;
 	private int highscore = 0000;
 	private JLabel errorLabel;
+	private ArrayList<String> allOnline = new ArrayList<String>();
+	private ArrayList<String> allOnlineScore = new ArrayList<String>();
 	
 	public LobbyPanel(LobbyControl lc) {
 		// Create a list of example players.
-		DefaultListModel<String> list = new DefaultListModel<String>();
-		list.addElement("Person One");
-		list.addElement("<html><b>Person Two</b></html>");
-		list.addElement("Person Three");
-		list.addElement("Person Four");
-		list.addElement("<html><b>Person Five</b></html>");
-		list.addElement("Person Six");
-		list.addElement("<html><b>Person Seven</b></html>");
-		list.addElement("<html><b>Person Eight</b></html>");
-		list.addElement("Person Nine");
+		list = new DefaultListModel<String>();
+//		list.addElement("Person One");
+//		list.addElement("<html><b>Person Two</b></html>");
+//		list.addElement("Person Three");
+//		list.addElement("Person Four");
+//		list.addElement("<html><b>Person Five</b></html>");
+//		list.addElement("Person Six");
+//		list.addElement("<html><b>Person Seven</b></html>");
+//		list.addElement("<html><b>Person Eight</b></html>");
+//		list.addElement("Person Nine");
+		
+		//Create list of players
+		for (int i = 0; i < allOnline.size();i++) {
+			list.addElement(allOnline.get(i));
+		}
 
 		// Use BorderLayout to lay out the components in this panel.
 		this.setLayout(new BorderLayout());
@@ -43,7 +55,7 @@ public class LobbyPanel extends JPanel{
 		this.add(userInfoContainer);
 
 		// Create the playerList on the right.
-		JList<String> playerList = new JList<String>(list);
+		playerList = new JList<String>(list);
 		playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		playerList.setLayoutOrientation(JList.VERTICAL);
 		playerList.setVisibleRowCount(-1);
@@ -97,5 +109,34 @@ public class LobbyPanel extends JPanel{
 
 	public void setSelectedPlayer(String selectedPlayer) {
 		this.selectedPlayer = selectedPlayer;
+	}
+
+	public ArrayList<String> getAllOnline() {
+		return allOnline;
+	}
+
+	public void setAllOnline(ArrayList<String> allOnline) {
+		this.allOnline = allOnline;
+	}
+	
+	public void addAllOnline(String name) {
+		allOnline.add(name);
+		updatePlayerPanel(name);
+	}
+
+	public ArrayList<String> getAllOnlineScore() {
+		return allOnlineScore;
+	}
+
+	public void setAllOnlineScore(ArrayList<String> allOnlineScore) {
+		this.allOnlineScore = allOnlineScore;
+	}
+	
+	public void addAllOnlineScore(String score) {
+		allOnline.add(score);
+	}
+	
+	public void updatePlayerPanel(String name) {
+		list.addElement(name);
 	}
 }
