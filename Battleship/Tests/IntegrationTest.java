@@ -3,20 +3,42 @@
 /*
  * IntegrationTest.java
  * 
- * Provides JUnit 5 Integration Testing for the entire project
+ * Provides JUnit Integration Testing for the entire project
  */
 
 package Tests;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+import java.io.*;				//Needed for exceptions
+import org.junit.*;				//Needed for before/after
+import ClientCommunication.*;	//Needed for client
+import ServerCommunication.*;	//Needed for server
+import ClientGUI.*;				//Needed for interface
 
 public class IntegrationTest {
+	private GameServer server;
+	private GameClient client;
+	private Database db;
+	
 
+	@Before
+	public void setUp() throws IOException {
+		server = new GameServer();
+		db = new Database();
+		server.setDatabase(db);
+		server.listen();
+		client = new GameClient();
+	}
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void mainTest()
+	{
+		System.out.println("\nPlaceholder\n");
+	}
+	@After
+	public void tearDown() throws IOException
+	{
+		db.finish();
+		client.closeConnection();
+		server.close();
 	}
 
 }

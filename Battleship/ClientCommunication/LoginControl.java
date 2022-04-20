@@ -77,20 +77,32 @@ public class LoginControl implements ActionListener {
 				displayError("You must enter a username and password.");
 				return;
 			}
-			//Username cannot be <= 3 or not alphanumeric
+			//Username cannot be <= 3 characters
 			else if (data.getUsername().length() <= 3){
 				displayError("Invalid username! (Less than 3 characters!)");
 				return;
 			}
+			//Username cannot be > 30 characters
+			else if (data.getUsername().length() > 30) {
+				displayError("Invalid username! (More than 30 characters!)");
+				return;
+			}
+			//Username cannot be non alphanumeric
 			else if (!data.getUsername().matches("[a-zA-Z0-9]*")){
 				displayError("Invalid username! (Not alphanumeric!)");
 				return;
 			}
-			//Password cannot be < 10 or not alphanumeric
+			//Password cannot be < 10 characters
 			else if (data.getPassword().length() < 10){
 				displayError("Invalid password! (Less than 10 characters!)");
 				return;
 			}
+			//Password cannot be > 20 characters
+			else if (data.getPassword().length() > 20) {
+				displayError("Invalid Password! (More than 20 characters!)");
+				return;
+			}
+			//Password cannot be non alphanumeric
 			else if (!data.getPassword().matches("[a-zA-Z0-9]*")){
 				displayError("Invalid password! (Not alphanumeric!)");
 				return;
