@@ -1,11 +1,14 @@
 //Chris Stinson - Team 6
 package ClientCommunication;
 
+import java.awt.CardLayout;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import ClientGUI.LobbyPanel;
+import ClientGUI.LoginPanel;
 
 public class LobbyControl implements ActionListener {
 	private JPanel container;
@@ -36,17 +39,30 @@ public class LobbyControl implements ActionListener {
 				if (dialogResult == JOptionPane.YES_OPTION) {
 					System.out.println("Challenge Selected");
 					// TODO send request to selected player
+					LobbyData data = new LobbyData(panel.getSelectedPlayer(), panel.getHighscore());
+					try {
+						client.sendToServer(data);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
-
 		} else if (command.equals("View Score")){
-			System.out.println("View Score");
 			// ToDO retrieve selected player info from server and display their score
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
 			} else {
+				ArrayList<String> allPlayers = panel.getAllOnline();
+				ArrayList<String> allPlayersScores = panel.getAllOnlineScore();
+				String selectedPlayerScore = "";
+				for (int i = 0 ; i<allPlayers.size();i++) {
+					if (panel.getSelectedPlayer().strip().equals(allPlayers.get(i).strip())) {
+						selectedPlayerScore = allPlayersScores.get(i);
+					}
+				}
 				int dialogButton = JOptionPane.INFORMATION_MESSAGE;
-				JOptionPane.showMessageDialog(panel.getParent(), panel.getSelectedPlayer() + " score is: x");
+				JOptionPane.showMessageDialog(panel.getParent(), panel.getSelectedPlayer() + " score is: " + selectedPlayerScore);
 				//TODO fix above line to get real player name from list and score from server
 			}
 		}
@@ -94,5 +110,10 @@ public class LobbyControl implements ActionListener {
 		// TODO Auto-generated method stub
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.updatePlayerInfo(playerName);
+	}
+	
+	public void challengeAccepted() {
+		CardLayout cardLayout = (CardLayout) container.getLayout();
+		cardLayout.show(container, "6");
 	}
 }

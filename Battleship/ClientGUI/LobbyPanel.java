@@ -14,7 +14,7 @@ public class LobbyPanel extends JPanel{
 	private JList<String> playerList;
 	DefaultListModel<String> list;
 	private String playerUsername;
-	private int highscore = 0000;
+	private double highscore = 0000;
 	private JLabel errorLabel;
 	private ArrayList<String> allOnline = new ArrayList<String>();
 	private ArrayList<String> allOnlineScore = new ArrayList<String>();
@@ -48,7 +48,7 @@ public class LobbyPanel extends JPanel{
 		// create other player info on the Left
 		JLabel userInfoLabel = new JLabel("Your Win/Loss Ratio!", JLabel.CENTER);
 		userInfoLabel.setForeground(Color.BLUE);
-		userHighScore = new JLabel(Integer.toString(highscore), JLabel.CENTER);
+		userHighScore = new JLabel(Double.toString(highscore), JLabel.CENTER);
 		JPanel userInfoBuffer = new JPanel(new GridLayout(0,1));
 		userInfoBuffer.add(userInfoLabel);
 		userInfoBuffer.add(userHighScore);
@@ -88,6 +88,7 @@ public class LobbyPanel extends JPanel{
 
 		challengeButton.addActionListener(lc);
 		logoutButton.addActionListener(lc);
+		viewHighscore.addActionListener(lc);
 		playerList.addListSelectionListener((javax.swing.event.ListSelectionListener) new ListSelectionListener() {
 
 			public void valueChanged(ListSelectionEvent arg0) {
@@ -150,8 +151,12 @@ public class LobbyPanel extends JPanel{
 		this.playerUsername = playerUsername;
 	}
 	
-	public void setHighscore(int highscore) {
+	public void setHighscore(double highscore) {
 		this.highscore = highscore;
+	}
+	
+	public double getHighscore() {
+		return highscore;
 	}
 
 	public void updatePlayerInfo(String playerName) {
@@ -161,8 +166,13 @@ public class LobbyPanel extends JPanel{
 		for (int i = 0; i < allOnline.size(); i++) {
 			if (allOnline.get(i).equals(playerName)) {
 				list.remove(i);
-				userHighScore.setText(allOnlineScore.get(i));
+				setHighscore(Double.parseDouble(allOnlineScore.get(i)));
+				userHighScore.setText(Double.toString(highscore));
 			}
 		}
+	}
+	
+	public int getUserHighScore() {
+		return Integer.parseInt(userHighScore.getText());
 	}
 }
