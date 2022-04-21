@@ -19,4 +19,5 @@
     <fullyQualifiedTypeName name="org.junit.Before"/>
     <fullyQualifiedTypeName name="ClientGUI.LoginPanel"/>
     <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

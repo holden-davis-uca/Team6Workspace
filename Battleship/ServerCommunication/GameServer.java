@@ -3,6 +3,7 @@ package ServerCommunication;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 import ClientCommunication.*;
 import ocsf.server.*;
@@ -16,6 +17,7 @@ public class GameServer extends AbstractServer {
 	private int player1Miss;
 	private int player2Miss;
 	private boolean running = false;
+	private ArrayList<User> onlinePlayers;
 	
 	public GameServer() {
 		super(8300);
@@ -61,8 +63,10 @@ public class GameServer extends AbstractServer {
 			verify = db.verifyAccount(data.getUsername(), data.getPassword());
 			
 			if (verify == true) {
+				User user = new User(data.getUsername(), data.getPassword());
 				System.out.println("Client " + arg1.getId() + " successfully logged in as " + data.getUsername() + "\n");
 				result = "LoginSuccessful";
+				onlinePlayers.add(user);
 			} else {
 				result = "LoginError";
 				System.out.println("Client " + arg1.getId() + " failed to login\n");
@@ -83,8 +87,10 @@ public class GameServer extends AbstractServer {
 			created = db.createAccount(data.getUsername(), data.getPassword());
 			
 			if (created == true) {
+				User user = new User(data.getUsername(), data.getPassword());
 				result = "CreateSuccessful";
 				System.out.println("Client " + arg1.getId() + " created a new account called " + data.getUsername() + "\n");
+				onlinePlayers.add(user);
 			} else {
 				result = "CreateError";
 				System.out.println("Client " + arg1.getId() + " failed to create a new account\n");
@@ -114,9 +120,21 @@ public class GameServer extends AbstractServer {
 			
 		} else if (arg0 instanceof GameData) {
 			
+		} else if (arg0.equals("AllPlayers")) {
+			String response = "All: ";
+			response += db.getAllUsers();
+			try {
+				arg1.sendToClient(response);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else if (arg0.equals("OnlinePlayers")) {
 			String response = "Online: ";
-			response += db.getAllUsers();
+			for (int i = 0; i < onlinePlayers.size(); i++) {
+				response += onlinePlayers.get(i);
+			}
+			
 			try {
 				arg1.sendToClient(response);
 			} catch (IOException e) {
@@ -150,7 +168,6 @@ public class GameServer extends AbstractServer {
 		Database db = new Database();
 		Scanner scanner = new Scanner(System.in);
 		String input;
-		
 		server.setDatabase(db);
 		
 		try {
