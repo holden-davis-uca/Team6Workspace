@@ -73,38 +73,46 @@ public class LoginControl implements ActionListener {
 			LoginPanel loginPanel = (LoginPanel) container.getComponent(1);
 			LoginData data = new LoginData(loginPanel.getUsername(), loginPanel.getPassword());
 			//Credentials cannot be empty
-			if (data.getUsername().isEmpty() || data.getPassword().isEmpty())
+			if (data.getUsername().isEmpty() || data.getPassword().isEmpty()){
 				displayError("You must enter a username and password.");
-			//Username cannot be <= 3 or not alphanumeric
-			else if (data.getUsername().length() <= 3)
+				return;
+			}
+			//Username cannot be <= 3 characters
+			else if (data.getUsername().length() <= 3){
 				displayError("Invalid username! (Less than 3 characters!)");
-			else if (!data.getUsername().matches("[a-zA-Z0-9]*"))
+				return;
+			}
+			//Username cannot be > 30 characters
+			else if (data.getUsername().length() > 30) {
+				displayError("Invalid username! (More than 30 characters!)");
+				return;
+			}
+			//Username cannot be non alphanumeric
+			else if (!data.getUsername().matches("[a-zA-Z0-9]*")){
 				displayError("Invalid username! (Not alphanumeric!)");
-			//Password cannot be < 10 or not alphanumeric
-			else if (data.getPassword().length() < 10)
+				return;
+			}
+			//Password cannot be < 10 characters
+			else if (data.getPassword().length() < 10){
 				displayError("Invalid password! (Less than 10 characters!)");
-			
-			
-			//TODO: Send LoginData to server when GameServer.java and GameClient.java are ready
-			
-			
-			
-//			try {
-//				Client.sendToServer(data);
-//			} catch (IOException ioe) {
-//				displayError("Server connection failure!");
-//				ioe.printStackTrace();
-//			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+				return;
+			}
+			//Password cannot be > 20 characters
+			else if (data.getPassword().length() > 20) {
+				displayError("Invalid Password! (More than 20 characters!)");
+				return;
+			}
+			//Password cannot be non alphanumeric
+			else if (!data.getPassword().matches("[a-zA-Z0-9]*")){
+				displayError("Invalid password! (Not alphanumeric!)");
+				return;
+			}
+			try {
+				Client.sendToServer(data);
+			} catch (IOException ioe) {
+				displayError("Server connection failure!");
+				ioe.printStackTrace();
+			}
 		}
 
 	}

@@ -6,9 +6,11 @@
  * Provides JUnit 5 unit tests for the LoginData.java file, particularly those that take parameters
  */
 
-package ClientCommunication;
+package Tests;
 
 import org.junit.*; //Needed for tests
+
+import ClientCommunication.LoginData;
 
 public class LoginDataTest {
 	String[] users = {"username1", "username2", "username3"};

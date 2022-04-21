@@ -26,27 +26,96 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_uUuV0J8-Eey4CrfTp4bsKQ" name="startcontrol" type="_S6l78J8-Eey0yJD0SYw9Rw" association="_uUivoJ8-Eey4CrfTp4bsKQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_32dKwJ8-Eey4CrfTp4bsKQ" name="LoginControl">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_d4W6MKYGEeyYv7JjOYf-rw" name="LoginPanel" type="_52YbIJ8-Eey4CrfTp4bsKQ"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_h73y8KYGEeyYv7JjOYf-rw" name="client" type="_uMlbkJ9AEey4CrfTp4bsKQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_lRXIEKYGEeyYv7JjOYf-rw" name="LoginControl"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_mU8E8KYGEeyYv7JjOYf-rw" name="ActionPerformed"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_oJZFIKYGEeyYv7JjOYf-rw" name="DisplayError"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_h73y8KYGEeyYv7JjOYf-rw" name="client" visibility="private" type="_uMlbkJ9AEey4CrfTp4bsKQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3saZAMDfEeyZxubEjbCvAw" name="container" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_lRXIEKYGEeyYv7JjOYf-rw" name="LoginControl">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_82M9UMDfEeyZxubEjbCvAw" name="container">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_AT0TsMDgEeyZxubEjbCvAw" name="client" type="_uMlbkJ9AEey4CrfTp4bsKQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mU8E8KYGEeyYv7JjOYf-rw" name="ActionPerformed">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Cf5wwMDgEeyZxubEjbCvAw" name="ae">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oJZFIKYGEeyYv7JjOYf-rw" name="displayError">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_FdXncMDgEeyZxubEjbCvAw" name="error">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_F_0NMMDgEeyZxubEjbCvAw" name="loginSuccess"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_52YbIJ8-Eey4CrfTp4bsKQ" name="LoginPanel">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_pzoZYKYGEeyYv7JjOYf-rw" name="errorLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_txmDwKYGEeyYv7JjOYf-rw" name="userField"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_ukpRUKYGEeyYv7JjOYf-rw" name="passField"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_vd-tEKYGEeyYv7JjOYf-rw" name="LoginPanel"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_wv4Z0KYGEeyYv7JjOYf-rw" name="getUserField"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_x2bLIKYGEeyYv7JjOYf-rw" name="getPassField"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_yxvj4KYGEeyYv7JjOYf-rw" name="setError"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pzoZYKYGEeyYv7JjOYf-rw" name="errorLabel" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_txmDwKYGEeyYv7JjOYf-rw" name="usernameField" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ukpRUKYGEeyYv7JjOYf-rw" name="passwordField" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2qXioMDeEeyZxubEjbCvAw" name="serialVersionUID" visibility="private" isStatic="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8wWCYMDeEeyZxubEjbCvAw" name="titleLabel" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wv4Z0KYGEeyYv7JjOYf-rw" name="getUserName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_x2bLIKYGEeyYv7JjOYf-rw" name="getPassword"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yxvj4KYGEeyYv7JjOYf-rw" name="setUsername">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_NDlAUMDfEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_NiHWcMDfEeyZxubEjbCvAw" name="setPassword">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_NiHWccDfEeyZxubEjbCvAw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QFDNQMDfEeyZxubEjbCvAw" name="setError">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QFDNQcDfEeyZxubEjbCvAw" name="error">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_R_qf0MDfEeyZxubEjbCvAw" name="clearAll"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Su910MDfEeyZxubEjbCvAw" name="LoginPanel">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WMaNEMDfEeyZxubEjbCvAw" name="lc" type="_32dKwJ8-Eey4CrfTp4bsKQ"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="__pnlEJ8-Eey4CrfTp4bsKQ" name="LoginData">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_26IVkKYGEeyYv7JjOYf-rw" name="usernames"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_6q3cQKYGEeyYv7JjOYf-rw" name="passwords"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_9rO18KYGEeyYv7JjOYf-rw" name="LoginData"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-URL4KYGEeyYv7JjOYf-rw" name="checkUsername"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__QlqMKYGEeyYv7JjOYf-rw" name="checkPassword"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ajBA8MDfEeyZxubEjbCvAw" name="serialVersionUID" visibility="private" isStatic="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hFiSwMDfEeyZxubEjbCvAw" name="username" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_i7oRsMDfEeyZxubEjbCvAw" name="password" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nj2aAMDfEeyZxubEjbCvAw" name="setUsername">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nj2aAcDfEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nj3BEMDfEeyZxubEjbCvAw" name="setPassword">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nj3BEcDfEeyZxubEjbCvAw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nj4PMMDfEeyZxubEjbCvAw" name="getPassword"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nj42QMDfEeyZxubEjbCvAw" name="getUserName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oxgf8MDfEeyZxubEjbCvAw" name="LoginData">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_qxmIYMDfEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_rlEzwMDfEeyZxubEjbCvAw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_DiqTMJ8_Eey4CrfTp4bsKQ" memberEnd="_DisIYJ8_Eey4CrfTp4bsKQ _Di15YJ8_Eey4CrfTp4bsKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DirhUJ8_Eey4CrfTp4bsKQ" source="org.eclipse.papyrus">
@@ -272,7 +341,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_gd7t8KYJEeyYv7JjOYf-rw" name="connectionException"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Z71CsJ9BEey4CrfTp4bsKQ" name="GameServer">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_gsJf8p9BEey4CrfTp4bsKQ" name="databasefile" type="_et5qkJ9BEey4CrfTp4bsKQ" association="_gsIR0J9BEey4CrfTp4bsKQ">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gsJf8p9BEey4CrfTp4bsKQ" name="Database" type="_et5qkJ9BEey4CrfTp4bsKQ" association="_gsIR0J9BEey4CrfTp4bsKQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gsJf859BEey4CrfTp4bsKQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gsJf9J9BEey4CrfTp4bsKQ" value="1"/>
     </ownedAttribute>
@@ -310,10 +379,70 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_bi5U0LEhEeyUwsRvsNsdHA" name="validateSelection"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_erp1gLEhEeyUwsRvsNsdHA" name="playerBoardDataUpdate"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_et5qkJ9BEey4CrfTp4bsKQ" name="DatabaseFile">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_TKLOUKYIEeyYv7JjOYf-rw" name="gameData"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_UDNvIKYIEeyYv7JjOYf-rw" name="getData"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_VUvBYKYIEeyYv7JjOYf-rw" name="setData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_et5qkJ9BEey4CrfTp4bsKQ" name="Database">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TKLOUKYIEeyYv7JjOYf-rw" name="con" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rO0XQMDcEeyZxubEjbCvAw" name="username" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BLH2gMDdEeyZxubEjbCvAw" name="password" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ELLHIMDdEeyZxubEjbCvAw" name="url" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FVqkUMDdEeyZxubEjbCvAw" name="aeskey" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GkjZUMDdEeyZxubEjbCvAw" name="fis" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_UDNvIKYIEeyYv7JjOYf-rw" name="executeDML">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ToAzIMDeEeyZxubEjbCvAw" name="dml">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_VUvBYKYIEeyYv7JjOYf-rw" name="query">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkmFcMDeEeyZxubEjbCvAw" name="query">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_OLlcIMDdEeyZxubEjbCvAw" name="Database"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_05GOwMDdEeyZxubEjbCvAw" name="createAccount">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_V8ewIMDeEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XRCIQMDeEeyZxubEjbCvAw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2g-LgMDdEeyZxubEjbCvAw" name="verifyAccount">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cBEv0MDeEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ddgRkMDeEeyZxubEjbCvAw" name="password">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_4DXyYMDdEeyZxubEjbCvAw" name="getAllUsers"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_5tOFEMDdEeyZxubEjbCvAw" name="getUserRatio">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fSA8IMDeEeyZxubEjbCvAw" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7TEokMDdEeyZxubEjbCvAw" name="recordMatch">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hH0AIMDeEeyZxubEjbCvAw" name="user1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iOjlwMDeEeyZxubEjbCvAw" name="user2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jwFC4MDeEeyZxubEjbCvAw" name="user1win">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_8akcIMDdEeyZxubEjbCvAw" name="finish"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_gsIR0J9BEey4CrfTp4bsKQ" memberEnd="_gsJf8p9BEey4CrfTp4bsKQ _gsKHAJ9BEey4CrfTp4bsKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gsJf8J9BEey4CrfTp4bsKQ" source="org.eclipse.papyrus">

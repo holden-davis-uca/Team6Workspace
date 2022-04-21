@@ -9,17 +9,17 @@ import javax.swing.JPanel;
 import ClientGUI.PlacingPanel;
 
 public class PlacingControl implements ActionListener{
-	private PlacingPanel container;
+	private JPanel container;
 	private GameClient client;
 	
 	public PlacingControl(JPanel container, GameClient client) {
-		this.container = (PlacingPanel) container;
+		this.container = container;
 		this.client = client;
 	}
 
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
-		PlacingPanel panel = container;
+		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
 
 		if (command == "Place Ship") {
 			System.out.println("Place Ship");
@@ -75,12 +75,12 @@ public class PlacingControl implements ActionListener{
 	}
 	
 	public void DisplayError(String error) {
-		PlacingPanel panel = container;
+		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
 		panel.setErrorLabel(error);
 	}
 	
 	public void allShipsPlaced() {
-		PlacingPanel panel = container;
+		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
 		PlacingData data = new PlacingData(panel.getXcoords(), panel.getYcoord(), panel.getIsHorizontal());
 		//TODO send data to server
 	}

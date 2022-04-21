@@ -6,10 +6,13 @@
  * Provides JUnit 5 unit tests for the LoginControl.java file, particularly those that take parameters
  */
 
-package ClientCommunication;
+package Tests;
 
 import javax.swing.*;
 import org.junit.*; //Needed for tests
+
+import ClientCommunication.GameClient;
+import ClientCommunication.LoginControl;
 
 public class LoginControlTest {
 

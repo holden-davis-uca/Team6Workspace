@@ -2,6 +2,8 @@
 package ClientCommunication;
 
 import java.io.*;
+import java.util.ArrayList;
+import ServerCommunication.User;
 
 public class LobbyData implements Serializable {
 	private String player;
@@ -27,5 +29,4 @@ public class LobbyData implements Serializable {
 	public void setPlayer(String player) {
 		this.player = player;
 	}
-
 }

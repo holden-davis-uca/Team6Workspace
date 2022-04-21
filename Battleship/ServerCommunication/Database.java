@@ -162,7 +162,7 @@ public class Database {
 	 * 
 	 */
 	public boolean verifyAccount(String username, String password)
-	{
+	{	
 		ResultSet results = query("select * from users where username='"+username+"' and password=aes_encrypt('"+password+"', '"+aeskey+"');");
 		try {
 			return !(results == null || (!results.next()));

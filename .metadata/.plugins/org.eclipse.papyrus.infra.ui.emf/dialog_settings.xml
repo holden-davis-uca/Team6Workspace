@@ -3,7 +3,9 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_uMlbkJ9AEey4CrfTp4bsKQ"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_iFagUJ8-Eey4CrfTp4bsKQ"/>
 				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_IUw60J9AEey4CrfTp4bsKQ"/>
@@ -19,8 +21,21 @@
 	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
 		<section name="History">
 			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_uMlbkJ9AEey4CrfTp4bsKQ"/>
+				<item value="platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml#_32dKwJ8-Eey4CrfTp4bsKQ"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
 				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
 			</list>
 		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Type:type">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Constraint:bodyCondition">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Behavior:method">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/Team6ClassDiagramProject/Team6ClassDiagram.uml:uml:Constraint:postcondition">
 	</section>
 </section>

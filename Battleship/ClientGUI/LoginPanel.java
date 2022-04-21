@@ -83,7 +83,7 @@ public class LoginPanel extends JPanel {
 	 * Throws:
 	 */
 	public String getPassword() {
-		return Arrays.toString(passwordField.getPassword());
+		return new String(passwordField.getPassword());
 	}
 	/*
 	 * setError()
