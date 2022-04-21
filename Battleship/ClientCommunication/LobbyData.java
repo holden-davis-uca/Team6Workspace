@@ -7,18 +7,18 @@ import ServerCommunication.User;
 
 public class LobbyData implements Serializable {
 	private String player;
-	private int highscore;
+	private double highscore;
 
-	public LobbyData(String username, int highscore) {
+	public LobbyData(String username, double highscore) {
 		setPlayer(username);
 		setHighscore(highscore);
 	}
 
-	public int getHighscore() {
+	public double getHighscore() {
 		return highscore;
 	}
 
-	public void setHighscore(int highscore) {
+	public void setHighscore(double highscore) {
 		this.highscore = highscore;
 	}
 
