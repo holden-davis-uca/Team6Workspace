@@ -13,10 +13,12 @@ public class LobbyPanel extends JPanel{
 	private String selectedPlayer;
 	private JList<String> playerList;
 	DefaultListModel<String> list;
+	private String playerUsername;
 	private int highscore = 0000;
 	private JLabel errorLabel;
 	private ArrayList<String> allOnline = new ArrayList<String>();
 	private ArrayList<String> allOnlineScore = new ArrayList<String>();
+	private JLabel userHighScore;
 	
 	public LobbyPanel(LobbyControl lc) {
 		// Create a list of example players.
@@ -44,9 +46,9 @@ public class LobbyPanel extends JPanel{
 		this.add(label, BorderLayout.NORTH);
 
 		// create other player info on the Left
-		JLabel userInfoLabel = new JLabel("Your High Score!", JLabel.CENTER);
+		JLabel userInfoLabel = new JLabel("Your Win/Loss Ratio!", JLabel.CENTER);
 		userInfoLabel.setForeground(Color.BLUE);
-		JLabel userHighScore = new JLabel(Integer.toString(highscore), JLabel.CENTER);
+		userHighScore = new JLabel(Integer.toString(highscore), JLabel.CENTER);
 		JPanel userInfoBuffer = new JPanel(new GridLayout(0,1));
 		userInfoBuffer.add(userInfoLabel);
 		userInfoBuffer.add(userHighScore);
@@ -133,10 +135,34 @@ public class LobbyPanel extends JPanel{
 	}
 	
 	public void addAllOnlineScore(String score) {
-		allOnline.add(score);
+		allOnlineScore.add(score);
 	}
 	
 	public void updatePlayerPanel(String name) {
 		list.addElement(name);
+	}
+
+	public String getPlayerUsername() {
+		return playerUsername;
+	}
+
+	public void setPlayerUsername(String playerUsername) {
+		this.playerUsername = playerUsername;
+	}
+	
+	public void setHighscore(int highscore) {
+		this.highscore = highscore;
+	}
+
+	public void updatePlayerInfo(String playerName) {
+		// TODO Auto-generated method stub
+		setPlayerUsername(playerName);
+		playerName = playerName.strip();
+		for (int i = 0; i < allOnline.size(); i++) {
+			if (allOnline.get(i).equals(playerName)) {
+				list.remove(i);
+				userHighScore.setText(allOnlineScore.get(i));
+			}
+		}
 	}
 }

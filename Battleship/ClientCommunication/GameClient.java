@@ -42,8 +42,16 @@ public class GameClient extends AbstractClient {
 	public void handleMessageFromServer(Object arg0) {
 		String message = (String)arg0;
 		
-		if (message.equals("LoginSuccessful")) 
+		if (message.equals("LoginSuccessful")) {
 			loginControl.loginSuccess();
+			try {
+				//sendToServer("OnlinePlayers");	
+				sendToServer("MyName");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
 		else if (message.equals("LoginError"))
 			loginControl.displayError("Login failed");
 		else if (message.equals("CreateSuccessful")) 
@@ -52,8 +60,18 @@ public class GameClient extends AbstractClient {
 			createControl.displayError("Account could not be created");
 		else if (message.startsWith("Online: ")) {
 			String allPlayers = message.substring(8);
-			lobbyControl.processOnline(allPlayers);			
+			lobbyControl.processOnline(allPlayers);	
+			/*try {
+				sendToServer("MyName");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/
 			}
+		else if (message.startsWith("MyName:")) {
+			String playerName = message.substring(7);
+			lobbyControl.updatePlayerName(playerName);
+		}
 		//TODO add the other handles
 	}
 	
@@ -115,9 +133,9 @@ public class GameClient extends AbstractClient {
 		jframe.add(container);
 		
 		jframe.setSize(550, 350);
-		jframe.setVisible(true);
+		jframe.setVisible(true);	
 		try {
-			client.sendToServer("OnlinePlayers");
+			client.sendToServer("OnlinePlayers");				
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

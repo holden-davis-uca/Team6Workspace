@@ -13,7 +13,7 @@ public class LobbyControl implements ActionListener {
 
 	public LobbyControl(JPanel container, GameClient client) {
 		this.container = container;
-		this.client = client;		
+		this.client = client;			
 	}
 
 	public void actionPerformed(ActionEvent ae) {
@@ -88,5 +88,11 @@ public class LobbyControl implements ActionListener {
 			String[] toSend = player[i].split("=");
 			addListUsers(toSend[0], toSend[1]);
 		}
+	}
+
+	public void updatePlayerName(String playerName) {
+		// TODO Auto-generated method stub
+		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
+		panel.updatePlayerInfo(playerName);
 	}
 }

@@ -70,6 +70,7 @@ public class GameServer extends AbstractServer {
 			
 			try {
 				arg1.sendToClient(result);
+				arg1.sendToClient("MyName:" + data.getUsername());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
