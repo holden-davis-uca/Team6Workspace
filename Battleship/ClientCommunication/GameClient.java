@@ -14,6 +14,7 @@ public class GameClient extends AbstractClient {
 	private GameControl gameControl;
 	private LobbyControl lobbyControl;
 	private PlacingControl placingControl;
+	private static JFrame jframe;
 	
 	public void setLoginControl(LoginControl loginControl) {
 		this.loginControl = loginControl;
@@ -33,6 +34,14 @@ public class GameClient extends AbstractClient {
 	
 	public void setPlacingControl(PlacingControl placingControl) {
 		this.placingControl = placingControl;
+	}
+	
+	public void setJframe(JFrame frame) {
+		this.jframe = frame;
+	}
+	
+	public JFrame getJframe() {
+		return jframe;
 	}
 	
 	public GameClient() {
@@ -83,7 +92,7 @@ public class GameClient extends AbstractClient {
 	
 	public static void main(String[] args) {
 		GameClient client = new GameClient();
-		JFrame jframe = new JFrame();
+		jframe = new JFrame();
 		
 		try {
 			client.openConnection();

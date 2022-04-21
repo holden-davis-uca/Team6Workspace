@@ -179,12 +179,33 @@ public class LobbyPanel extends JPanel{
 	public void updateAllOnline(String onlinePlayers) {
 		// TODO Auto-generated method stub
 		String[] allOnline = onlinePlayers.split(",");
+		ArrayList<String> notOnline = new ArrayList<String>();
+		ArrayList<String> allOnline1 = new ArrayList<String>();
+		
+		for (int i = 0; i < allOnline.length; i++) {
+			allOnline1.add(allOnline[i]);
+		}
+		
+		
+		for (int i = 0; i < allPlayers.size(); i++) {
+			if (!allOnline1.contains(allPlayers.get(i))) {
+				notOnline.add(allPlayers.get(i));
+			}
+		}
+		
 		for (int i = 0; i<allOnline.length;i++) {
 			if (list.contains(allOnline[i])) {
 				System.out.println(list.get(list.indexOf(allOnline[i])));
 				list.remove(list.indexOf(allOnline[i]));
 				list.addElement("<html><b>" + allOnline[i] + "</b></html>");
-			}
+			} 
+		} 
+		
+		for (int i = 0; i < notOnline.size(); i++) {
+			if (list.contains("<html><b>" + notOnline.get(i) + "</b></html>")) {
+				list.remove(list.indexOf("<html><b>" + notOnline.get(i) + "</b></html>"));
+				list.addElement(notOnline.get(i));
+			} 
 		}
 	}
 }

@@ -138,8 +138,26 @@ public class GameServer extends AbstractServer {
 				}
 			}
 			
+			sendToAllClients(response);
+		} else if (arg0.toString().startsWith("Logout: ")) {
+			String username = arg0.toString().substring(8);
+			for (int i = 0; i < onlinePlayers.size(); i++) {
+				if (onlinePlayers.get(i).getUsername().equals(username)) {
+					onlinePlayers.remove(i);
+				}
+			}
+			String response = "Online: ";
+			for (int i = 0; i < onlinePlayers.size(); i++) {
+				response += onlinePlayers.get(i).getUsername();
+				if (i + 1 < onlinePlayers.size()) {
+					response += ",";
+				}
+			}			
+			
+			sendToAllClients(response);
+			
 			try {
-				arg1.sendToClient(response);
+				arg1.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -13,10 +13,12 @@ import ClientGUI.LoginPanel;
 public class LobbyControl implements ActionListener {
 	private JPanel container;
 	private GameClient client;
+	private String username;
 
 	public LobbyControl(JPanel container, GameClient client) {
 		this.container = container;
-		this.client = client;			
+		this.client = client;	
+		username = "";
 	}
 
 	public void actionPerformed(ActionEvent ae) {
@@ -83,12 +85,15 @@ public class LobbyControl implements ActionListener {
 	public void Logout() {
 		// TODO log client out from server
 		try {
+			client.sendToServer("Logout: " + getUsername());
 			client.closeConnection();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		JFrame frame = client.getJframe();
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 	}
 	
 	public void processAllPlayers(String allPlayers) {
@@ -111,6 +116,7 @@ public class LobbyControl implements ActionListener {
 		// TODO Auto-generated method stub
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.updatePlayerInfo(playerName);
+		setUsername(playerName);
 	}
 	
 	public void challengeAccepted() {
@@ -123,5 +129,13 @@ public class LobbyControl implements ActionListener {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.updateAllOnline(onlinePlayers);
 		
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }
