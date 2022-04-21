@@ -95,7 +95,7 @@ public class LoginControl implements ActionListener {
 			//Password cannot be < 10 characters
 			else if (data.getPassword().length() < 10){
 				displayError("Invalid password! (Less than 10 characters!)");
-				return;
+				//return;
 			}
 			//Password cannot be > 20 characters
 			else if (data.getPassword().length() > 20) {

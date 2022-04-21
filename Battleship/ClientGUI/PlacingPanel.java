@@ -19,15 +19,11 @@ public class PlacingPanel extends JPanel {
 	// ship location
 	private JLabel ship_one_location;
 	private JLabel ship_two_location;
-	private JLabel ship_three_location;
-	private JLabel ship_four_location;
-	public JLabel ship_five_location;
+	public JLabel ship_three_location;
 	// ship orientation
 	private JLabel ship_one_orientation;
 	private JLabel ship_two_orientation;
 	private JLabel ship_three_orientation;
-	private JLabel ship_four_orientation;
-	private JLabel ship_five_orientation;
 
 	// toolbar fields
 	public JLabel currShip;
@@ -71,14 +67,10 @@ public class PlacingPanel extends JPanel {
 		ship_one_location = new JLabel("Location: ", JLabel.LEFT);
 		ship_two_location = new JLabel("Location: ", JLabel.LEFT);
 		ship_three_location = new JLabel("Location: ", JLabel.LEFT);
-		ship_four_location = new JLabel("Location: ", JLabel.LEFT);
-		ship_five_location = new JLabel("Location: ", JLabel.LEFT);
 
 		ship_one_orientation = new JLabel("Orientation: ", JLabel.LEFT);
 		ship_two_orientation = new JLabel("Orientation: ", JLabel.LEFT);
 		ship_three_orientation = new JLabel("Orientation: ", JLabel.LEFT);
-		ship_four_orientation = new JLabel("Orientation: ", JLabel.LEFT);
-		ship_five_orientation = new JLabel("Orientation: ", JLabel.LEFT);
 
 		shipInfoPanel.add(ship_one_title);
 		shipInfoPanel.add(ship_one_location);
@@ -89,12 +81,6 @@ public class PlacingPanel extends JPanel {
 		shipInfoPanel.add(ship_three_title);
 		shipInfoPanel.add(ship_three_location);
 		shipInfoPanel.add(ship_three_orientation);
-		shipInfoPanel.add(ship_four_title);
-		shipInfoPanel.add(ship_four_location);
-		shipInfoPanel.add(ship_four_orientation);
-		shipInfoPanel.add(ship_five_title);
-		shipInfoPanel.add(ship_five_location);
-		shipInfoPanel.add(ship_five_orientation);
 
 		shipContainerPanel.add(shipInfoPanel);
 		this.add(shipContainerPanel, BorderLayout.WEST);
@@ -225,13 +211,9 @@ public class PlacingPanel extends JPanel {
 		ship_one_location.setText("Location: ");
 		ship_two_location.setText("Location: ");
 		ship_three_location.setText("Location: ");
-		ship_four_location.setText("Location: ");
-		ship_five_location.setText("Location: ");
 		ship_one_orientation.setText("Orientation: ");
 		ship_two_orientation.setText("Orientation: ");
 		ship_three_orientation.setText("Orientation: ");
-		ship_four_orientation.setText("Orientation: ");
-		ship_five_orientation.setText("Orientation: ");
 		xcoords.clear();
 		ycoords.clear();
 		isHorizontal.clear();	
@@ -244,7 +226,7 @@ public class PlacingPanel extends JPanel {
 			return false;
 		}
 
-		if (ship_five_location.getText() != "Location: ") {
+		if (ship_three_location.getText() != "Location: ") {
 			setErrorLabel("All ships have been placed!");
 			return false;
 		}
@@ -401,23 +383,13 @@ public class PlacingPanel extends JPanel {
 			currShip.setText("Ship 3");
 
 		} else if (currShip.getText() == "Ship 3") {
-			ship_three_location.setText(ship_three_location.getText() + loc);
-			ship_three_orientation.setText(ship_three_orientation.getText() + orientation);
-			currShip.setText("Ship 4");
-
-		} else if (currShip.getText() == "Ship 4") {
-			ship_four_location.setText(ship_four_location.getText() + loc);
-			ship_four_orientation.setText(ship_four_orientation.getText() + orientation);
-			currShip.setText("Ship 5");
-
-		} else if (currShip.getText() == "Ship 5") {
-
-			if (ship_five_location.getText() == "Location: ") {
-				ship_five_location.setText(ship_five_location.getText() + loc);
-				ship_five_orientation.setText(ship_five_orientation.getText() + orientation);
+			if (ship_three_location.getText() == "Location: ") {
+				ship_three_location.setText(ship_three_location.getText() + loc);
+				ship_three_orientation.setText(ship_three_orientation.getText() + orientation);
 
 			}
 			setErrorLabel("All Ships placed. Remove ships or start game");
-		}
+
+		} 
 	}
 }

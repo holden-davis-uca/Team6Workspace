@@ -47,6 +47,7 @@ public class GameClient extends AbstractClient {
 			try {
 				//sendToServer("OnlinePlayers");	
 				sendToServer("MyName");
+				sendToServer("OnlinePlayers");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -58,19 +59,16 @@ public class GameClient extends AbstractClient {
 			createControl.createAccountSuccess();
 		else if (message.equals("CreateError")) 
 			createControl.displayError("Account could not be created");
-		else if (message.startsWith("Online: ")) {
-			String allPlayers = message.substring(8);
-			lobbyControl.processOnline(allPlayers);	
-			/*try {
-				sendToServer("MyName");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
+		else if (message.startsWith("All: ")) {
+			String allPlayers = message.substring(5);
+			lobbyControl.processAllPlayers(allPlayers);				
 			}
 		else if (message.startsWith("MyName:")) {
 			String playerName = message.substring(7);
 			lobbyControl.updatePlayerName(playerName);
+		} else if (message.startsWith("Online: ")) {
+			String onlinePlayers = message.substring(8);
+			lobbyControl.processOnlinePlayers(onlinePlayers);
 		}
 		//TODO add the other handles
 	}
@@ -135,7 +133,7 @@ public class GameClient extends AbstractClient {
 		jframe.setSize(550, 350);
 		jframe.setVisible(true);	
 		try {
-			client.sendToServer("OnlinePlayers");				
+			client.sendToServer("AllPlayers");				
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

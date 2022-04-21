@@ -42,6 +42,7 @@ public class LobbyControl implements ActionListener {
 					LobbyData data = new LobbyData(panel.getSelectedPlayer(), panel.getHighscore());
 					try {
 						client.sendToServer(data);
+						challengeAccepted();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -53,8 +54,8 @@ public class LobbyControl implements ActionListener {
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
 			} else {
-				ArrayList<String> allPlayers = panel.getAllOnline();
-				ArrayList<String> allPlayersScores = panel.getAllOnlineScore();
+				ArrayList<String> allPlayers = panel.getAllPlayers();
+				ArrayList<String> allPlayersScores = panel.getAllPlayersScore();
 				String selectedPlayerScore = "";
 				for (int i = 0 ; i<allPlayers.size();i++) {
 					if (panel.getSelectedPlayer().strip().equals(allPlayers.get(i).strip())) {
@@ -75,8 +76,8 @@ public class LobbyControl implements ActionListener {
 	
 	public void addListUsers(String name, String score) {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
-		panel.addAllOnline(name);
-		panel.addAllOnlineScore(score);
+		panel.addAllPlayers(name);
+		panel.addAllPlayersScore(score);
 	}
 
 	public void Logout() {
@@ -90,7 +91,7 @@ public class LobbyControl implements ActionListener {
 		}
 	}
 	
-	public void processOnline(String allPlayers) {
+	public void processAllPlayers(String allPlayers) {
 		String [] player = allPlayers.split(","); 
 		
 		for (int i = 0; i < player.length;i++) {
@@ -115,5 +116,12 @@ public class LobbyControl implements ActionListener {
 	public void challengeAccepted() {
 		CardLayout cardLayout = (CardLayout) container.getLayout();
 		cardLayout.show(container, "6");
+	}
+
+	public void processOnlinePlayers(String onlinePlayers) {
+		// TODO Auto-generated method stub
+		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
+		panel.updateAllOnline(onlinePlayers);
+		
 	}
 }

@@ -19,7 +19,7 @@ public class PlacingControl implements ActionListener{
 
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
-		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
+		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
 
 		if (command == "Place Ship") {
 			System.out.println("Place Ship");
@@ -52,7 +52,7 @@ public class PlacingControl implements ActionListener{
 				panel.NextShip(location, hor);
 				panel.setErrorLabel("Ship Placed");
 			} else {
-				if (panel.ship_five_location.getText() != "Location: ") {
+				if (panel.ship_three_location.getText() != "Location: ") {
 					panel.setErrorLabel("All ships have been placed!");
 				}else {
 					panel.setErrorLabel("Invalid location option. Try again");
@@ -64,7 +64,7 @@ public class PlacingControl implements ActionListener{
 			panel.resetShips();		
 
 		} else if (command == "Start Game!") {
-			if (panel.ship_five_location.getText() != "Location: ") {
+			if (panel.ship_three_location.getText() != "Location: ") {
 				allShipsPlaced();
 			}
 			else {
@@ -75,12 +75,12 @@ public class PlacingControl implements ActionListener{
 	}
 	
 	public void DisplayError(String error) {
-		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
+		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
 		panel.setErrorLabel(error);
 	}
 	
 	public void allShipsPlaced() {
-		PlacingPanel panel = (PlacingPanel)container.getComponent(6);
+		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
 		PlacingData data = new PlacingData(panel.getXcoords(), panel.getYcoord(), panel.getIsHorizontal());
 		//TODO send data to server
 	}

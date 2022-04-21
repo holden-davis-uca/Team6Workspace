@@ -17,7 +17,7 @@ public class GameServer extends AbstractServer {
 	private int player1Miss;
 	private int player2Miss;
 	private boolean running = false;
-	private ArrayList<User> onlinePlayers;
+	private ArrayList<User> onlinePlayers = new ArrayList<User>();
 	
 	public GameServer() {
 		super(8300);
@@ -132,7 +132,10 @@ public class GameServer extends AbstractServer {
 		} else if (arg0.equals("OnlinePlayers")) {
 			String response = "Online: ";
 			for (int i = 0; i < onlinePlayers.size(); i++) {
-				response += onlinePlayers.get(i);
+				response += onlinePlayers.get(i).getUsername();
+				if (i + 1 < onlinePlayers.size()) {
+					response += ",";
+				}
 			}
 			
 			try {
