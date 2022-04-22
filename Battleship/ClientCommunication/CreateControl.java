@@ -80,12 +80,8 @@ public class CreateControl implements ActionListener {
 	// screen.
 	public void createAccountSuccess() {
 		CreatePanel createPanel = (CreatePanel) container.getComponent(2);
-		// ClientGUI clientGUI =
-		// (ClientGUI)SwingUtilities.getWindowAncestor(createPanel);
-		// clientGUI.setUser(new User(createAccountPanel.getUsername(),
-		// createAccountPanel.getPassword()));
 		CardLayout cardLayout = (CardLayout) container.getLayout();
-		cardLayout.show(container, "4");
+		cardLayout.show(container, "2");
 	}
 
 	// Method that displays a message in the error label.

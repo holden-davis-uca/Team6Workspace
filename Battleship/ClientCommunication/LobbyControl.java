@@ -30,9 +30,14 @@ public class LobbyControl implements ActionListener {
 			//validates a player is selected
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
-			} else {
+			} else if(!panel.getSelectedPlayer().startsWith("<html><b>")){
+				panel.setError("You must select an online player to challenge. Players who are online are bold");
+			}else {
 				//asks user to verify and sends data to server
 				int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
+				String playerName = panel.getSelectedPlayer();
+				playerName = playerName.substring(9);
+				playerName = playerName.substring(0, playerName.length() - 9);
 				int dialogResult = JOptionPane.showConfirmDialog(null, "Challenge " + panel.getSelectedPlayer() + "?",
 						command, dialogButton);
 				if (dialogResult == JOptionPane.YES_OPTION) {
@@ -74,8 +79,16 @@ public class LobbyControl implements ActionListener {
 	//adds to the list of All players in the db, held in the panel class
 	public void addListUsers(String name, String score) {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
-		panel.addAllPlayers(name);
-		panel.addAllPlayersScore(score);
+		String myName = getUsername();
+		
+		boolean doAdd = false;
+		if (!name.equals(myName)) {
+			doAdd = panel.addAllPlayers(name);
+		}			
+		
+		if (doAdd) {
+			panel.addAllPlayersScore(score);
+		}		
 	}
 
 	//lets the server know this player is logging out, then closes the connection and window

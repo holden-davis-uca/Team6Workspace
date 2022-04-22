@@ -61,8 +61,15 @@ public class GameClient extends AbstractClient {
 			}
 		} else if (message.equals("LoginError"))
 			loginControl.displayError("Login failed");
-		else if (message.equals("CreateSuccessful"))
+		else if (message.equals("CreateSuccessful")) {
 			createControl.createAccountSuccess();
+			try {
+				sendToServer("AllPlayers");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
 		else if (message.equals("CreateError"))
 			createControl.displayError("Account could not be created");
 		else if (message.startsWith("All: ")) {

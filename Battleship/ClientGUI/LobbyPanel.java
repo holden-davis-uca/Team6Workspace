@@ -24,7 +24,7 @@ public class LobbyPanel extends JPanel {
 
 	public LobbyPanel(LobbyControl lc) {
 		// Create list of players
-		list = new DefaultListModel<String>();		
+		list = new DefaultListModel<String>();
 		for (int i = 0; i < allPlayers.size(); i++) {
 			list.addElement(allPlayers.get(i));
 		}
@@ -52,10 +52,14 @@ public class LobbyPanel extends JPanel {
 		playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		playerList.setLayoutOrientation(JList.VERTICAL);
 		playerList.setVisibleRowCount(-1);
-		playerList.setPreferredSize(new Dimension(300, 200));
+		//playerList.setPreferredSize(new Dimension(200, 200));
 		playerList.setFont(playerList.getFont().deriveFont(Font.PLAIN));
+		JScrollPane scrollPane = new JScrollPane(playerList);
+		scrollPane.setPreferredSize(new Dimension(200, 200));
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		JPanel contactListBuffer = new JPanel();
-		contactListBuffer.add(playerList);
+		contactListBuffer.add(scrollPane);
 		this.add(contactListBuffer, BorderLayout.EAST);
 
 		// Create the buttons in the south and error label
@@ -79,8 +83,8 @@ public class LobbyPanel extends JPanel {
 		challengeButton.addActionListener(lc);
 		logoutButton.addActionListener(lc);
 		viewHighscore.addActionListener(lc);
-		
-		//updates selectedPlayer based off of which player is selected in the panel
+
+		// updates selectedPlayer based off of which player is selected in the panel
 		playerList.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				if (!arg0.getValueIsAdjusting()) {
@@ -113,10 +117,15 @@ public class LobbyPanel extends JPanel {
 		this.allPlayers = allOnline;
 	}
 
-	//adds player name to list of all players
-	public void addAllPlayers(String name) {
-		allPlayers.add(name);
-		updatePlayerPanel(name);
+	// adds player name to list of all players, returns true if name was added
+	public boolean addAllPlayers(String name) {
+		boolean result = false;
+		if (!list.contains(name) && !list.contains("<html><b>" + name + "</b></html>")) {
+			allPlayers.add(name);
+			updatePlayerPanel(name);
+			result = true;
+		}
+		return result;
 	}
 
 	public ArrayList<String> getAllPlayersScore() {
@@ -127,12 +136,12 @@ public class LobbyPanel extends JPanel {
 		this.allPlayersScore = allOnlineScore;
 	}
 
-	//adds list of all players
+	// adds list of all players
 	public void addAllPlayersScore(String score) {
 		allPlayersScore.add(score);
 	}
 
-	//adds a name to lobby list
+	// adds a name to lobby list
 	public void updatePlayerPanel(String name) {
 		list.addElement(name);
 	}
@@ -153,7 +162,7 @@ public class LobbyPanel extends JPanel {
 		return highscore;
 	}
 
-	//fills in player info in panel
+	// fills in player info in panel
 	public void updatePlayerInfo(String playerName) {
 		setPlayerUsername(playerName);
 		playerName = playerName.strip();
@@ -170,7 +179,8 @@ public class LobbyPanel extends JPanel {
 		return Integer.parseInt(userHighScore.getText());
 	}
 
-	//updates the list of players bolding the players online and returning offline players to normal
+	// updates the list of players bolding the players online and returning offline
+	// players to normal
 	public void updateAllOnline(String onlinePlayers) {
 		String[] allOnline = onlinePlayers.split(",");
 		ArrayList<String> notOnline = new ArrayList<String>();

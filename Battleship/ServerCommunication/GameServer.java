@@ -123,12 +123,7 @@ public class GameServer extends AbstractServer {
 		} else if (arg0.equals("AllPlayers")) {
 			String response = "All: ";
 			response += db.getAllUsers();
-			try {
-				arg1.sendToClient(response);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			sendToAllClients(response);
 		} else if (arg0.equals("OnlinePlayers")) {
 			String response = "Online: ";
 			for (int i = 0; i < onlinePlayers.size(); i++) {
