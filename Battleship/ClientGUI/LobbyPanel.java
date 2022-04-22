@@ -23,19 +23,8 @@ public class LobbyPanel extends JPanel {
 	private JLabel userHighScore;
 
 	public LobbyPanel(LobbyControl lc) {
-		// Create a list of example players.
-		list = new DefaultListModel<String>();
-//		list.addElement("Person One");
-//		list.addElement("<html><b>Person Two</b></html>");
-//		list.addElement("Person Three");
-//		list.addElement("Person Four");
-//		list.addElement("<html><b>Person Five</b></html>");
-//		list.addElement("Person Six");
-//		list.addElement("<html><b>Person Seven</b></html>");
-//		list.addElement("<html><b>Person Eight</b></html>");
-//		list.addElement("Person Nine");
-
 		// Create list of players
+		list = new DefaultListModel<String>();		
 		for (int i = 0; i < allPlayers.size(); i++) {
 			list.addElement(allPlayers.get(i));
 		}
@@ -90,8 +79,9 @@ public class LobbyPanel extends JPanel {
 		challengeButton.addActionListener(lc);
 		logoutButton.addActionListener(lc);
 		viewHighscore.addActionListener(lc);
+		
+		//updates selectedPlayer based off of which player is selected in the panel
 		playerList.addListSelectionListener(new ListSelectionListener() {
-
 			public void valueChanged(ListSelectionEvent arg0) {
 				if (!arg0.getValueIsAdjusting()) {
 					setSelectedPlayer(playerList.getSelectedValue());
@@ -123,6 +113,7 @@ public class LobbyPanel extends JPanel {
 		this.allPlayers = allOnline;
 	}
 
+	//adds player name to list of all players
 	public void addAllPlayers(String name) {
 		allPlayers.add(name);
 		updatePlayerPanel(name);
@@ -136,10 +127,12 @@ public class LobbyPanel extends JPanel {
 		this.allPlayersScore = allOnlineScore;
 	}
 
+	//adds list of all players
 	public void addAllPlayersScore(String score) {
 		allPlayersScore.add(score);
 	}
 
+	//adds a name to lobby list
 	public void updatePlayerPanel(String name) {
 		list.addElement(name);
 	}
@@ -160,6 +153,7 @@ public class LobbyPanel extends JPanel {
 		return highscore;
 	}
 
+	//fills in player info in panel
 	public void updatePlayerInfo(String playerName) {
 		setPlayerUsername(playerName);
 		playerName = playerName.strip();
@@ -176,6 +170,7 @@ public class LobbyPanel extends JPanel {
 		return Integer.parseInt(userHighScore.getText());
 	}
 
+	//updates the list of players bolding the players online and returning offline players to normal
 	public void updateAllOnline(String onlinePlayers) {
 		String[] allOnline = onlinePlayers.split(",");
 		ArrayList<String> notOnline = new ArrayList<String>();

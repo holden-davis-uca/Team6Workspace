@@ -104,14 +104,15 @@ public class PlacingPanel extends JPanel {
 		JLabel positionLabel = new JLabel("Position to Place:");
 		toolBuffer.add(positionLabel);
 		toolBuffer.add(shipLocation);
-
+		
 		JButton placeShipBtn = new JButton("Place Ship");
 		JButton removeShipsBtn = new JButton("Remove All Ships");
 		JButton startGameBtn = new JButton("Start Game!");
 		toolBuffer.add(placeShipBtn);
 		toolBuffer.add(removeShipsBtn);
 		toolBuffer.add(startGameBtn);
-
+		
+		//add action listener to buttons
 		placeShipBtn.addActionListener(pc);
 		removeShipsBtn.addActionListener(pc);
 		startGameBtn.addActionListener(pc);
@@ -151,6 +152,7 @@ public class PlacingPanel extends JPanel {
 		return map;
 	}
 	
+	//hash map to generate for button location -> button#
 	public HashMap<String, Integer> gridStrToBtnIntKey() {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("A0" , 0);
@@ -244,15 +246,18 @@ public class PlacingPanel extends JPanel {
 	// validates the location of a ship selected by the user
 	public boolean verifyPlacement(String loc, int shipLength, boolean hor) {
 
+		//make sure location lenghth = 2 chars
 		if (loc.length() != 2) {
 			return false;
 		}
 
+		//make sure the JLable displaying the location of x is holding nothing except "Location: "
 		if (ship_three_location.getText() != "Location: ") {
 			setErrorLabel("All ships have been placed!");
 			return false;
 		}
 
+		//generate variables
 		HashMap<Integer, Character> map = generateHashMap();
 		HashMap<Character, Integer> mapRev = generateHashMapReverse();
 		HashMap<String,Integer> mapKey = gridStrToBtnIntKey();
@@ -260,27 +265,32 @@ public class PlacingPanel extends JPanel {
 		char y = loc.charAt(1);
 		boolean result = false;
 
+		//make sure that the value of x is valid
 		if (!map.containsValue(x)) {
 			return result;
 		}
-
+	
+		//var to hold the button#
 		int coords = mapRev.get(x);
 		String coordStr = new String(coords + "" + Character.getNumericValue(y));
 		coords = mapKey.get(loc);
 
+		//make sure y is between 0 and 4
 		if (Character.getNumericValue(y) < 0 || Character.getNumericValue(y) > 4) {
 			return result;
 		}
 
+		//validates ship length
 		if (shipLength == 0) {
 			return result;
 		}
 
+		//check validity of location if horizontal
 		if (hor) {
 			if (Character.getNumericValue(y) <= (5 - shipLength)) {
 				result = true;
 			}
-
+			//validates if vertical
 		} else {
 			if (shipLength == 4) {
 				if (x == 'A'|| x == 'B') {
@@ -298,7 +308,8 @@ public class PlacingPanel extends JPanel {
 				result = false;
 			}
 		}
-
+		
+		//adds the button# of all locations held by this ship to the arrayList usedSpaces
 		if (hor) {
 			for (int i = 0; i < buttonGrid.size(); i++) {
 				if (i >= coords && i < (coords + shipLength) && usedSpaces.contains(i)) {
@@ -341,10 +352,12 @@ public class PlacingPanel extends JPanel {
 		int coords = map.get(xchar);
 		String coordStr = new String(coords + "" + Character.getNumericValue(ychar));
 		coords = mapKey.get(loc);
+		//coords ends up a negative for some reason, idk. Just flip it.
 		if (coords < 0) {
 			coords *= -1;
 		}
 		System.out.println(coords);
+		//highlights spaces
 		if (hor) {
 			for (int i = 0; i < buttonGrid.size(); i++) {
 				if (i >= coords && i < (coords + shipLength)) {

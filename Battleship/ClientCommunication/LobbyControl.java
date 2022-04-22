@@ -22,17 +22,16 @@ public class LobbyControl implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
-
+		
+		//logs out player
 		if (command.equals("Log Out")) {
-			System.out.println("Logout Selected");
-			// TODO add logout functionality
 			Logout();
-		} else if (command.equals("Challenge")) {
-
+		} else if (command.equals("Challenge")) {//send selected player challenge
+			//validates a player is selected
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
 			} else {
-				System.out.println("Challenge Button Pressed");
+				//asks user to verify and sends data to server
 				int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
 				int dialogResult = JOptionPane.showConfirmDialog(null, "Challenge " + panel.getSelectedPlayer() + "?",
 						command, dialogButton);
@@ -48,10 +47,10 @@ public class LobbyControl implements ActionListener {
 				}
 			}
 		} else if (command.equals("View Score")) {
-			// ToDO retrieve selected player info from server and display their score
+			//validates a player is selected
 			if (panel.getSelectedPlayer() == null) {
 				panel.setError("You must select a player first!");
-			} else {
+			} else {//displays selected player's win/loss ratio
 				ArrayList<String> allPlayers = panel.getAllPlayers();
 				ArrayList<String> allPlayersScores = panel.getAllPlayersScore();
 				String selectedPlayerScore = "";
@@ -62,7 +61,7 @@ public class LobbyControl implements ActionListener {
 				}
 				int dialogButton = JOptionPane.INFORMATION_MESSAGE;
 				JOptionPane.showMessageDialog(panel.getParent(),
-						panel.getSelectedPlayer() + " score is: " + selectedPlayerScore);
+						panel.getSelectedPlayer() + " win/loss ratio is: " + selectedPlayerScore);
 			}
 		}
 	}
@@ -71,15 +70,16 @@ public class LobbyControl implements ActionListener {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(2);
 		panel.setError(error);
 	}
-
+	
+	//adds to the list of All players in the db, held in the panel class
 	public void addListUsers(String name, String score) {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.addAllPlayers(name);
 		panel.addAllPlayersScore(score);
 	}
 
+	//lets the server know this player is logging out, then closes the connection and window
 	public void Logout() {
-		// TODO log client out from server
 		try {
 			client.sendToServer("Logout: " + getUsername());
 			client.closeConnection();
@@ -90,7 +90,8 @@ public class LobbyControl implements ActionListener {
 		JFrame frame = client.getJframe();
 		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 	}
-
+	
+	//proccesses the list of all players
 	public void processAllPlayers(String allPlayers) {
 		String[] player = allPlayers.split(",");
 
@@ -107,17 +108,20 @@ public class LobbyControl implements ActionListener {
 		}
 	}
 
+	//updates this players name
 	public void updatePlayerName(String playerName) {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.updatePlayerInfo(playerName);
 		setUsername(playerName);
 	}
 
+	//challenge has been accepted by opponent
 	public void challengeAccepted() {
 		CardLayout cardLayout = (CardLayout) container.getLayout();		
 		cardLayout.show(container, "6");
 	}
 
+	//proccesses list of online players
 	public void processOnlinePlayers(String onlinePlayers) {
 		LobbyPanel panel = (LobbyPanel) container.getComponent(3);
 		panel.updateAllOnline(onlinePlayers);

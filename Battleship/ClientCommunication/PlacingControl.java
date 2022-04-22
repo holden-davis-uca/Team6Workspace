@@ -22,12 +22,12 @@ public class PlacingControl implements ActionListener {
 		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 
 		if (command.equals("Place Ship")) {
-			System.out.println("Place Ship");
 			String shipNum = panel.currShip.getText();
 			String location = panel.shipLocation.getText();
 			boolean hor = panel.horizontal.isSelected();
 			int shipLength = 0;
 
+			//gives a value to shipLength based on ship #
 			if (shipNum.equals("Ship 1")) {
 				shipLength = 4;
 			} else if (shipNum.equals("Ship 2")) {
@@ -36,9 +36,10 @@ public class PlacingControl implements ActionListener {
 				shipLength = 2;
 			}
 
+			//validates the ship placement info
 			boolean result = panel.verifyPlacement(location, shipLength, hor);
 
-			if (result) {
+			if (result) {//if valid
 				// save ship data
 				HashMap<Character, Integer> map = panel.generateHashMapReverse();
 				char x = location.charAt(0);
@@ -51,22 +52,23 @@ public class PlacingControl implements ActionListener {
 				// move to next ship
 				panel.NextShip(location, hor);
 				panel.setErrorLabel("Ship Placed");
-			} else {
+			} else {//set error
 				if (panel.ship_three_location.getText() != "Location: ") {
 					panel.setErrorLabel("All ships have been placed!");
 				} else {
 					panel.setErrorLabel("Invalid location option. Try again");
 				}
 			}
-
+			//clears all ship data
 		} else if (command.equals("Remove All Ships")) {
 			System.out.println("Remove All Ships");
 			panel.resetShips();
-
+			
 		} else if (command.equals("Start Game!")) {
+			//validates that all ships have been placed
 			if (!panel.ship_three_location.getText().equals("Location: ")) {
-				allShipsPlaced();
-			} else {
+				allShipsPlaced();//build info and send to server
+			} else {//set error
 				panel.setErrorLabel("Must Set all ships before starting game!");
 			}
 
@@ -77,7 +79,8 @@ public class PlacingControl implements ActionListener {
 		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 		panel.setErrorLabel(error);
 	}
-
+	
+	//sends the ship data to the server
 	public void allShipsPlaced() {
 		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 		PlacingData data = new PlacingData(panel.getXcoords(), panel.getYcoord(), panel.getIsHorizontal());
@@ -90,6 +93,7 @@ public class PlacingControl implements ActionListener {
 		}
 	}
 	
+	//navigate to game MVC
 	public void placingSuccess() {
 		CardLayout cardLayout = (CardLayout) container.getLayout();
 		//Need to uncomment when we get the Game controller/panel
