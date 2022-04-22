@@ -63,7 +63,7 @@ public class GameServer extends AbstractServer {
 			verify = db.verifyAccount(data.getUsername(), data.getPassword());
 			
 			if (verify == true) {
-				User user = new User(data.getUsername(), data.getPassword());
+				User user = new User(data.getUsername(), data.getPassword(), db.getUserRatio(data.getUsername()));
 				System.out.println("Client " + arg1.getId() + " successfully logged in as " + data.getUsername() + "\n");
 				result = "LoginSuccessful";
 				onlinePlayers.add(user);
@@ -87,7 +87,7 @@ public class GameServer extends AbstractServer {
 			created = db.createAccount(data.getUsername(), data.getPassword());
 			
 			if (created == true) {
-				User user = new User(data.getUsername(), data.getPassword());
+				User user = new User(data.getUsername(), data.getPassword(), db.getUserRatio(data.getUsername()));
 				result = "CreateSuccessful";
 				System.out.println("Client " + arg1.getId() + " created a new account called " + data.getUsername() + "\n");
 				onlinePlayers.add(user);
