@@ -1,12 +1,8 @@
 package Tests;
 
-import static org.junit.Assert.*;
-import javax.swing.JPanel;
-import org.junit.Before;
-import org.junit.Test;
-
-import ClientCommunication.GameClient;
-import ClientCommunication.StartControl;
+import javax.swing.*;
+import org.junit.*;
+import ClientCommunication.*;
 
 public class StartControlTest {
 	private StartControl sc;

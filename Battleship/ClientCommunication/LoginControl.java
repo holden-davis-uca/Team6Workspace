@@ -26,7 +26,7 @@ public class LoginControl implements ActionListener {
 	 * Client - the GameClient.java instance that eventually passes logindata from logincontrol to gameserver
 	 * container - the parent jpanel containing all jpanels for the client GUI
 	 */
-	private GameClient Client;
+	private GameClient client;
 	private JPanel container;
 	/*
 	 *Methods:
@@ -49,7 +49,7 @@ public class LoginControl implements ActionListener {
 	 */
 	public LoginControl(JPanel container, GameClient Client) {
 		this.container = container;
-		this.Client = Client;
+		this.client = Client;
 	}
 	/*
 	 * actionPerformed
@@ -108,7 +108,7 @@ public class LoginControl implements ActionListener {
 				return;
 			}
 			try {
-				Client.sendToServer(data);
+				client.sendToServer(data);
 			} catch (IOException ioe) {
 				displayError("Server connection failure!");
 				ioe.printStackTrace();

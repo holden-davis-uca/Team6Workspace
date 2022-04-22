@@ -1,17 +1,13 @@
 package Tests;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import ServerCommunication.Database;
-import ServerCommunication.GameServer;
+import org.junit.*;
+import ServerCommunication.*;
 
 public class GameServerTest {
 	private Database db;
 	private GameServer server;
-	
+
 	@Before
 	public void setUp() {
 		db = new Database();
@@ -27,17 +23,17 @@ public class GameServerTest {
 	public void testIsRunning() {
 		assertNotNull(server.isRunning());
 	}
-	
+
 	@Test
 	public void testServerStarted() {
 		server.serverStarted();
 	}
-	
+
 	@Test
 	public void testServerStopped() {
 		server.serverStopped();
 	}
-	
+
 	@Test
 	public void testServerClosed() {
 		server.serverClosed();
@@ -47,9 +43,9 @@ public class GameServerTest {
 	public void testClientConnected() {
 		server.clientConnected(null);
 	}
-	
+
 	@Test
 	public void testHandleMessageFromClient() {
-		
+
 	}
 }

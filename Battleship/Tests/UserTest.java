@@ -1,18 +1,14 @@
 package Tests;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import ServerCommunication.User;
+import org.junit.*;
+import ServerCommunication.*;
 
 public class UserTest {
 	private User user;
 	
 	@Before
 	public void setUp() {
-		user = new User();
+		user = new User(null, null);
 	}
 
 	@Test

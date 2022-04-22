@@ -20,4 +20,5 @@
     <fullyQualifiedTypeName name="ClientGUI.LoginPanel"/>
     <fullyQualifiedTypeName name="org.junit.After"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="ClientCommunication.LobbyControl"/>
 </qualifiedTypeNameHistroy>

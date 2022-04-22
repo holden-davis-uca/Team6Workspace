@@ -4,9 +4,13 @@ package ClientGUI;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
-import ClientCommunication.PlacingControl;
+import ClientCommunication.*;
 
 public class PlacingPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Integer> xcoords = new ArrayList<Integer>();
 	private ArrayList<Integer> ycoords = new ArrayList<Integer>();
 	private ArrayList<Boolean> isHorizontal = new ArrayList<Boolean>();
@@ -34,7 +38,7 @@ public class PlacingPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 
 		// create top most label in north
-		JLabel label = new JLabel("Place Your Ships!", JLabel.CENTER);
+		JLabel label = new JLabel("Place Your Ships!", SwingConstants.CENTER);
 		this.add(label, BorderLayout.NORTH);
 
 		// create button grid in east
@@ -58,19 +62,19 @@ public class PlacingPanel extends JPanel {
 		JPanel shipInfoPanel = new JPanel(new GridLayout(0, 1));
 		JPanel shipContainerPanel = new JPanel();
 
-		JLabel ship_one_title = new JLabel("Ship one(5-spaces):", JLabel.LEFT);
-		JLabel ship_two_title = new JLabel("Ship one(5-spaces):", JLabel.LEFT);
-		JLabel ship_three_title = new JLabel("Ship one(3-spaces):", JLabel.LEFT);
-		JLabel ship_four_title = new JLabel("Ship one(3-spaces):", JLabel.LEFT);
-		JLabel ship_five_title = new JLabel("Ship one(2-spaces):", JLabel.LEFT);
+		JLabel ship_one_title = new JLabel("Ship one(5-spaces):", SwingConstants.LEFT);
+		JLabel ship_two_title = new JLabel("Ship one(5-spaces):", SwingConstants.LEFT);
+		JLabel ship_three_title = new JLabel("Ship one(3-spaces):", SwingConstants.LEFT);
+		JLabel ship_four_title = new JLabel("Ship one(3-spaces):", SwingConstants.LEFT);
+		JLabel ship_five_title = new JLabel("Ship one(2-spaces):", SwingConstants.LEFT);
 
-		ship_one_location = new JLabel("Location: ", JLabel.LEFT);
-		ship_two_location = new JLabel("Location: ", JLabel.LEFT);
-		ship_three_location = new JLabel("Location: ", JLabel.LEFT);
+		ship_one_location = new JLabel("Location: ", SwingConstants.LEFT);
+		ship_two_location = new JLabel("Location: ", SwingConstants.LEFT);
+		ship_three_location = new JLabel("Location: ", SwingConstants.LEFT);
 
-		ship_one_orientation = new JLabel("Orientation: ", JLabel.LEFT);
-		ship_two_orientation = new JLabel("Orientation: ", JLabel.LEFT);
-		ship_three_orientation = new JLabel("Orientation: ", JLabel.LEFT);
+		ship_one_orientation = new JLabel("Orientation: ", SwingConstants.LEFT);
+		ship_two_orientation = new JLabel("Orientation: ", SwingConstants.LEFT);
+		ship_three_orientation = new JLabel("Orientation: ", SwingConstants.LEFT);
 
 		shipInfoPanel.add(ship_one_title);
 		shipInfoPanel.add(ship_one_location);
@@ -124,11 +128,10 @@ public class PlacingPanel extends JPanel {
 		this.setSize(700, 700);
 		this.setVisible(true);
 	}
-	
-	//generates a hash map for the x coords
+
+	// generates a hash map for the x coords
 	public HashMap<Integer, Character> generateHashMap() {
-		// TODO Auto-generated method stub
-		HashMap<Integer, Character> map = new HashMap();
+		HashMap<Integer, Character> map = new HashMap<Integer, Character>();
 		map.put(0, 'A');
 		map.put(1, 'B');
 		map.put(2, 'C');
@@ -142,11 +145,10 @@ public class PlacingPanel extends JPanel {
 
 		return map;
 	}
-	
-	//generates the reverse of the above hash map
+
+	// generates the reverse of the above hash map
 	public HashMap<Character, Integer> generateHashMapReverse() {
-		// TODO Auto-generated method stub
-		HashMap<Character, Integer> map = new HashMap();
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 		map.put('A', 0);
 		map.put('B', 1);
 		map.put('C', 2);
@@ -168,7 +170,7 @@ public class PlacingPanel extends JPanel {
 	public void setXcoords(ArrayList<Integer> xcoords) {
 		this.xcoords = xcoords;
 	}
-	
+
 	public void addXCoord(int x) {
 		this.xcoords.add(x);
 	}
@@ -180,7 +182,7 @@ public class PlacingPanel extends JPanel {
 	public void setYcoord(ArrayList<Integer> ycoord) {
 		this.ycoords = ycoord;
 	}
-	
+
 	public void addYCoord(int y) {
 		this.xcoords.add(y);
 	}
@@ -192,7 +194,7 @@ public class PlacingPanel extends JPanel {
 	public void setIsHorizontal(ArrayList<Boolean> isHorizontal) {
 		this.isHorizontal = isHorizontal;
 	}
-	
+
 	public void addIsHorizontal(boolean result) {
 		this.isHorizontal.add(result);
 	}
@@ -200,11 +202,11 @@ public class PlacingPanel extends JPanel {
 	public void setErrorLabel(String error) {
 		errorLabel.setText(error);
 	}
-	
-	//resets all ship info on panel
+
+	// resets all ship info on panel
 	public void resetShips() {
 		JButton temp = new JButton();
-		for (int i = 0; i < buttonGrid.size();i++) {
+		for (int i = 0; i < buttonGrid.size(); i++) {
 			buttonGrid.get(i).setBackground(temp.getBackground());
 		}
 		currShip.setText("Ship 1");
@@ -216,10 +218,10 @@ public class PlacingPanel extends JPanel {
 		ship_three_orientation.setText("Orientation: ");
 		xcoords.clear();
 		ycoords.clear();
-		isHorizontal.clear();	
+		isHorizontal.clear();
 	}
-	
-	//validates the location of a ship selected by the user
+
+	// validates the location of a ship selected by the user
 	public boolean verifyPlacement(String loc, int shipLength, boolean hor) {
 
 		if (loc.length() != 2) {
@@ -279,36 +281,29 @@ public class PlacingPanel extends JPanel {
 
 		if (hor) {
 			for (int i = 0; i < buttonGrid.size(); i++) {
-				if (i >= coords && i < (coords + shipLength)) {
-					if (usedSpaces.contains(i)) {
-						result = false;
-					}
+				if (i >= coords && i < (coords + shipLength) && usedSpaces.contains(i)) {
+					result = false;
 				}
 			}
 
 		} else {
 			if (shipLength == 5) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10 || i == coords + 20 || i == coords + 30 || i == coords + 40) {
-						if (usedSpaces.contains(i)) {
-							result = false;
-						}
+					if ((i == coords || i == coords + 10 || i == coords + 20 || i == coords + 30 || i == coords + 40)
+							&& usedSpaces.contains(i)) {
+						result = false;
 					}
 				}
 			} else if (shipLength == 3) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10 || i == coords + 20) {
-						if (usedSpaces.contains(i)) {
-							result = false;
-						}
+					if ((i == coords || i == coords + 10 || i == coords + 20) && usedSpaces.contains(i)) {
+						result = false;
 					}
 				}
 			} else if (shipLength == 2) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10) {
-						if (usedSpaces.contains(i)) {
-							result = false;
-						}
+					if ((i == coords || i == coords + 10) && usedSpaces.contains(i)) {
+						result = false;
 					}
 				}
 			}
@@ -317,7 +312,7 @@ public class PlacingPanel extends JPanel {
 		return result;
 	}
 
-	//highlights grid for ship just placed
+	// highlights grid for ship just placed
 	public void HighlightGrid(String loc, int shipLength, boolean hor) {
 		HashMap<Character, Integer> map = generateHashMapReverse();
 		char xchar = loc.charAt(0);
@@ -363,7 +358,8 @@ public class PlacingPanel extends JPanel {
 		}
 	}
 
-	//fills information about ship in information section and sets the next ship to be placed
+	// fills information about ship in information section and sets the next ship to
+	// be placed
 	public void NextShip(String loc, boolean hor) {
 		String orientation;
 		if (hor) {
@@ -372,24 +368,24 @@ public class PlacingPanel extends JPanel {
 			orientation = "Vertical";
 		}
 
-		if (currShip.getText() == "Ship 1") {
+		if (currShip.getText().equals("Ship 1")) {
 			ship_one_location.setText(ship_one_location.getText() + loc);
 			ship_one_orientation.setText(ship_one_orientation.getText() + orientation);
 			currShip.setText("Ship 2");
 
-		} else if (currShip.getText() == "Ship 2") {
+		} else if (currShip.getText().equals("Ship 2")) {
 			ship_two_location.setText(ship_two_location.getText() + loc);
 			ship_two_orientation.setText(ship_two_orientation.getText() + orientation);
 			currShip.setText("Ship 3");
 
-		} else if (currShip.getText() == "Ship 3") {
-			if (ship_three_location.getText() == "Location: ") {
+		} else if (currShip.getText().equals("Ship 3")) {
+			if (ship_three_location.getText().equals("Location: ")) {
 				ship_three_location.setText(ship_three_location.getText() + loc);
 				ship_three_orientation.setText(ship_three_orientation.getText() + orientation);
 
 			}
 			setErrorLabel("All Ships placed. Remove ships or start game");
 
-		} 
+		}
 	}
 }

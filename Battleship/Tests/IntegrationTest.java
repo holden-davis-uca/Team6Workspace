@@ -26,7 +26,7 @@ public class IntegrationTest {
 		db = new Database();
 		server.setDatabase(db);
 		server.listen();
-		client = new GameClient();
+		client = new GameClient("localhost");
 	}
 	@Test
 	public void mainTest()

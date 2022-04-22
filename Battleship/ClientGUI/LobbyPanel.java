@@ -3,13 +3,15 @@ package ClientGUI;
 
 import java.awt.*;
 import java.util.ArrayList;
-
 import javax.swing.*;
 import javax.swing.event.*;
-import ClientCommunication.LobbyControl;
-import ServerCommunication.User;
+import ClientCommunication.*;
 
-public class LobbyPanel extends JPanel{
+public class LobbyPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String selectedPlayer;
 	private JList<String> playerList;
 	DefaultListModel<String> list;
@@ -19,7 +21,7 @@ public class LobbyPanel extends JPanel{
 	private ArrayList<String> allPlayers = new ArrayList<String>();
 	private ArrayList<String> allPlayersScore = new ArrayList<String>();
 	private JLabel userHighScore;
-	
+
 	public LobbyPanel(LobbyControl lc) {
 		// Create a list of example players.
 		list = new DefaultListModel<String>();
@@ -32,9 +34,9 @@ public class LobbyPanel extends JPanel{
 //		list.addElement("<html><b>Person Seven</b></html>");
 //		list.addElement("<html><b>Person Eight</b></html>");
 //		list.addElement("Person Nine");
-		
-		//Create list of players
-		for (int i = 0; i < allPlayers.size();i++) {
+
+		// Create list of players
+		for (int i = 0; i < allPlayers.size(); i++) {
 			list.addElement(allPlayers.get(i));
 		}
 
@@ -42,14 +44,14 @@ public class LobbyPanel extends JPanel{
 		this.setLayout(new BorderLayout());
 
 		// Create the main lobby label in the north.
-		JLabel label = new JLabel("Main Lobby", JLabel.CENTER);
+		JLabel label = new JLabel("Main Lobby", SwingConstants.CENTER);
 		this.add(label, BorderLayout.NORTH);
 
 		// create other player info on the Left
-		JLabel userInfoLabel = new JLabel("Your Win/Loss Ratio!", JLabel.CENTER);
+		JLabel userInfoLabel = new JLabel("Your Win/Loss Ratio!", SwingConstants.CENTER);
 		userInfoLabel.setForeground(Color.BLUE);
-		userHighScore = new JLabel(Double.toString(highscore), JLabel.CENTER);
-		JPanel userInfoBuffer = new JPanel(new GridLayout(0,1));
+		userHighScore = new JLabel(Double.toString(highscore), SwingConstants.CENTER);
+		JPanel userInfoBuffer = new JPanel(new GridLayout(0, 1));
 		userInfoBuffer.add(userInfoLabel);
 		userInfoBuffer.add(userHighScore);
 		JPanel userInfoContainer = new JPanel();
@@ -66,7 +68,6 @@ public class LobbyPanel extends JPanel{
 		JPanel contactListBuffer = new JPanel();
 		contactListBuffer.add(playerList);
 		this.add(contactListBuffer, BorderLayout.EAST);
-
 
 		// Create the buttons in the south and error label
 		JPanel buttonsPanel = new JPanel(new BorderLayout());
@@ -89,7 +90,7 @@ public class LobbyPanel extends JPanel{
 		challengeButton.addActionListener(lc);
 		logoutButton.addActionListener(lc);
 		viewHighscore.addActionListener(lc);
-		playerList.addListSelectionListener((javax.swing.event.ListSelectionListener) new ListSelectionListener() {
+		playerList.addListSelectionListener(new ListSelectionListener() {
 
 			public void valueChanged(ListSelectionEvent arg0) {
 				if (!arg0.getValueIsAdjusting()) {
@@ -101,11 +102,11 @@ public class LobbyPanel extends JPanel{
 		this.setSize(500, 500);
 		this.setVisible(true);
 	}
-	
+
 	public void setError(String error) {
 		errorLabel.setText(error);
 	}
-	
+
 	public String getSelectedPlayer() {
 		return selectedPlayer;
 	}
@@ -121,7 +122,7 @@ public class LobbyPanel extends JPanel{
 	public void setAllPlayers(ArrayList<String> allOnline) {
 		this.allPlayers = allOnline;
 	}
-	
+
 	public void addAllPlayers(String name) {
 		allPlayers.add(name);
 		updatePlayerPanel(name);
@@ -134,11 +135,11 @@ public class LobbyPanel extends JPanel{
 	public void setAllPlayersScore(ArrayList<String> allOnlineScore) {
 		this.allPlayersScore = allOnlineScore;
 	}
-	
+
 	public void addAllPlayersScore(String score) {
 		allPlayersScore.add(score);
 	}
-	
+
 	public void updatePlayerPanel(String name) {
 		list.addElement(name);
 	}
@@ -150,17 +151,16 @@ public class LobbyPanel extends JPanel{
 	public void setPlayerUsername(String playerUsername) {
 		this.playerUsername = playerUsername;
 	}
-	
+
 	public void setHighscore(double highscore) {
 		this.highscore = highscore;
 	}
-	
+
 	public double getHighscore() {
 		return highscore;
 	}
 
 	public void updatePlayerInfo(String playerName) {
-		// TODO Auto-generated method stub
 		setPlayerUsername(playerName);
 		playerName = playerName.strip();
 		for (int i = 0; i < allPlayers.size(); i++) {
@@ -171,41 +171,39 @@ public class LobbyPanel extends JPanel{
 			}
 		}
 	}
-	
+
 	public int getUserHighScore() {
 		return Integer.parseInt(userHighScore.getText());
 	}
 
 	public void updateAllOnline(String onlinePlayers) {
-		// TODO Auto-generated method stub
 		String[] allOnline = onlinePlayers.split(",");
 		ArrayList<String> notOnline = new ArrayList<String>();
 		ArrayList<String> allOnline1 = new ArrayList<String>();
-		
+
 		for (int i = 0; i < allOnline.length; i++) {
 			allOnline1.add(allOnline[i]);
 		}
-		
-		
+
 		for (int i = 0; i < allPlayers.size(); i++) {
 			if (!allOnline1.contains(allPlayers.get(i))) {
 				notOnline.add(allPlayers.get(i));
 			}
 		}
-		
-		for (int i = 0; i<allOnline.length;i++) {
+
+		for (int i = 0; i < allOnline.length; i++) {
 			if (list.contains(allOnline[i])) {
 				System.out.println(list.get(list.indexOf(allOnline[i])));
 				list.remove(list.indexOf(allOnline[i]));
 				list.addElement("<html><b>" + allOnline[i] + "</b></html>");
-			} 
-		} 
-		
+			}
+		}
+
 		for (int i = 0; i < notOnline.size(); i++) {
 			if (list.contains("<html><b>" + notOnline.get(i) + "</b></html>")) {
 				list.remove(list.indexOf("<html><b>" + notOnline.get(i) + "</b></html>"));
 				list.addElement(notOnline.get(i));
-			} 
+			}
 		}
 	}
 }

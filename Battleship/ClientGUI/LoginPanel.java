@@ -128,7 +128,7 @@ public class LoginPanel extends JPanel {
 	    errorLabel.setForeground(Color.RED);
 	    errorLabel.setFont(new Font("", Font.BOLD, 12));
 	    titleLabel = new JLabel("BattleShip - Login", SwingConstants.CENTER);
-	    titleLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+	    titleLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 	    JLabel instructionLabel = new JLabel("Enter Username and Password:", SwingConstants.CENTER);
 	    instructionLabel.setFont(new Font("", Font.ITALIC, 12));
 	    labelPanel.add(errorLabel);

@@ -2,16 +2,14 @@
 package ClientCommunication;
 
 import java.awt.event.*;
-import java.util.HashMap;
+import java.util.*;
+import javax.swing.*;
+import ClientGUI.*;
 
-import javax.swing.JPanel;
-
-import ClientGUI.PlacingPanel;
-
-public class PlacingControl implements ActionListener{
+public class PlacingControl implements ActionListener {
 	private JPanel container;
 	private GameClient client;
-	
+
 	public PlacingControl(JPanel container, GameClient client) {
 		this.container = container;
 		this.client = client;
@@ -19,20 +17,20 @@ public class PlacingControl implements ActionListener{
 
 	public void actionPerformed(ActionEvent ae) {
 		String command = ae.getActionCommand();
-		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
+		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 
-		if (command == "Place Ship") {
+		if (command.equals("Place Ship")) {
 			System.out.println("Place Ship");
 			String shipNum = panel.currShip.getText();
 			String location = panel.shipLocation.getText();
 			boolean hor = panel.horizontal.isSelected();
 			int shipLength = 0;
 
-			if (shipNum == "Ship 1" || shipNum == "Ship 2") {
+			if (shipNum.equals("Ship 1") || shipNum.equals("Ship 2")) {
 				shipLength = 5;
-			} else if (shipNum == "Ship 3" || shipNum == "Ship 4") {
+			} else if (shipNum.equals("Ship 3") || shipNum.equals("Ship 4")) {
 				shipLength = 3;
-			} else if (shipNum == "Ship 5") {
+			} else if (shipNum.equals("Ship 5")) {
 				shipLength = 2;
 			}
 
@@ -54,36 +52,34 @@ public class PlacingControl implements ActionListener{
 			} else {
 				if (panel.ship_three_location.getText() != "Location: ") {
 					panel.setErrorLabel("All ships have been placed!");
-				}else {
+				} else {
 					panel.setErrorLabel("Invalid location option. Try again");
-				}					
+				}
 			}
 
-		} else if (command == "Remove All Ships") {
+		} else if (command.equals("Remove All Ships")) {
 			System.out.println("Remove All Ships");
-			panel.resetShips();		
+			panel.resetShips();
 
-		} else if (command == "Start Game!") {
-			if (panel.ship_three_location.getText() != "Location: ") {
+		} else if (command.equals("Start Game!")) {
+			if (!panel.ship_three_location.getText().equals("Location: ")) {
 				allShipsPlaced();
-			}
-			else {
+			} else {
 				panel.setErrorLabel("Must Set all ships before starting game!");
 			}
-			
+
 		}
 	}
-	
-	public void DisplayError(String error) {
-		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
+
+	public void displayError(String error) {
+		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 		panel.setErrorLabel(error);
 	}
-	
+
 	public void allShipsPlaced() {
-		PlacingPanel panel = (PlacingPanel)container.getComponent(4);
+		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 		PlacingData data = new PlacingData(panel.getXcoords(), panel.getYcoord(), panel.getIsHorizontal());
-		//TODO send data to server
+		// TODO send data to server
 	}
-	
-		
+
 }
