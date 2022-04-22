@@ -1,7 +1,9 @@
 //Chris Stinson - Team 6
 package ClientCommunication;
 
+import java.awt.CardLayout;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.*;
 import javax.swing.*;
 import ClientGUI.*;
@@ -26,11 +28,11 @@ public class PlacingControl implements ActionListener {
 			boolean hor = panel.horizontal.isSelected();
 			int shipLength = 0;
 
-			if (shipNum.equals("Ship 1") || shipNum.equals("Ship 2")) {
-				shipLength = 5;
-			} else if (shipNum.equals("Ship 3") || shipNum.equals("Ship 4")) {
+			if (shipNum.equals("Ship 1")) {
+				shipLength = 4;
+			} else if (shipNum.equals("Ship 2")) {
 				shipLength = 3;
-			} else if (shipNum.equals("Ship 5")) {
+			} else if (shipNum.equals("Ship 3")) {
 				shipLength = 2;
 			}
 
@@ -80,6 +82,18 @@ public class PlacingControl implements ActionListener {
 		PlacingPanel panel = (PlacingPanel) container.getComponent(4);
 		PlacingData data = new PlacingData(panel.getXcoords(), panel.getYcoord(), panel.getIsHorizontal());
 		// TODO send data to server
+		try {
+			client.sendToServer(data);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void placingSuccess() {
+		CardLayout cardLayout = (CardLayout) container.getLayout();
+		//Need to uncomment when we get the Game controller/panel
+		//cardLayout.show(container, "5");
 	}
 
 }

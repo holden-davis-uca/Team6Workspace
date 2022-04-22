@@ -42,7 +42,6 @@ public class LobbyControl implements ActionListener {
 					LobbyData data = new LobbyData(panel.getSelectedPlayer(), panel.getHighscore());
 					try {
 						client.sendToServer(data);
-						challengeAccepted();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -64,7 +63,6 @@ public class LobbyControl implements ActionListener {
 				int dialogButton = JOptionPane.INFORMATION_MESSAGE;
 				JOptionPane.showMessageDialog(panel.getParent(),
 						panel.getSelectedPlayer() + " score is: " + selectedPlayerScore);
-				// TODO fix above line to get real player name from list and score from server
 			}
 		}
 	}
@@ -116,7 +114,7 @@ public class LobbyControl implements ActionListener {
 	}
 
 	public void challengeAccepted() {
-		CardLayout cardLayout = (CardLayout) container.getLayout();
+		CardLayout cardLayout = (CardLayout) container.getLayout();		
 		cardLayout.show(container, "6");
 	}
 

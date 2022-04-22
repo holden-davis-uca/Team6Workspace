@@ -44,17 +44,17 @@ public class PlacingPanel extends JPanel {
 		// create button grid in east
 		JPanel buttonPanel = new JPanel();
 		JPanel containerPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(10, 10));
+		buttonPanel.setLayout(new GridLayout(5,5));
 		HashMap<Integer, Character> map = generateHashMap();
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
 				buttonGrid.add(new JButton(map.get(i) + "" + j));
 			}
 		}
 		for (int i = 0; i < buttonGrid.size(); i++) {
 			buttonPanel.add(buttonGrid.get(i));
 		}
-		buttonPanel.setPreferredSize(new Dimension(500, 500));
+		buttonPanel.setPreferredSize(new Dimension(350, 350));
 		containerPanel.add(buttonPanel);
 		this.add(containerPanel, BorderLayout.EAST);
 
@@ -62,11 +62,9 @@ public class PlacingPanel extends JPanel {
 		JPanel shipInfoPanel = new JPanel(new GridLayout(0, 1));
 		JPanel shipContainerPanel = new JPanel();
 
-		JLabel ship_one_title = new JLabel("Ship one(5-spaces):", SwingConstants.LEFT);
-		JLabel ship_two_title = new JLabel("Ship one(5-spaces):", SwingConstants.LEFT);
-		JLabel ship_three_title = new JLabel("Ship one(3-spaces):", SwingConstants.LEFT);
-		JLabel ship_four_title = new JLabel("Ship one(3-spaces):", SwingConstants.LEFT);
-		JLabel ship_five_title = new JLabel("Ship one(2-spaces):", SwingConstants.LEFT);
+		JLabel ship_one_title = new JLabel("Ship one(4-spaces):", SwingConstants.LEFT);
+		JLabel ship_two_title = new JLabel("Ship two(3-spaces):", SwingConstants.LEFT);
+		JLabel ship_three_title = new JLabel("Ship three(2-spaces):", SwingConstants.LEFT);
 
 		ship_one_location = new JLabel("Location: ", SwingConstants.LEFT);
 		ship_two_location = new JLabel("Location: ", SwingConstants.LEFT);
@@ -137,11 +135,6 @@ public class PlacingPanel extends JPanel {
 		map.put(2, 'C');
 		map.put(3, 'D');
 		map.put(4, 'E');
-		map.put(5, 'F');
-		map.put(6, 'G');
-		map.put(7, 'H');
-		map.put(8, 'I');
-		map.put(9, 'J');
 
 		return map;
 	}
@@ -154,11 +147,37 @@ public class PlacingPanel extends JPanel {
 		map.put('C', 2);
 		map.put('D', 3);
 		map.put('E', 4);
-		map.put('F', 5);
-		map.put('G', 6);
-		map.put('H', 7);
-		map.put('I', 8);
-		map.put('J', 9);
+
+		return map;
+	}
+	
+	public HashMap<String, Integer> gridStrToBtnIntKey() {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("A0" , 0);
+		map.put("A1", 1);
+		map.put("A2", 2);
+		map.put("A3" , 3);
+		map.put("A4", 4);
+		map.put("B0", 5);
+		map.put("B1", 6);
+		map.put("B2" , 7);
+		map.put("B3", 8);
+		map.put("B4", 9);
+		map.put("C0" , 10);
+		map.put("C1", 11);
+		map.put("C2", 12);
+		map.put("C3" , 13);
+		map.put("C4", 14);
+		map.put("D0", 15);
+		map.put("D1", 16);
+		map.put("D2" , 17);
+		map.put("D3", 18);
+		map.put("D4", 19);
+		map.put("E0", 20);
+		map.put("E1", 21);
+		map.put("E2" , 22);
+		map.put("E3", 23);
+		map.put("E4", 24);
 
 		return map;
 	}
@@ -219,6 +238,7 @@ public class PlacingPanel extends JPanel {
 		xcoords.clear();
 		ycoords.clear();
 		isHorizontal.clear();
+		usedSpaces.clear();
 	}
 
 	// validates the location of a ship selected by the user
@@ -235,6 +255,7 @@ public class PlacingPanel extends JPanel {
 
 		HashMap<Integer, Character> map = generateHashMap();
 		HashMap<Character, Integer> mapRev = generateHashMapReverse();
+		HashMap<String,Integer> mapKey = gridStrToBtnIntKey();
 		char x = loc.charAt(0);
 		char y = loc.charAt(1);
 		boolean result = false;
@@ -245,9 +266,9 @@ public class PlacingPanel extends JPanel {
 
 		int coords = mapRev.get(x);
 		String coordStr = new String(coords + "" + Character.getNumericValue(y));
-		coords = Integer.parseInt(coordStr);
+		coords = mapKey.get(loc);
 
-		if (Character.getNumericValue(y) < 0 || Character.getNumericValue(y) > 9) {
+		if (Character.getNumericValue(y) < 0 || Character.getNumericValue(y) > 4) {
 			return result;
 		}
 
@@ -256,22 +277,21 @@ public class PlacingPanel extends JPanel {
 		}
 
 		if (hor) {
-			if (Character.getNumericValue(y) <= (10 - shipLength)) {
+			if (Character.getNumericValue(y) <= (5 - shipLength)) {
 				result = true;
 			}
 
 		} else {
-			if (shipLength == 5) {
-				if (x == 'A' || x == 'B' || x == 'C' || x == 'D' || x == 'E' || x == 'F') {
+			if (shipLength == 4) {
+				if (x == 'A'|| x == 'B') {
 					result = true;
 				}
 			} else if (shipLength == 3) {
-				if (x == 'A' || x == 'B' || x == 'C' || x == 'D' || x == 'E' || x == 'F' || x == 'G' || x == 'H') {
+				if (x == 'A' || x == 'B'|| x == 'C') {
 					result = true;
 				}
 			} else if (shipLength == 2) {
-				if (x == 'A' || x == 'B' || x == 'C' || x == 'D' || x == 'E' || x == 'F' || x == 'G' || x == 'H'
-						|| x == 'I') {
+				if (x == 'A' || x == 'B' || x == 'C' || x == 'D') {
 					result = true;
 				}
 			} else {
@@ -287,22 +307,22 @@ public class PlacingPanel extends JPanel {
 			}
 
 		} else {
-			if (shipLength == 5) {
+			if (shipLength == 4) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if ((i == coords || i == coords + 10 || i == coords + 20 || i == coords + 30 || i == coords + 40)
+					if ((i == coords || i == coords + 5 || i == coords + 10 || i == coords + 15)
 							&& usedSpaces.contains(i)) {
 						result = false;
 					}
 				}
 			} else if (shipLength == 3) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if ((i == coords || i == coords + 10 || i == coords + 20) && usedSpaces.contains(i)) {
+					if ((i == coords || i == coords + 5 || i == coords + 10) && usedSpaces.contains(i)) {
 						result = false;
 					}
 				}
 			} else if (shipLength == 2) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if ((i == coords || i == coords + 10) && usedSpaces.contains(i)) {
+					if ((i == coords || i == coords + 5) && usedSpaces.contains(i)) {
 						result = false;
 					}
 				}
@@ -315,11 +335,12 @@ public class PlacingPanel extends JPanel {
 	// highlights grid for ship just placed
 	public void HighlightGrid(String loc, int shipLength, boolean hor) {
 		HashMap<Character, Integer> map = generateHashMapReverse();
+		HashMap<String,Integer> mapKey = gridStrToBtnIntKey();
 		char xchar = loc.charAt(0);
 		char ychar = loc.charAt(1);
 		int coords = map.get(xchar);
 		String coordStr = new String(coords + "" + Character.getNumericValue(ychar));
-		coords = Integer.parseInt(coordStr);
+		coords = mapKey.get(loc);
 		if (coords < 0) {
 			coords *= -1;
 		}
@@ -333,23 +354,23 @@ public class PlacingPanel extends JPanel {
 			}
 
 		} else {
-			if (shipLength == 5) {
+			if (shipLength == 4) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10 || i == coords + 20 || i == coords + 30 || i == coords + 40) {
+					if (i == coords || i == coords + 5 || i == coords + 10 || i == coords + 15) {
 						buttonGrid.get(i).setBackground(Color.YELLOW);
 						usedSpaces.add(i);
 					}
 				}
 			} else if (shipLength == 3) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10 || i == coords + 20) {
+					if (i == coords || i == coords + 5 || i == coords + 10) {
 						buttonGrid.get(i).setBackground(Color.YELLOW);
 						usedSpaces.add(i);
 					}
 				}
 			} else if (shipLength == 2) {
 				for (int i = 0; i < buttonGrid.size(); i++) {
-					if (i == coords || i == coords + 10) {
+					if (i == coords || i == coords + 5) {
 						buttonGrid.get(i).setBackground(Color.YELLOW);
 						usedSpaces.add(i);
 					}
