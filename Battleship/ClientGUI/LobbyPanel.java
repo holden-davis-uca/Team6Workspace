@@ -169,7 +169,15 @@ public class LobbyPanel extends JPanel {
 		for (int i = 0; i < allPlayers.size(); i++) {
 			if (allPlayers.get(i).equals(playerName)) {
 				list.remove(i);
-				setHighscore(Double.parseDouble(allPlayersScore.get(i)));
+				String myHighscore = allPlayersScore.get(i);
+				if (allPlayersScore.get(i).equals("NaN")) {
+					myHighscore = allPlayersScore.get(i);
+					myHighscore = "0.0";
+				} else if (allPlayersScore.get(i).equals("Infinity")) {
+					myHighscore = allPlayersScore.get(i);
+					myHighscore = ">1.0";
+				}
+				setHighscore(Double.parseDouble(myHighscore));
 				userHighScore.setText(Double.toString(highscore));
 			}
 		}

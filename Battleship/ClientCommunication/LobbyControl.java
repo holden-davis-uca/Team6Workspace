@@ -37,8 +37,8 @@ public class LobbyControl implements ActionListener {
 				int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
 				String playerName = panel.getSelectedPlayer();
 				playerName = playerName.substring(9);
-				playerName = playerName.substring(0, playerName.length() - 9);
-				int dialogResult = JOptionPane.showConfirmDialog(null, "Challenge " + panel.getSelectedPlayer() + "?",
+				playerName = playerName.substring(0, playerName.length() - 11);
+				int dialogResult = JOptionPane.showConfirmDialog(null, "Challenge " + playerName + "?",
 						command, dialogButton);
 				if (dialogResult == JOptionPane.YES_OPTION) {
 					System.out.println("Challenge Selected");
@@ -63,6 +63,11 @@ public class LobbyControl implements ActionListener {
 					if (panel.getSelectedPlayer().strip().equals(allPlayers.get(i).strip())) {
 						selectedPlayerScore = allPlayersScores.get(i);
 					}
+				}
+				if (selectedPlayerScore.equals("NaN")) {					
+					selectedPlayerScore = "0.0";
+				} else if (selectedPlayerScore.equals("Infinity")) {					
+					selectedPlayerScore = ">1.0";
 				}
 				int dialogButton = JOptionPane.INFORMATION_MESSAGE;
 				JOptionPane.showMessageDialog(panel.getParent(),
