@@ -26,27 +26,29 @@ Database specification and definition is as follows (also contained within db.pr
 * Program-level constraints for password: Must be between 5 and 20 characters, must be alphanumeric (including capitals and lowercase)
 
 ## Final Class Diagram Status
-# Completed Classes:
+
+### Added Classes:
 * LoginControl
 * LoginData
 * LoginPanel
 * Database
-# Incomplete Classes:
 * User
-* Gameserver
-* CreatePanel
-* CreateControl
-* CreateData
 * StartPanel
 * StartControl
-* Ships
+* CreateControl
+* CreatePanel
+* CreateData
+* LobbyData
+* LobbyControl
+* LobbyPanel
 * PlacingControl
 * PlacingPanel
 * PlacingData
+### Not Yet Added Classes:
+* Gameserver
+* Ships
 * GameClient
 * GameData
 * GameControl
 * GamePanel
-* LobbyData
-* LobbyControl
-* LobbyPanel
+
