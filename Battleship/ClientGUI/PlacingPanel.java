@@ -205,7 +205,7 @@ public class PlacingPanel extends JPanel {
 	}
 
 	public void addYCoord(int y) {
-		this.xcoords.add(y);
+		this.ycoords.add(y);
 	}
 
 	public ArrayList<Boolean> getIsHorizontal() {

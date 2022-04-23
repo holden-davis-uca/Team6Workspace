@@ -1,9 +1,10 @@
 //Chris Stinson - Team 6
 package ClientCommunication;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class PlacingData {
+public class PlacingData implements Serializable{
 	private ArrayList<Integer> xcoords;
 	private ArrayList<Integer> ycoord;
 	private ArrayList<Boolean> isHorizontal;
