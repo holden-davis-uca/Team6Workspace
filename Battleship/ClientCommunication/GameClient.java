@@ -2,6 +2,7 @@
 package ClientCommunication;
 
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import javax.swing.*;
 import ClientGUI.*;
@@ -69,8 +70,7 @@ public class GameClient extends AbstractClient {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			}
-		else if (message.equals("CreateError"))
+		} else if (message.equals("CreateError"))
 			createControl.displayError("Account could not be created");
 		else if (message.startsWith("All: ")) {
 			String allPlayers = message.substring(5);
@@ -147,5 +147,18 @@ public class GameClient extends AbstractClient {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		jframe.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				// lbc.Logout();
+				try {
+					client.sendToServer("Logout: " + lbc.getUsername());
+					client.closeConnection();
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 }
