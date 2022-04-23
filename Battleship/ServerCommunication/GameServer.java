@@ -105,14 +105,14 @@ public class GameServer extends AbstractServer {
 		} else if (arg0 instanceof LobbyData) {
 			LobbyData data = (LobbyData)arg0;
 			Object result;
+			String challenge = "Challenge:";
 			
-			try {
-				System.out.println("Client " + arg1.getId() + " successfully logged out of " + data.getPlayer() + "\n");
-				arg1.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			challenge += data.getToChallengeUsername() + ":";
+			challenge += data.getPlayer() + ":";
+			challenge += data.getHighscore();
+						
+			sendToAllClients(challenge);
+			
 		} else if (arg0 instanceof PlacingData) {
 			PlacingData data = (PlacingData)arg0;
 			Object result;
@@ -157,6 +157,8 @@ public class GameServer extends AbstractServer {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if (arg0.toString().startsWith("ChallengeResult:")) {
+			sendToAllClients(arg0.toString());
 		}
 		
 		//TODO finish the other handles

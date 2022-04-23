@@ -81,6 +81,16 @@ public class GameClient extends AbstractClient {
 		} else if (message.startsWith("Online: ")) {
 			String onlinePlayers = message.substring(8);
 			lobbyControl.processOnlinePlayers(onlinePlayers);
+		} else if (message.startsWith("Challenge:")) {
+			String[] challengeInfo = message.split(":");
+			if (challengeInfo[1].equals(lobbyControl.getUsername())) {
+				lobbyControl.processChallenge(challengeInfo[1], challengeInfo[2], challengeInfo[3]);
+			}
+		} else if (message.startsWith("ChallengeResult:")) {
+			String[] resultInfo = message.split(":");
+			if (resultInfo[1].equals(lobbyControl.getUsername())) {
+				lobbyControl.processChallengeResults(resultInfo[2]);
+			}
 		}
 	}
 

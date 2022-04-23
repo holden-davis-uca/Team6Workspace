@@ -38,12 +38,15 @@ public class LobbyControl implements ActionListener {
 				String playerName = panel.getSelectedPlayer();
 				playerName = playerName.substring(9);
 				playerName = playerName.substring(0, playerName.length() - 11);
-				int dialogResult = JOptionPane.showConfirmDialog(null, "Challenge " + playerName + "?",
+				int dialogResult = JOptionPane.showConfirmDialog(container, "Challenge " + playerName + "?",
 						command, dialogButton);
 				if (dialogResult == JOptionPane.YES_OPTION) {
 					System.out.println("Challenge Selected");
 					// TODO send request to selected player
-					LobbyData data = new LobbyData(panel.getSelectedPlayer(), panel.getHighscore());
+					String toChallenge = panel.getSelectedPlayer();
+					toChallenge = toChallenge.substring(9);
+					toChallenge = toChallenge.substring(0, toChallenge.length() - 11);
+					LobbyData data = new LobbyData(getUsername(), panel.getHighscore(), toChallenge);
 					try {
 						client.sendToServer(data);
 					} catch (IOException e) {
@@ -70,7 +73,7 @@ public class LobbyControl implements ActionListener {
 					selectedPlayerScore = ">1.0";
 				}
 				int dialogButton = JOptionPane.INFORMATION_MESSAGE;
-				JOptionPane.showMessageDialog(panel.getParent(),
+				JOptionPane.showMessageDialog(container,
 						panel.getSelectedPlayer() + " win/loss ratio is: " + selectedPlayerScore);
 			}
 		}
@@ -152,5 +155,57 @@ public class LobbyControl implements ActionListener {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public void processChallenge(String beingChallengedName, String sentChallengeName, String sentChallengeScore) {
+		String message = "ChallengeResult:" + sentChallengeName + ":";
+		boolean accept;
+		
+		if (JOptionPane.showConfirmDialog(container, sentChallengeName + " with a win/loss ratio of " + sentChallengeScore + " has challenged you. Accept?", "Accept Challenge?",
+		        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+		    // yes option
+			message += "Yes";
+			accept = true;
+		} else {
+		    // no option
+			message += "No";
+			accept = false;
+		}
+		
+		try {
+			client.sendToServer(message);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (accept) {
+			challengeAccepted();
+		}
+	}
+
+	public void processChallengeResults(String result) {
+		String toDisplay = "Your Challenge has been ";
+		boolean accept;
+		
+		if (result.equals("Yes")) {
+			toDisplay += "accepted!";
+			accept = true;
+		} else {
+			toDisplay += "denied!";
+			accept = false;
+		}
+		Object[] options = {"OK"};
+	    int n = JOptionPane.showOptionDialog(container,
+	                   toDisplay,"Challenge Results",
+	                   JOptionPane.PLAIN_MESSAGE,
+	                   JOptionPane.QUESTION_MESSAGE,
+	                   null,
+	                   options,
+	                   options[0]);
+		
+		if (accept) {
+			challengeAccepted();
+		}
 	}
 }
