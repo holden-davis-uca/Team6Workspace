@@ -24,3 +24,29 @@ Database specification and definition is as follows (also contained within db.pr
 * >> Datatype of int(10)
 * Program-level constraints for username: Must be unique, must be between 3 and 30 characters, must be alphanumeric (including capitals and lowercase)
 * Program-level constraints for password: Must be between 5 and 20 characters, must be alphanumeric (including capitals and lowercase)
+
+## Final Class Diagram Status
+# Completed Classes:
+* LoginControl
+* LoginData
+* LoginPanel
+* Database
+# Incomplete Classes:
+* User
+* Gameserver
+* CreatePanel
+* CreateControl
+* CreateData
+* StartPanel
+* StartControl
+* Ships
+* PlacingControl
+* PlacingPanel
+* PlacingData
+* GameClient
+* GameData
+* GameControl
+* GamePanel
+* LobbyData
+* LobbyControl
+* LobbyPanel
