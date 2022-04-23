@@ -140,7 +140,7 @@ public class GameClient extends AbstractClient {
 		jframe.setLayout(new GridBagLayout());
 		jframe.add(container);
 
-		jframe.setSize(550, 350);
+		jframe.setSize(550, 500);
 		jframe.setVisible(true);
 		try {
 			client.sendToServer("AllPlayers");
