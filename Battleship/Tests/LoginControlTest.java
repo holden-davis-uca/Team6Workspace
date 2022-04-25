@@ -8,11 +8,12 @@
 
 package Tests;
 
-import javax.swing.*;
-import org.junit.*; //Needed for tests
-
-import ClientCommunication.GameClient;
-import ClientCommunication.LoginControl;
+import java.awt.*;				//Needed for cardlayout
+import java.awt.event.*;		//Needed for actionevent
+import javax.swing.*;			//Needed for Jpanel
+import org.junit.*; 			//Needed for tests
+import ClientCommunication.*;	//Needed for client
+import ClientGUI.*;				//Needed for loginpanel
 
 public class LoginControlTest {
 
@@ -23,7 +24,13 @@ public class LoginControlTest {
 	@Before
 	public void setUp()
 	{
+		JPanel view1 = new LoginPanel(lc);
+		CardLayout cardLayout = new CardLayout();
+		container = new JPanel(cardLayout);
 		lc = new LoginControl(container, Client);
+		container.add(view1,"1");
+		container.add(new LoginPanel(lc), "2");
+		cardLayout.show(container, "1");
 	}
 	@Test
 	public void testloginSuccess() 
@@ -34,11 +41,12 @@ public class LoginControlTest {
 	public void testdisplayError()
 	{
 		lc.displayError("test");
+		
 	}
 	@Test 
 	public void testactionPerformed()
 	{
-		lc.actionPerformed(null);
+		lc.actionPerformed(new ActionEvent(this, 0, "Login"));
 	}
 
 }

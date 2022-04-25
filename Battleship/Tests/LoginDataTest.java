@@ -8,9 +8,8 @@
 
 package Tests;
 
-import org.junit.*; //Needed for tests
-
-import ClientCommunication.LoginData;
+import org.junit.*; 			//Needed for tests
+import ClientCommunication.*;	//Needed for login data
 
 public class LoginDataTest {
 	String[] users = {"username1", "username2", "username3"};

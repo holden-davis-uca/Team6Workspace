@@ -8,11 +8,11 @@
 
 package Tests;
 
-import static org.junit.Assert.*; //Needed for not null and equals assertions
-import javax.swing.*; //Needed for JPanel/JLabel casts
-import org.junit.*; //Needed for tests
-import ClientCommunication.*; //Needed for dummy logincontrol for loginpanel constructor
-import ClientGUI.LoginPanel;
+import static org.junit.Assert.*; 	//Needed for not null and equals assertions
+import javax.swing.*; 				//Needed for JPanel/JLabel casts
+import org.junit.*; 				//Needed for tests
+import ClientCommunication.*; 		//Needed for dummy logincontrol for loginpanel constructor
+import ClientGUI.LoginPanel; 		//Needed for loginpanel
 
 public class LoginPanelTest {
 	
@@ -59,6 +59,7 @@ public class LoginPanelTest {
 	@Test
 	public void testclearAll()
 	{
+		lp.clearAll();
 		assertEquals(lp.getUsername(), "");
 		assertNotNull(lp.getPassword());
 	}

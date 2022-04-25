@@ -8,7 +8,7 @@ public class UserTest {
 	
 	@Before
 	public void setUp() {
-		user = new User(null, null);
+		user = new User(null, null, null);
 	}
 
 	@Test
