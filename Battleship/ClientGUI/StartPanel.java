@@ -13,6 +13,7 @@ public class StartPanel extends JPanel {
 
 	public StartPanel(StartControl sc) {
 
+		//Initial setup
 		JPanel grid = new JPanel();
 		GridBagLayout gbl_grid = new GridBagLayout();
 		gbl_grid.columnWidths = new int[] { 450, 0 };

@@ -6,7 +6,7 @@ public class User implements Serializable {
 	private String username;
 	private String password;
 	private String winRatio;
-	
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -31,6 +31,7 @@ public class User implements Serializable {
 		return winRatio;
 	}
 	
+	//Constructor
 	public User(String username, String password, String winRatio) {
 		setUsername(username);
 		setPassword(password);
