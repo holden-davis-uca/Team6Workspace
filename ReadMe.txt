@@ -6,4 +6,5 @@ TO RUN THE SERVER ON THE HOST MACHINE:
 3. Run BattleShipServer.bat
 
 TO RUN A CLIENT ON A SEPARATE MACHINE
-1. Run BattleShipClient.bat
+1. Edit BattleShipClient.bat, replacing 127.0.0.1 (local host) to the local IP address of the server machine
+2. Run BattleShipClient.bat
